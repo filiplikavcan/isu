@@ -18,20 +18,20 @@ class SchoolStrikeForm extends Form
 
             (new DropdownField('School'))->addExtraClass('form-control'),
             (new TextField('SchoolRaw'))->addExtraClass('form-control'),
-            (new TextField('SchoolAddress', 'Adresa školy'))->addExtraClass('form-control'),
+            (new TextField('SchoolStreet'))->addExtraClass('form-control'),
 
             // Pedagogickí a odborní zamestnanci
-            (new TextField('EmployeesCount', 'Celkový počet'))->addExtraClass('form-control'),
-            (new TextField('JoinedEmployeesCount', 'Počet zapojených'))->addExtraClass('form-control'),
+            (new TextField('EmployeesCount'))->addExtraClass('form-control'),
+            (new TextField('JoinedEmployeesCount'))->addExtraClass('form-control'),
 
             // Kontaktná osoba
-            (new TextField('ContactName', 'Meno'))->addExtraClass('form-control'),
-            (new TextField('ContactSurname', 'Priezvisko'))->addExtraClass('form-control'),
-            (new TextField('ContactPosition', 'Titul/funkcia (napr. učiteľ biológie)'))->addExtraClass('form-control'),
-            (new TextField('ContactEmail', 'E-mail'))->addExtraClass('form-control'),
-            (new TextField('ContactPhone', 'Telefón'))->addExtraClass('form-control'),
+            (new TextField('ContactName'))->addExtraClass('form-control'),
+            (new TextField('ContactSurname'))->addExtraClass('form-control'),
+            (new TextField('ContactPosition'))->addExtraClass('form-control'),
+            (new TextField('ContactEmail'))->addExtraClass('form-control'),
 
-            (new TextareaField('Note', 'Poznámka'))->addExtraClass('form-control')
+            (new TextField('ContactPhone'))->addExtraClass('form-control'),
+            (new TextareaField('Note'))->addExtraClass('form-control')
         );
 
         $actions = new FieldList(

@@ -14,7 +14,7 @@ class AjaxController extends Controller
             'schools' => array(),
         );
 
-        foreach (School::get()->filter(array('CityID' => $result['city_id']))->sort('Name ASC') as $school)
+        foreach (School::get()->filter(array('CityID' => $result['city_id'], 'Verified' => true))->sort('Name ASC') as $school)
         {
             $result['schools'][] = array(
                 'id' => $school->ID,
@@ -28,8 +28,6 @@ class AjaxController extends Controller
 
     public function submit(SS_HTTPRequest $request)
     {
-        $data = $request->postVar('data');
-
-        print_r($data);
+        SchoolStrikeRegistration::store($request->postVar('data'));
     }
 }

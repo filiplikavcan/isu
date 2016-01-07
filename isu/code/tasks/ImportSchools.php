@@ -25,6 +25,7 @@ class ImportSchools extends BuildTask
             $school->Name = $row[3];
             $school->Street = $row[4];
             $school->EmployeesCount = $row[5];
+            $school->Verified = true;
 
             $school->write();
         }
@@ -57,6 +58,7 @@ class ImportSchools extends BuildTask
                 $city = new City;
                 $city->Name = $city_name;
                 $city->Region = $this->getRegionCode($region_name);
+                $city->Verified = true;
                 $city->write();
             }
         }

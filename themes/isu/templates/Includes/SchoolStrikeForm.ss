@@ -9,7 +9,11 @@
     <% end_if %>
 
     <p>
-        Registrácia zapojených škôl slúži výlučne pre potreby Iniciatívy slovenských učiteľov. Ďakujeme, že registrujete štrajkujúce školy, je to dôležité pre efektívny priebeh štrajku. Zoznam štrajkujúcich škôl nie je verejne prístupný.
+        Registrácia zapojených škôl slúži výlučne pre potreby Iniciatívy slovenských učiteľov. Ďakujeme, že registrujete štrajkujúce školy, je to dôležité pre efektívny priebeh štrajku. Údaje o kontaktnej osobe nebudú zverejnené.
+    </p>
+
+    <p>
+        Ak ste už školu zaregistrovali môžete <a href="" class="update-form">aktualizovať údaje</a>.
     </p>
 
         $Fields.fieldByName(SecurityID)
@@ -48,9 +52,9 @@
     </div>
 
     <div class="form-group school-address">
-        <label class="col-sm-4 control-label">Adresa školy:</label>
+        <label class="col-sm-4 control-label">Ulica:</label>
         <div class="col-sm-8">
-            $Fields.fieldByName(SchoolAddress)
+            $Fields.fieldByName(SchoolStreet)
         </div>
     </div>
 
@@ -97,8 +101,13 @@
             <label class="col-sm-4 control-label">Emailová adresa:</label>
             <div class="col-sm-8">
                 $Fields.fieldByName(ContactEmail)
+                <div>
+                    Po odoslaní formulára Vám na túto emailovú adresu príde email s linkou, na ktorú musíte kliknúť, aby ste potvrdili registráciu.
+                </div>
             </div>
         </div>
+
+        <h4>Doplňujúce (nepovinné) údaje</h4>
 
         <div class="form-group">
             <label class="col-sm-4 control-label">Telefón:</label>
@@ -107,10 +116,9 @@
             </div>
         </div>
 
-        <h4>Poznámka</h4>
-
         <div class="form-group">
-            <div class="col-sm-8 col-sm-offset-4">
+            <label class="col-sm-4 control-label">Poznámka:</label>
+            <div class="col-sm-8">
                 $Fields.fieldByName(Note)
             </div>
         </div>

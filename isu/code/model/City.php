@@ -5,6 +5,7 @@ class City extends DataObject
     private static $db = array(
         'Name' => 'Varchar',
         'Region' => 'Varchar(2)',
+        'Verified' => 'Boolean',
     );
 
     private static $has_many = array(
@@ -42,7 +43,7 @@ class City extends DataObject
 
     public static function all()
     {
-        return self::get()->sort('Name ASC');
+        return self::get()->filter(array('Verified' => true))->sort('Name ASC');
     }
 
     protected function getRegionName()

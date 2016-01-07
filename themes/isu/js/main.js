@@ -30,53 +30,53 @@ var APP = {
     }
 };
 
-// calculate zoom based on the width of map div
-function calculate_zoom() {
-    var w = $('#map').width();
-    z = 5 + w/310;
-    return z;
-}
-
-// set height of the map (and textarea input) as half of its width
-function resize_map() {
-    var w = $('#map').width();
-    $('#map').css('height', 0.5*w + 'px');
-    $('#vase-zelanie .area-input').css('height', 0.3*w + 'px');
-}
-
-$( window ).resize(function() {
-    map.setZoom(calculate_zoom());
-    resize_map();
-});
-
-var map;
+//// calculate zoom based on the width of map div
+//function calculate_zoom() {
+//    var w = $('#map').width();
+//    z = 5 + w/310;
+//    return z;
+//}
+//
+//// set height of the map (and textarea input) as half of its width
+//function resize_map() {
+//    var w = $('#map').width();
+//    $('#map').css('height', 0.5*w + 'px');
+//    $('#vase-zelanie .area-input').css('height', 0.3*w + 'px');
+//}
+//
+//$( window ).resize(function() {
+//    map.setZoom(calculate_zoom());
+//    resize_map();
+//});
+//
+//var map;
 
 $(document).ready(function(){
     APP = new App(APP.inits);
 
-    // leaflet map
-    resize_map();
-    map = L.map('map', {
-        center: [48.690833, 19.667222],
-        zoom: calculate_zoom(),
-        zoomControl: false,
-        attributionControl: false,
-        dragging: false,
-        touchZoom: false,
-        scrollWheelZoom: false,
-        doubleClickZoom: false,
-        boxZoom: false,
-        tap: false,
-//      trackResize: false,
-//      keyboard: false
-    });
-
-    // draw country border
-    L.geoJson([border], {
-        style: function (feature) {
-            return feature.properties && feature.properties.style;
-        },
-    }).addTo(map);
+//    // leaflet map
+//    resize_map();
+//    map = L.map('map', {
+//        center: [48.690833, 19.667222],
+//        zoom: calculate_zoom(),
+//        zoomControl: false,
+//        attributionControl: false,
+//        dragging: false,
+//        touchZoom: false,
+//        scrollWheelZoom: false,
+//        doubleClickZoom: false,
+//        boxZoom: false,
+//        tap: false,
+////      trackResize: false,
+////      keyboard: false
+//    });
+//
+//    // draw country border
+//    L.geoJson([border], {
+//        style: function (feature) {
+//            return feature.properties && feature.properties.style;
+//        },
+//    }).addTo(map);
 });
 
 var SchoolStrikeForm = function() {
@@ -97,7 +97,7 @@ var SchoolStrikeForm = function() {
         Region: null,
         School: null,
         SchoolRaw: '',
-        SchoolAddress: '',
+        SchoolStreet: '',
         EmployeesCount: null,
         JoinedEmployeesCount: null,
         ContactName: '',
@@ -111,7 +111,7 @@ var SchoolStrikeForm = function() {
     this.required = [
         ['City', 'CityRaw'],
         ['School', 'SchoolRaw'],
-        ['SchoolAddress'],
+        ['SchoolStreet'],
         ['EmployeesCount'],
         ['JoinedEmployeesCount'],
         ['ContactName'],
@@ -132,7 +132,7 @@ SchoolStrikeForm.prototype = {
 
         this.city_select.on("select2:select", function() {
             that.choose_school = true;
-            that.form_holder.find('[name=SchoolAddress]').val('');
+            that.form_holder.find('[name=SchoolStreet]').val('');
             that.render();
         });
 
@@ -232,7 +232,7 @@ SchoolStrikeForm.prototype = {
 
             school_select.select2()
                 .on("select2:select", function(e) {
-                    that.form_holder.find('[name=SchoolAddress]').val(school_addresses[e.params.data.id]);
+                    that.form_holder.find('[name=SchoolStreet]').val(school_addresses[e.params.data.id]);
                 });
         }
     },
@@ -282,7 +282,7 @@ SchoolStrikeForm.prototype = {
                     }
                 }
 
-                that.form_holder.find('[name=SchoolAddress]').val('');
+                that.form_holder.find('[name=SchoolStreet]').val('');
                 that.form_holder.find('[name=SchoolRaw]').val('');
 
                 that.render();
@@ -311,12 +311,12 @@ SchoolStrikeForm.prototype = {
                         city = that.data.CityRaw;
                     }
 
-                    that.geocodeCity(city, function(lat, lng) {
-                        that.data.CityLat = lat;
-                        that.data.CityLng = lng;
+                    //  that.submitData();
 
-                        that.submitData();
-                    });
+                    //that.geocodeCity(city, function(lat, lng) {
+                    //    that.data.CityLat = lat;
+                    //    that.data.CityLng = lng;
+                    //});
                 }
                 else
                 {
