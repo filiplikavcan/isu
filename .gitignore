@@ -10,8 +10,12 @@ _ss_environment.php
 # ignore composer vendor folder
 /vendor/
 
-.idea
+/.idea/
 /cms/
 /framework/
 /reports/
 /siteconfig/
+/silverstripe-less/
+/assets/schoolsByCity.json
+/logs/
+/themes/isu/css/main.css

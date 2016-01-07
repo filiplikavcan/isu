@@ -1,0 +1,9 @@
+---
+Name: lognroutes
+After: 'framework/routes#coreroutes'
+---
+Director:
+  rules:
+    'data//schoolsByCity': 'AjaxController'
+    'data//submit': 'AjaxController'
+---

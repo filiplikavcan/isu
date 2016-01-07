@@ -4,9 +4,49 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b24b87eef7505eece2f2ff2da067c409",
-    "content-hash": "831e21807ba447b64d90810267f4844c",
+    "hash": "526b9284a4c8de9c6f881cdba51b2ebd",
+    "content-hash": "4a320c19e769bea9affed09f06c5cdb3",
     "packages": [
+        {
+            "name": "axllent/silverstripe-less",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/axllent/silverstripe-less.git",
+                "reference": "3040a890c87fd75390ffe46603b51bcb8adfdb7a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/axllent/silverstripe-less/zipball/3040a890c87fd75390ffe46603b51bcb8adfdb7a",
+                "reference": "3040a890c87fd75390ffe46603b51bcb8adfdb7a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2",
+                "silverstripe/framework": ">=2.4"
+            },
+            "type": "silverstripe-module",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "The MIT License (MIT)"
+            ],
+            "authors": [
+                {
+                    "name": "Ralph Slooten",
+                    "homepage": "http://www.axllent.org/"
+                }
+            ],
+            "description": "Wrapper for less.php to integrate LESS into SilverStripe",
+            "homepage": "https://github.com/axllent/silverstripe-less",
+            "keywords": [
+                "css",
+                "less",
+                "less.php",
+                "lessphp",
+                "silverstripe"
+            ],
+            "time": "2016-01-04 23:17:09"
+        },
         {
             "name": "composer/installers",
             "version": "v1.0.22",
@@ -705,7 +745,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "axllent/silverstripe-less": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

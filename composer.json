@@ -6,7 +6,8 @@
 		"silverstripe/cms": "3.2.1",
 		"silverstripe/framework": "3.2.1",
 		"silverstripe/reports": "3.2.1",
-		"silverstripe/siteconfig": "3.2.1"
+		"silverstripe/siteconfig": "3.2.1",
+		"axllent/silverstripe-less": "dev-master"
 	},
 	"require-dev": {
 		"phpunit/PHPUnit": "~3.7"
