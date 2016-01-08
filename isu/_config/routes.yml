@@ -6,4 +6,6 @@ Director:
   rules:
     'data//schoolsByCity': 'AjaxController'
     'data//submit': 'AjaxController'
+    'data//requestUpdate': 'AjaxController'
+    'v': 'ActionsController'
 ---

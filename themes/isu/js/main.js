@@ -89,15 +89,10 @@ var SchoolStrikeForm = function() {
 
     this.schools_by_city = {};
 
+    this.is_new = this.form_holder.find('[name=UpdateHash]').length == 0;
+
     this.data = {
-        City: null,
-        CityRaw: '',
-        CityLat: null,
-        CityLng: null,
-        Region: null,
-        School: null,
-        SchoolRaw: '',
-        SchoolStreet: '',
+        UpdateHash: null,
         EmployeesCount: null,
         JoinedEmployeesCount: null,
         ContactName: '',
@@ -109,9 +104,6 @@ var SchoolStrikeForm = function() {
     };
 
     this.required = [
-        ['City', 'CityRaw'],
-        ['School', 'SchoolRaw'],
-        ['SchoolStreet'],
         ['EmployeesCount'],
         ['JoinedEmployeesCount'],
         ['ContactName'],
@@ -119,22 +111,44 @@ var SchoolStrikeForm = function() {
         ['ContactPosition'],
         ['ContactEmail']
     ];
+
+    if (this.is_new)
+    {
+        $.extend(this.data, {
+            City: null,
+            CityRaw: '',
+            CityLat: null,
+            CityLng: null,
+            Region: null,
+            School: null,
+            SchoolRaw: '',
+            SchoolStreet: ''
+        });
+
+        $.merge(this.required, [
+            ['City', 'CityRaw'],
+            ['School', 'SchoolRaw'],
+            ['SchoolStreet']
+        ]);
+    }
 };
 
 SchoolStrikeForm.prototype = {
     init: function() {
         var that = this;
-        this.initCityData();
 
-        this.city_select = $('.school-strike-form select[name=City]').select2({
-//            minimumResultsForSearch: Infinity
-        });
+        if (this.is_new)
+        {
+            this.initCityData();
 
-        this.city_select.on("select2:select", function() {
-            that.choose_school = true;
-            that.form_holder.find('[name=SchoolStreet]').val('');
-            that.render();
-        });
+            this.city_select = $('.school-strike-form select[name=City]').select2();
+
+            this.city_select.on("select2:select", function() {
+                that.choose_school = true;
+                that.form_holder.find('[name=SchoolStreet]').val('');
+                that.render();
+            });
+        }
 
         this.initEvents();
         this.render();
@@ -143,57 +157,67 @@ SchoolStrikeForm.prototype = {
     render: function(invalid_fields)
     {
         var that = this;
-        var previous_city = this.data.City;
+
+        if (this.is_new)
+        {
+            var previous_city = this.data.City;
+        }
 
         this.storeForm();
 
-        if (this.choose_city)
+        if (this.is_new)
         {
-            this.form_holder.find('.choose-city').show();
-            this.form_holder.find('.add-city').hide();
-
-            if (this.data.City)
+            if (this.choose_city)
             {
-                this.form_holder.find('.add-school-toggle').show();
+                this.form_holder.find('.choose-city').show();
+                this.form_holder.find('.add-city').hide();
+
+                if (this.data.City)
+                {
+                    this.form_holder.find('.add-school-toggle').show();
+                }
+            }
+            else
+            {
+                this.form_holder.find('.choose-city').hide();
+                this.form_holder.find('.add-city').show();
+
+                var region_select = $('.school-strike-form select[name=Region]');
+
+                if (region_select.data('select2'))
+                {
+                    region_select.select2('destroy');
+                }
+
+                region_select.select2({
+                    minimumResultsForSearch: Infinity
+                });
+            }
+
+            if (this.choose_school)
+            {
+                this.form_holder.find('.choose-school').show();
+                this.form_holder.find('.add-school').hide();
+
+                if (previous_city != this.data.City)
+                {
+                    this.updateSchoolSelect();
+                }
+            }
+            else
+            {
+                this.form_holder.find('.choose-school').hide();
+                this.form_holder.find('.add-school').show();
             }
         }
-        else
-        {
-            this.form_holder.find('.choose-city').hide();
-            this.form_holder.find('.add-city').show();
 
-            var region_select = $('.school-strike-form select[name=Region]');
-
-            if (region_select.data('select2'))
-            {
-                region_select.select2('destroy');
-            }
-
-            region_select.select2({
-                minimumResultsForSearch: Infinity
-            });
-        }
-
-        if (this.choose_school)
-        {
-            this.form_holder.find('.choose-school').show();
-            this.form_holder.find('.add-school').hide();
-
-            if (previous_city != this.data.City)
-            {
-                this.updateSchoolSelect();
-            }
-        }
-        else
-        {
-            this.form_holder.find('.choose-school').hide();
-            this.form_holder.find('.add-school').show();
-        }
-
+        this.form_holder.find('.form-error-message').hide();
         this.form_holder.find('.has-error').removeClass('has-error');
 
         if (invalid_fields)
         {
+            this.form_holder.find('.form-error-message').show();
+
             $.each(invalid_fields, function(i, fields) {
                 $.each(fields, function(j, field) {
                     that.form_holder.find('[name=' + field + ']').closest('.form-group').addClass('has-error');
@@ -237,16 +261,6 @@ SchoolStrikeForm.prototype = {
         }
     },
 
-    schoolsForCityExist: function(city_id)
-    {
-        return !!this.schools_by_city[city_id];
-    },
-
-    isCityEntered: function()
-    {
-        return (this.choose_city && this.data.City) || (!this.choose_city && this.data.CityRaw);
-    },
-
     storeForm: function()
     {
         var that = this;
@@ -259,6 +273,12 @@ SchoolStrikeForm.prototype = {
     initEvents: function()
     {
         var that = this;
+
+        $('.request-update-form')
+            .on('submit', function(e){
+                e.preventDefault();
+                that.requestUpdateEmail();
+            });
 
         this.form_holder
             .on('click', '.toggle', function(e) {
@@ -291,27 +311,26 @@ SchoolStrikeForm.prototype = {
                 e.preventDefault();
 
                 that.storeForm();
-                that.submitData();
 
                 var invalid_fields = that.validateData();
 
                 if (invalid_fields.length == 0)
                 {
-                    that.data.CityLat = null;
-                    that.data.CityLng = null;
+                    //that.data.CityLat = null;
+                    //that.data.CityLng = null;
+                    //
+                    //var city;
+                    //
+                    //if (that.choose_city)
+                    //{
+                    //    city = that.form_holder.find('[name=City] option[value=' + that.data.City + ']').text();
+                    //}
+                    //else
+                    //{
+                    //    city = that.data.CityRaw;
+                    //}
 
-                    var city;
-
-                    if (that.choose_city)
-                    {
-                        city = that.form_holder.find('[name=City] option[value=' + that.data.City + ']').text();
-                    }
-                    else
-                    {
-                        city = that.data.CityRaw;
-                    }
-
-                    //  that.submitData();
+                      that.submitData();
 
                     //that.geocodeCity(city, function(lat, lng) {
                     //    that.data.CityLat = lat;
@@ -328,7 +347,14 @@ SchoolStrikeForm.prototype = {
     submitData: function()
     {
         $.post('/data/submit', { data: this.data }, function(response) {
+            window.location = '/';
+        });
+    },
 
+    requestUpdateEmail: function()
+    {
+        $.post('/data/requestUpdate', { email: $('.request-update-form [name=Email]').val() }, function() {
+            window.location = '/';
         });
     },
 
@@ -374,19 +400,19 @@ SchoolStrikeForm.prototype = {
                 text: option.text()
             })
         });
-    },
+    }//,
 
-    geocodeCity: function(city, callback)
-    {
-        var geocoder = new google.maps.Geocoder();
-        geocoder.geocode({'address': city + ', slovensko'}, function(results, status) {
-            if (status == google.maps.GeocoderStatus.OK) {
-                callback(results[0].geometry.location.lat(), results[0].geometry.location.lng());
-            }
-            else
-            {
-                callback(null, null);
-            }
-        });
-    }
+    //geocodeCity: function(city, callback)
+    //{
+    //    var geocoder = new google.maps.Geocoder();
+    //    geocoder.geocode({'address': city + ', slovensko'}, function(results, status) {
+    //        if (status == google.maps.GeocoderStatus.OK) {
+    //            callback(results[0].geometry.location.lat(), results[0].geometry.location.lng());
+    //        }
+    //        else
+    //        {
+    //            callback(null, null);
+    //        }
+    //    });
+    //}
 };

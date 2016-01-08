@@ -10,11 +10,6 @@ class Page extends SiteTree
 
 class Page_Controller extends ContentController
 {
-    private static $allowed_actions = array(
-        'SchoolStrikeForm',
-        'SendSchoolStrikeForm',
-    );
-
     public function init()
     {
         parent::init();
@@ -40,11 +35,29 @@ class Page_Controller extends ContentController
         }
     }
 
-    public function SchoolStrikeForm()
+    public function IsFlashError()
     {
-        $form = new SchoolStrikeForm($this);
-        $form->loadDataFrom($this->request->postVars());
-        $form->setTemplate('SchoolStrikeForm');
-        return $form;
+        return Session::get('FlashError');
+    }
+
+    public function IsFlashMessage()
+    {
+        return Session::get('FlashMessage');
+    }
+
+    public function getFlashError()
+    {
+        $error = Session::get('FlashError');
+        Session::clear('FlashError');
+
+        return $error;
+    }
+
+    public function getFlashMessage()
+    {
+        $message = Session::get('FlashMessage');
+        Session::clear('FlashMessage');
+
+        return $message;
     }
 }

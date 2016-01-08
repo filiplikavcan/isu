@@ -5,6 +5,7 @@ class AjaxController extends Controller
     private static $allowed_actions = array (
         'schoolsByCity',
         'submit',
+        'requestUpdate',
     );
 
     public function schoolsByCity(SS_HTTPRequest $request)
@@ -14,13 +15,16 @@ class AjaxController extends Controller
             'schools' => array(),
         );
 
-        foreach (School::get()->filter(array('CityID' => $result['city_id'], 'Verified' => true))->sort('Name ASC') as $school)
+        if (Director::is_ajax())
         {
-            $result['schools'][] = array(
-                'id' => $school->ID,
-                'name' => $school->Name,
-                'street' => $school->Street,
-            );
+            foreach (School::get()->filter(array('CityID' => $result['city_id'], 'Verified' => true))->sort('Name ASC') as $school)
+            {
+                $result['schools'][] = array(
+                    'id' => $school->ID,
+                    'name' => $school->Name,
+                    'street' => $school->Street,
+                );
+            }
         }
 
         return json_encode($result);
@@ -28,6 +32,23 @@ class AjaxController extends Controller
 
     public function submit(SS_HTTPRequest $request)
     {
-        SchoolStrikeRegistration::store($request->postVar('data'));
+        if (Director::is_ajax())
+        {
+            return json_encode(array(
+                'success' => SchoolStrikeRegistration::store($request->postVar('data')),
+            ));
+        }
+    }
+
+    public function requestUpdate(SS_HTTPRequest $request)
+    {
+        if (Director::is_ajax())
+        {
+            SchoolStrikeRegistration::requestUpdate($request->postVar('email'));
+
+            return json_encode(array(
+                'success' => true,
+            ));
+        }
     }
 }
