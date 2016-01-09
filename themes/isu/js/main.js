@@ -19,6 +19,52 @@ App.prototype = {
     {
         var form = new SchoolStrikeForm();
         form.init();
+    },
+
+    initNewsletterForm: function()
+    {
+        var form = $('.newsletter-form');
+        form.prepend(
+            '<div class="alert alert-danger form-error-message" style="display: none;">' +
+                'Prosím, vyplňte Vašu emailovú adresu.' +
+            '</div>');
+
+        form.
+            on('submit', function(e) {
+                e.preventDefault();
+
+                var email = form.find('[name=Email]');
+
+                if (email.val() == '')
+                {
+                    email.closest('.form-group').addClass('has-error');
+                    form.find('.form-error-message').show();
+                }
+                else
+                {
+                    email.closest('.form-group').removeClass('has-error');
+                    form.find('.form-error-message').hide();
+
+                    form.addClass('form-submitting');
+                    form.find('input[type=submit]').val('Čakajte. Odosiela sa...');
+                    form.find('input, select, textarea').prop('disabled', true);
+
+                    $.getJSON('/data/addToNewsletter', { email: email.val() }, function(response) {
+                        if (response.code == 'success')
+                        {
+                            window.location = '/';
+                        }
+                        else
+                        {
+                            form.removeClass('form-submitting');
+                            form.find('input[type=submit]').val('Odoslať');
+                            form.find('input, select, textarea').prop('disabled', false);
+
+                            alert('Emailová adresa je pravdepodobne chybná a NEBOLA zaregistrovaná. Skontrolujte ju a skúste ju odoslať znovu.');
+                        }
+                    });
+                }
+            });
     }
 };
 
@@ -29,6 +75,8 @@ var APP = {
         APP.inits.push(name);
     }
 };
+
+APP.init('NewsletterForm');
 
 //// calculate zoom based on the width of map div
 //function calculate_zoom() {
@@ -316,6 +364,8 @@ SchoolStrikeForm.prototype = {
 
                 if (invalid_fields.length == 0)
                 {
+                    that.setFormAsSubmitting(that.form_holder);
+
                     //that.data.CityLat = null;
                     //that.data.CityLng = null;
                     //
@@ -339,6 +389,7 @@ SchoolStrikeForm.prototype = {
                 }
                 else
                 {
+                    $(window).scrollTop(0);
                     that.render(invalid_fields);
                 }
             });
@@ -351,9 +402,22 @@ SchoolStrikeForm.prototype = {
         });
     },
 
+    setFormAsSubmitting: function(form)
+    {
+        form.addClass('form-submitting');
+
+        form.find('.toggle').remove();
+        form.find('input[type=submit]').val('Čakajte. Odosiela sa...');
+        form.find('input, select, textarea').prop('disabled', true);
+    },
+
     requestUpdateEmail: function()
     {
-        $.post('/data/requestUpdate', { email: $('.request-update-form [name=Email]').val() }, function() {
+        var form = $('.request-update-form');
+
+        this.setFormAsSubmitting(form);
+
+        $.post('/data/requestUpdate', { email: form.find('[name=Email]').val() }, function() {
             window.location = '/';
         });
     },

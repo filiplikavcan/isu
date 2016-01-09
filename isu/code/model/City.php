@@ -31,7 +31,7 @@ class City extends DataObject
     public function getCMSFields() {
         $fields = parent::getCMSFields();
 
-        $fields->addFieldToTab('Root.Main', new DropdownField('Region', 'CiRegionty', self::regions()));
+        $fields->addFieldToTab('Root.Main', new DropdownField('Region', 'Region', self::regions()));
 
         return $fields;
     }

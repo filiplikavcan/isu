@@ -14,27 +14,48 @@
     <![endif]-->
 </head>
 <body>
+    <% include Header %>
     <div class="container">
-        <% if IsFlashMessage || IsFlashError %>
-            <% if IsFlashMessage %>
+        <div class="row">
+            <div class="col-sm-12">
+                <% if IsFlashMessage || IsFlashError %>
+                <% if IsFlashMessage %>
                 <div class="alert alert-success">
                     $FlashMessage
                 </div>
-            <% end_if %>
+                <% end_if %>
 
-            <% if IsFlashError %>
+                <% if IsFlashError %>
                 <div class="alert alert-danger">
                     $FlashError
                 </div>
-            <% end_if %>
-        <% else %>
-            $Form
-            $Layout
-        <% end_if %>
-
+                <% end_if %>
+                <% else %>
+                $Form
+                $Layout
+                <% end_if %>
+            </div>
+        </div>
         <div class="row">
             <div class="col-sm-12">
-                <h2>Regionálne iniciatívy</h2>
+              <% loop $ArticleCategories %>
+                    <h2>$Title</h2>
+                    <ul>
+                    <% loop Children %>
+                        <li>
+                            <a href="$Link">$Title</a>
+                            <% if $File %>
+                                (<a href="$File.Link" target="_blank">$FileName</a>)
+                            <% end_if %>
+                        </li>
+                    <% end_loop %>
+                    </ul>
+                <% end_loop %>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <h2 id="regiony">Regionálne iniciatívy</h2>
                 <ul>
                     <li>
                         <a href="http://ibu7.webnode.sk/" target="_blank">IBU - Iniciatíva bratislavských učiteľov</a>
@@ -61,5 +82,6 @@
             </div>
         </div>
     </div>
+    <% include Footer %>
 </body>
 </html>

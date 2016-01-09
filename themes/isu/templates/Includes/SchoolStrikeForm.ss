@@ -147,10 +147,12 @@
             </div>
 
             <% if $Actions %>
-            <div class="actions">
-                <% loop $Actions %>
-                $Field
-                <% end_loop %>
+            <div class="form-group">
+                <div class="col-sm-8 col-sm-offset-4">
+                    <% loop $Actions %>
+                    $Field
+                    <% end_loop %>
+                </div>
             </div>
             <% end_if %>
         </div>

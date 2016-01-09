@@ -35,6 +35,11 @@ class Page_Controller extends ContentController
         }
     }
 
+    public function getArticleCategories()
+    {
+        return ArticleCategoryPage::get();
+    }
+
     public function IsFlashError()
     {
         return Session::get('FlashError');

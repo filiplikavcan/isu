@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-sm-6">
+    <div class="col-sm-6" id="registracia">
         <% if $Action == 'edit' %>
             <h2>
                 Aktualizácia údajov školy zapojenej do štrajku
@@ -13,7 +13,7 @@
 
         <% else %>
             <h2>
-                Rregistrácia školy zapojenej do štrajku
+                Registrácia školy zapojenej do štrajku
             </h2>
 
             <p>
@@ -21,7 +21,7 @@
             </p>
 
             <p>
-                Ak ste Vašu už školu zaregistrovali môžete <a href="$Link('edit')" class="update-form">aktualizovať údaje</a>.
+                Ak ste už Vašu školu zaregistrovali môžete <a href="$Link('edit')" class="update-form">aktualizovať údaje</a>.
             </p>
 
             $SchoolStrikeCreateRegistrationForm

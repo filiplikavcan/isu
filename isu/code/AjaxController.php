@@ -6,6 +6,7 @@ class AjaxController extends Controller
         'schoolsByCity',
         'submit',
         'requestUpdate',
+        'addToNewsletter',
     );
 
     public function schoolsByCity(SS_HTTPRequest $request)
@@ -50,5 +51,28 @@ class AjaxController extends Controller
                 'success' => true,
             ));
         }
+    }
+
+    public function addToNewsletter(SS_HTTPRequest $request)
+    {
+        $mailin = new Sendinblue\Mailin("https://api.sendinblue.com/v2.0", SENDINBLUE_API_KEY);
+
+        $email = $request->getVar('email');
+
+        $data = array(
+            'email' => $email,
+            'listid' => array(2),
+        );
+
+        $response = $mailin->create_update_user($data);
+
+        if ($response['code'] == 'success')
+        {
+            Session::set('FlashMessage',
+                $this->renderWith(array('FlashMessageNewsletterRegistration'), array('Email' => $email))
+            );
+        }
+
+        return json_encode($response);
     }
 }

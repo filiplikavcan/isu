@@ -7,5 +7,6 @@ Director:
     'data//schoolsByCity': 'AjaxController'
     'data//submit': 'AjaxController'
     'data//requestUpdate': 'AjaxController'
+    'data//addToNewsletter': 'AjaxController'
     'v': 'ActionsController'
 ---
