@@ -4,7 +4,7 @@ global $project;
 $project = 'isu';
 
 global $database;
-$database = 'isu';
+$database = 'isuweb';
 
 // Set the site locale
 i18n::set_locale('sk_SK');
