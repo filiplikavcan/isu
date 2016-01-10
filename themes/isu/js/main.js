@@ -24,7 +24,7 @@ App.prototype = {
     initNewsletterForm: function()
     {
         var form = $('.newsletter-form');
-        form.prepend(
+        form.find('.form-group').prepend(
             '<div class="alert alert-danger form-error-message" style="display: none;">' +
                 'Prosím, vyplňte Vašu emailovú adresu.' +
             '</div>');
@@ -389,7 +389,7 @@ SchoolStrikeForm.prototype = {
                 }
                 else
                 {
-                    $(window).scrollTop(0);
+                    window.location = '#registracia';
                     that.render(invalid_fields);
                 }
             });

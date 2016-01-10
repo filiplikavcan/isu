@@ -1,39 +1,66 @@
 <div class="footer">
     <div class="container">
         <div class="row">
-            <div class="col-sm-4">
-                <h2>
-                    Zasielanie noviniek
-                </h2>
-
-                <p>
-                    Zadajte svoju emailovú adresu, ak chcete dostávateľ emailom novinky o činnosti ISU.
-                </p>
-
+            <div class="col-xs-12">
                 <form class="form form-horizontal newsletter-form">
-                    <div class="form-group">
-                        <div class="col-xs-12">
-                            <input type="text" name="Email" class="form-control" placeholder="emailová adresa">
-                        </div>
-                    </div>
+                    <h2>
+                        Chcete zostať informovaný?
+                    </h2>
+
+                    <p>
+                        Zadajte svoju emailovú adresu, ak chcete dostávať<br> emailom novinky o činnosti ISU.
+                    </p>
 
                     <div class="form-group">
-                        <div class="col-xs-12">
-                            <input type="submit" class="btn btn-primary" value="Odoslať">
+                        <div class="col-sm-6 col-sm-offset-3">
+                            <div class="input-group">
+                                <input type="text" name="Email" class="form-control" placeholder="emailová adresa">
+                                <span class="input-group-btn">
+                                    <input type="submit" class="btn btn-primary" value="Odoslať">
+                                </span>
+                            </div>
                         </div>
                     </div>
 
                     <p>
-                        <small>Nespamujeme a odhlásiť sa je jednoduché.</small>
+                        Nespamujeme a odhlásiť sa je jednoduché.
                     </p>
                 </form>
             </div>
+        </div>
+        <div class="row info-boxes">
             <div class="col-sm-4">
                 <h2 id="regiony">O ISU</h2>
 
                 <p>
                     Bacon ipsum dolor amet filet mignon salami andouille kevin turducken biltong pancetta doner ground round tongue cow flank pork chop. Cupim filet mignon shoulder chicken rump, corned beef beef ribs bacon. Tongue turducken bresaola fatback, pancetta strip steak pork belly cupim tri-tip venison jerky boudin tenderloin ground round hamburger. Tail landjaeger t-bone kevin tenderloin meatloaf.
                 </p>
+            </div>
+            <div class="col-sm-4">
+                <h2 id="regiony">Regionálne iniciatívy</h2>
+                <ul>
+                    <li>
+                        <a href="http://ibu7.webnode.sk/" target="_blank">IBU - Iniciatíva bratislavských učiteľov</a>
+                    </li>
+                    <li>
+                        <a href="http://izu4.webnode.sk/" target="_blank">IZU - Iniciatíva žilinských učiteľov</a>
+                    </li>
+                    <li>
+                        <a href="http://www.velkaprestavka.sk/" target="_blank">Veľká prestávka - iniciatíva považskobystrických učiteľov</a>
+                    </li>
+                    <li>
+                        <a href="http://ibbu1.webnode.sk/" target="_blank">IBBU - Iniciatíva banskobystrických učiteľov</a>
+                    </li>
+                    <li>
+                        <a href="http://itu3.webnode.sk/" target="_blank">ITU - Iniciatíva trnavských učiteľov</a>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com/groups/975617185831007/" target="_blank">ILU - Iniciatíva levických učiteľov</a>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com/Iniciat%C3%ADva-nitrianskych-u%C4%8Dite%C4%BEov-1655038091427960/" target="_blank">INU - Iniciatíva nitrianskych učiteľov</a>
+                    </li>
+                </ul>
             </div>
             <div class="col-sm-4">
                 <h2>

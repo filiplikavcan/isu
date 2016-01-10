@@ -1,7 +1,21 @@
 @import "bootstrap/bootstrap";
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700&subset=latin,latin-ext);
+
+* {
+  font-family: 'Roboto', sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased
+}
+
+a {
+  color: #0078ff;
+}
 
 body {
-  padding-top: 70px;
+  font-size: 15px;
+  color: black;
 }
 
 .school-strike-form {
@@ -13,6 +27,12 @@ body {
   }
 }
 
+.container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
 #map {
   width: 100%;
   background: transparent;
@@ -22,7 +42,325 @@ body {
   opacity: 0.8;
 }
 
+h2, h3 {
+  text-transform: uppercase;
+}
+
+.anchor {
+  display: block;
+  position: relative;
+  top: -120px;
+  visibility: hidden;
+}
+
+fieldset {
+  border: 1px solid #e1e1e1;
+  border-radius: 2px;
+  padding: 25px 45px 30px 25px;
+
+  margin-bottom: 15px;
+
+  h3 {
+    padding: 0 0 30px 0;
+    margin: 0;
+    font-size: 16px;
+    line-height: 28px;
+
+    span {
+      text-transform: none;
+      font-weight: normal;
+    }
+  }
+
+  a {
+    font-size: 13px;
+  }
+
+  label {
+    font-size: 13px;
+  }
+
+  .description {
+    font-size: 13px;
+    color: gray;
+  }
+}
+
+.registration {
+  h2 {
+    font-size: 40px;
+    line-height: 44px;
+    color: black;
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 28px;
+  }
+
+  .btn {
+    border-radius: 2px;
+    text-transform: uppercase;
+    font-size: 24px;
+    line-height: 20px;
+    font-weight: 700;
+    padding: 15px 60px;
+    background-color: #ec3233;
+    color: white;
+    box-shadow: none;
+    border: none;
+
+    margin: 20px 0 30px 0;
+
+    &:active,
+    &:focus {
+      outline: none !important;
+      border: 1px solid white;
+    }
+  }
+}
+
+.documents {
+  h2 {
+    font-size: 30px;
+    line-height: 34px;
+  }
+
+  .description {
+    color: #353535;
+    font-size: 13px;
+    max-width: 300px;
+  }
+
+  .document-category-holder {
+    padding: 75px 0 65px 0;
+  }
+
+  .odd {
+    background-color: #efefef;
+  }
+}
+
+.navbar-default {
+  background-color: #252525;
+  border-color: #252525;
+
+  a.navbar-brand {
+
+    span {
+      visibility: hidden;
+    }
+
+    @media (min-width: @grid-float-breakpoint) {
+      &:before {
+        content: ' ';
+        position: absolute;
+        left: 0;
+        width: 95px;
+        height: 98px;
+        background-image: url(/themes/isu/images/isu-web-logo.png);
+        background-repeat: no-repeat;
+      }
+    }
+  }
+
+  .navbar-nav > li > a {
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+
+    &:hover {
+      color: #ec3132;
+    }
+
+    @media (min-width: 768px) {
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+  }
+}
+
+.main-banner {
+  padding-top: 125px;
+  padding-bottom: 50px;
+
+  margin-bottom: 75px;
+
+  background-color: #ec3132;
+  color: white;
+
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 500;
+
+  background-image: url(/themes/isu/images/pattern-red.png);
+
+  h2 {
+    font-weight: 700;
+    padding-top: 20px;
+    font-size: 30px;
+    line-height: 32px;
+  }
+
+  .btn {
+    border-radius: 2px;
+    text-transform: uppercase;
+    font-size: 24px;
+    line-height: 20px;
+    font-weight: 700;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: white;
+    color: black;
+    width: 100%;
+    box-shadow: 10px 10px 1px 1px rgba(0, 0, 0, 0.23);
+
+    margin: 20px 0 30px 0;
+
+    &:active,
+    &:focus {
+      outline: none !important;
+      border: 1px solid white;
+    }
+  }
+
+  a {
+    text-decoration: underline;
+    color: white;
+    font-weight: bold;
+    display: inline-block;
+  }
+
+  .main-info {
+    width: 100%;
+    max-width: 494px;
+
+    div {
+      width: 100%;
+      padding-top: 106.2248996%;
+
+      h2, h3 {
+        display: none;
+      }
+
+      background-image: url(/themes/isu/images/visual-no-arrow.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+}
+
 .footer {
-  border-top: 1px solid black;
+  background-color: #212121;
   margin-top: 30px;
+  color: #999999;
+
+  background-image: url(/themes/isu/images/pattern-gray.png);
+
+  h2 {
+    color: white;
+  }
+
+  .newsletter-form {
+    text-align: center;
+    padding: 55px 0;
+    border-bottom: 1px solid rgba(153, 153, 153, 0.5);
+
+    input {
+      border-radius: 2px;
+      box-shadow: none;
+
+      &:active,
+      &:focus {
+        outline: none !important;
+        border: 1px solid white;
+      }
+    }
+
+    .btn-primary {
+      background-color: #ec3233;
+      border: 1px solid #ec3233;
+      text-transform: uppercase;
+    }
+
+    .form-group {
+      margin: 20px 0;
+    }
+  }
+
+  .info-boxes {
+    padding: 55px 0;
+
+    h2 {
+      font-size: 18px;
+      padding: 0 0 25px 0;
+      margin: 0;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      li {
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+}
+
+.articles-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    a {
+      color: #353535;
+      font-weight: bold;
+
+      display: block;
+      text-decoration: none;
+
+      padding: 25px 25px 25px 75px;
+      border-bottom: 1px solid #dfdfdf;
+
+      &:hover {
+        background-color: rgba(200, 200, 200, 0.25);
+      }
+
+      background-image: url(/themes/isu/images/icon-other.png);
+      background-repeat: no-repeat;
+      background-position: 30px center;
+
+      &.icon-pdf {
+        background-image: url(/themes/isu/images/icon-pdf.png);
+      }
+
+      &.icon-docx,
+      &.icon-doc {
+        background-image: url(/themes/isu/images/icon-word.png);
+      }
+    }
+
+    &:last-of-type {
+      a {
+        border-bottom: none;
+      }
+    }
+  }
+
+  .documents & {
+    a {
+      border: none;
+      background-position: 0 center;
+      padding: 20px 20px 20px 45px;
+
+      &:hover {
+        background-color: inherit;
+        color: rgba(0, 0, 0, 0.6);
+      }
+    }
+  }
 }
