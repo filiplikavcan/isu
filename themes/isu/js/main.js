@@ -389,7 +389,15 @@ SchoolStrikeForm.prototype = {
                 }
                 else
                 {
-                    window.location = '#registracia';
+                    if (that.is_new)
+                    {
+                        window.location = '#registracia';
+                    }
+                    else
+                    {
+                        $(window).scrollTop(0);
+                    }
+
                     that.render(invalid_fields);
                 }
             });

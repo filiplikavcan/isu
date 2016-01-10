@@ -87,6 +87,8 @@ fieldset {
 }
 
 .registration {
+  margin-bottom: 30px;
+
   h2 {
     font-size: 40px;
     line-height: 44px;
@@ -142,32 +144,31 @@ fieldset {
 }
 
 .navbar-default {
-  background-color: #252525;
-  border-color: #252525;
-
   a.navbar-brand {
 
-    span {
-      visibility: hidden;
-    }
-
     @media (min-width: @grid-float-breakpoint) {
-      &:before {
-        content: ' ';
-        position: absolute;
-        left: 0;
-        width: 95px;
-        height: 98px;
-        background-image: url(/themes/isu/images/isu-web-logo.png);
-        background-repeat: no-repeat;
+      background-image: url(/themes/isu/images/logo-isu.png);
+      padding: 0;
+
+      margin-top: 15px;
+      margin-right: 45px;
+      margin-left: 0px !important;
+
+      width: 171px;
+      height: 53px;
+
+      display: inline-block;
+
+      span {
+        visibility: hidden;
       }
     }
   }
 
   .navbar-nav > li > a {
-    color: white;
+    color: black;
     font-size: 16px;
-    font-weight: bold;
+    font-weight: 500;
 
     &:hover {
       color: #ec3132;
@@ -180,13 +181,73 @@ fieldset {
   }
 }
 
+.flash-message-holder,
+.update-registration-holder {
+  border-top: 65px solid #e82d2f;
+  padding-top: 60px;
+  padding-bottom: 50px;
+
+  @media (min-width: @grid-float-breakpoint) {
+    border-top: 95px solid #e82d2f;
+  }
+}
+
+.article-holder {
+  border-top: 65px solid #e82d2f;
+  padding-top: 60px;
+  padding-bottom: 50px;
+
+  @media (min-width: @grid-float-breakpoint) {
+    border-top: 95px solid #e82d2f;
+  }
+
+  h2 {
+    text-transform: none;
+    font-size: 30px;
+    line-height: 34px;
+    padding: 0;
+    margin: 0;
+  }
+
+  .date {
+    font-size: 14px;
+    line-height: 28px;
+    color: #999999;
+  }
+
+  .content {
+    margin-top: 30px;
+    color: #353535;
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  .downloads,
+  .related {
+    h3 {
+      font-size: 16px;
+      line-height: 34px;
+      border-bottom: 1px solid #dfdfdf;
+      margin: 40px 0 0 0 ;
+      padding: 0;
+      text-transform: none;
+      font-weight: 700;
+      color: #151515;
+    }
+  }
+
+  .downloads h3 {
+    margin-top: 0;
+  }
+}
+
 .main-banner {
   padding-top: 125px;
   padding-bottom: 50px;
 
   margin-bottom: 75px;
 
-  background-color: #ec3132;
+  background-color: #e82d2f;
   color: white;
 
   font-size: 16px;
@@ -202,7 +263,7 @@ fieldset {
     line-height: 32px;
   }
 
-  .btn {
+  .btn-register {
     border-radius: 2px;
     text-transform: uppercase;
     font-size: 24px;
@@ -214,6 +275,7 @@ fieldset {
     color: black;
     width: 100%;
     box-shadow: 10px 10px 1px 1px rgba(0, 0, 0, 0.23);
+    text-decoration: none;
 
     margin: 20px 0 30px 0;
 
@@ -246,6 +308,61 @@ fieldset {
       background-image: url(/themes/isu/images/visual-no-arrow.png);
       background-size: contain;
       background-repeat: no-repeat;
+    }
+  }
+}
+
+.request-registration-update {
+  text-align: center;
+  margin-bottom: 0;
+
+  h2 {
+    text-transform: none;
+    font-size: 36px;
+    font-weight: 500;
+  }
+
+  .input-group {
+    max-width: 600px;
+    margin: 30px auto 40px auto;
+  }
+
+  .input-group-btn {
+    padding-left: 10px;
+  }
+
+  input {
+    border-radius: 2px !important;
+    box-shadow: none;
+
+    padding: 10px 20px !important;
+    height: 66px !important;
+
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: white !important;
+      outline: none !important;
+      color: black !important;
+      border: 1px solid white !important;
+    }
+
+    font-weight: 400;
+
+    &.btn {
+      text-transform: uppercase;
+      background-color: white;
+      color: black;
+      border: 1px solid white;
+      font-weight: 700;
+
+      box-shadow: 10px 10px 1px 1px rgba(0, 0, 0, 0.23);
+
+      &:active,
+      &:focus {
+        outline: none !important;
+        border: 1px solid white;
+      }
     }
   }
 }
@@ -326,16 +443,27 @@ fieldset {
       padding: 25px 25px 25px 75px;
       border-bottom: 1px solid #dfdfdf;
 
-      &:hover {
-        background-color: rgba(200, 200, 200, 0.25);
-      }
-
       background-image: url(/themes/isu/images/icon-other.png);
       background-repeat: no-repeat;
       background-position: 30px center;
 
+      &:hover {
+        background-color: rgba(200, 200, 200, 0.25);
+      }
+
+      span {
+        display: block;
+        font-size: 12px;
+        line-height: 18px;
+        color: #8b8282;
+      }
+
       &.icon-pdf {
         background-image: url(/themes/isu/images/icon-pdf.png);
+      }
+
+      &.icon-multiple {
+        background-image: url(/themes/isu/images/icon-multiple.png);
       }
 
       &.icon-docx,
@@ -356,6 +484,20 @@ fieldset {
       border: none;
       background-position: 0 center;
       padding: 20px 20px 20px 45px;
+
+      &:hover {
+        background-color: inherit;
+        color: rgba(0, 0, 0, 0.6);
+      }
+    }
+  }
+
+  .downloads & {
+    padding-top: 20px;
+    li a {
+      border: none;
+      background-position: 0 center;
+      padding: 10px 20px 10px 45px;
 
       &:hover {
         background-color: inherit;

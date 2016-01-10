@@ -33,7 +33,10 @@
                 <h2 id="regiony">O ISU</h2>
 
                 <p>
-                    Bacon ipsum dolor amet filet mignon salami andouille kevin turducken biltong pancetta doner ground round tongue cow flank pork chop. Cupim filet mignon shoulder chicken rump, corned beef beef ribs bacon. Tongue turducken bresaola fatback, pancetta strip steak pork belly cupim tri-tip venison jerky boudin tenderloin ground round hamburger. Tail landjaeger t-bone kevin tenderloin meatloaf.
+                    Iniciatíva slovenských učiteľov je neformálne hnutie, ktoré vzniklo spojením lokálnych učiteľských iniciatív z celého Slovenska.
+                </p>
+                <p>
+                    Kontakt: <a href="mailto:info@isu.sk">info@isu.sk</a>
                 </p>
             </div>
             <div class="col-sm-4">
@@ -58,7 +61,10 @@
                         <a href="https://www.facebook.com/groups/975617185831007/" target="_blank">ILU - Iniciatíva levických učiteľov</a>
                     </li>
                     <li>
-                        <a href="https://www.facebook.com/Iniciat%C3%ADva-nitrianskych-u%C4%8Dite%C4%BEov-1655038091427960/" target="_blank">INU - Iniciatíva nitrianskych učiteľov</a>
+                        <a href="https://www.facebook.com/Iniciat%C3%ADva-nitrianskych-u%C4%8Dite%C4%BEov-1655038091427960/" target="_blank">INRU - Iniciatíva nitrianskych učiteľov</a>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com/groups/1681140675501152/" target="_blank">ITNU - Iniciatíva trenčianskych učiteľov</a>
                     </li>
                 </ul>
             </div>

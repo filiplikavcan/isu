@@ -15,6 +15,7 @@
 <body>
     <% include Header %>
     <% if IsFlashMessage || IsFlashError %>
+        <div class="flash-message-holder">
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
@@ -31,6 +32,7 @@
                     <% end_if %>
                 </div>
             </div>
+        </div>
         </div>
     <% else %>
         $Form

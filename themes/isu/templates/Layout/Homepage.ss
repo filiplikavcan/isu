@@ -1,39 +1,54 @@
-<span class="anchor" id="registracia"></span>
-<div class="container">
 <% if $Action == 'edit' %>
-    <div class="row">
-        <div class="col-sm-5" >
-            <h2>
-                Aktualizácia údajov školy zapojenej do štrajku
-            </h2>
+    $SchoolStrikeUpdateRegistrationForm
+<% else %>
 
-            <p>Odoslaním elektronického prihlasovacieho formulára súhlasím so spracovaním osobných údajov, v zmysle ustanovenia § 11 zákona č. 122/2013 Z.z. o ochrane osobných údajov. Tento súhlas platí výlučne pre interné potreby Iniciatívy slovenských učiteľov v rozsahu osobných údajov:  meno a e-mailová adresa, najmä na zasielanie ďalších oznámení a informácií o štrajku vo forme emailov a newslettera. Iniciatíva slovenských učiteľov nebude tieto údaje nikde zverejňovať, ani ich posielať tretím stranám. Tento súhlas možno písomne odvolať mailom na <a href="mailto:strajk@isu.sk">strajk@isu.sk</a></p>
-        </div>
+    <div class="main-banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="main-info">
+                        <div>
+                            <h2>Iniciatíva slovnských učiteľov vyhlasuje štrajk od 25.1.2016</h2>
+                            <h3>Nie je nám to FUK!</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <h2>Zaregistrujte školu zapojenú do štrajku</h2>
 
-        <div class="col-sm-7">
-            $SchoolStrikeUpdateRegistrationForm
+                    <p>
+                        Registrácia zapojených škôl slúži výlučne pre potreby Iniciatívy slovenských učiteľov. Ďakujeme, že registrujete štrajkujúce školy, je to dôležité pre efektívny priebeh štrajku. Údaje o kontaktnej osobe nebudú zverejnené.
+                    </p>
 
-            <p>
-                Ak ste Vašu školu ešte nezaregistrovali môžete <a href="$Link" class="update-form">vytvoriť novú registráciu</a>.
-            </p>
+                    <div>
+                        <a href="/#registracia" class="btn btn-register">Zaregistrovať školu</a>
+                    </div>
+
+                    <p style="text-align: center;">
+                        Ak ste už Vašu školu zaregistrovali, môžete<br> <a href="$Link('edit')" class="update-form">aktualizovať údaje</a>.
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
-<% else %>
-    <div class="row registration">
-        <div class="col-sm-5">
-            <h2>
-                Registrácia školy zapojenej do štrajku
-            </h2>
 
-            <p>Odoslaním elektronického prihlasovacieho formulára súhlasím so spracovaním osobných údajov, v zmysle ustanovenia § 11 zákona č. 122/2013 Z.z. o ochrane osobných údajov. Tento súhlas platí výlučne pre interné potreby Iniciatívy slovenských učiteľov v rozsahu osobných údajov:  meno a e-mailová adresa, najmä na zasielanie ďalších oznámení a informácií o štrajku vo forme emailov a newslettera. Iniciatíva slovenských učiteľov nebude tieto údaje nikde zverejňovať, ani ich posielať tretím stranám. Tento súhlas možno písomne odvolať mailom na <a href="mailto:strajk@isu.sk">strajk@isu.sk</a></p>
-        </div>
+    <span class="anchor" id="registracia"></span>
+    <div class="container">
+        <div class="row registration">
+            <div class="col-sm-5">
+                <h2>
+                    Registrácia školy zapojenej do štrajku
+                </h2>
 
-        <div class="col-sm-7">
-            $SchoolStrikeCreateRegistrationForm
+                <p>Odoslaním elektronického prihlasovacieho formulára súhlasím so spracovaním osobných údajov, v zmysle ustanovenia § 11 zákona č. 122/2013 Z.z. o ochrane osobných údajov. Tento súhlas platí výlučne pre interné potreby Iniciatívy slovenských učiteľov v rozsahu osobných údajov:  meno a e-mailová adresa, najmä na zasielanie ďalších oznámení a informácií o štrajku vo forme emailov a newslettera. Iniciatíva slovenských učiteľov nebude tieto údaje nikde zverejňovať, ani ich posielať tretím stranám. Tento súhlas možno písomne odvolať mailom na <a href="mailto:strajk@isu.sk">strajk@isu.sk</a></p>
+            </div>
+
+            <div class="col-sm-7">
+                $SchoolStrikeCreateRegistrationForm
+            </div>
         </div>
     </div>
 <% end_if %>
-</div>
 
 <span class="anchor" id="dokumenty"></span>
 <div class="documents">
@@ -52,7 +67,10 @@
                     <ul class="articles-list">
                         <% loop Children %>
                         <li>
-                            <a href="$Link">$Title</a>
+                            <a href="$Link" class="icon-$IconName">
+                                $Title
+                                <span><% if $FileSize %>$FileSize<% end_if %></span>
+                            </a>
                         </li>
                         <% end_loop %>
                     </ul>

@@ -1,22 +1,38 @@
- <div class="row">
-    <div class="col-sm-12">
-        <h2>$Title</h2>
-        <div>$PublishDate</div>
-        $Content
+<div class="article-holder">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8">
+                <h2>$Title</h2>
+                <div class="date">$PublishDate.format('j. n. Y')</div>
 
-        <% if File %>
-        <div style="text-align: center;">
-            <a href="$File.Link" target="_blank" class="btn btn-primary btn-lg">dokument na stiahnutie/tlač</a>
+                <div class="content">
+                    $Content
+                </div>
+
+                <% if $RelatedArticles %>
+                <div class="related">
+                    <h3>Súvisiace články</h3>
+                    <% include ArticlesList Articles=$RelatedArticles %>
+                </div>
+                <% end_if %>
+            </div>
+            <div class="col-sm-4">
+                <% if $Files %>
+                <div class="downloads">
+                    <h3>Na stiahnutie</h3>
+                    <ul class="articles-list">
+                        <% loop $Files %>
+                        <li>
+                            <a href="$Link" class="icon-$Extension" target="_blank">
+                                $Name
+                                <span>$Size</span>
+                            </a>
+                        </li>
+                        <% end_loop %>
+                    </ul>
+                </div>
+                <% end_if %>
+            </div>
         </div>
-        <% end_if %>
-
-        <% if $RelatedArticles %>
-            <h3>Súvisiace</h3>
-            <ul>
-            <% loop $RelatedArticles %>
-                <li><a href="$Link">$Title</a></li>
-            <% end_loop %>
-            </ul>
-        <% end_if %>
     </div>
 </div>

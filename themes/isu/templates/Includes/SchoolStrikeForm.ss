@@ -1,22 +1,57 @@
 <% if ShowRequestUpdateForm %>
-    <form class="form form-horizontal request-update-form">
-        <div class="form-group">
-            <label class="col-sm-12">Emailová adresa kontaktnej osoby:</label>
+<div class="main-banner request-registration-update">
+    <div class="container">
+        <div class="row">
             <div class="col-sm-12">
-                <input type="text" name="Email" class="form-control">
-                <div>
-                    Na emailovú adresu Vám príde email s inštrukciami ako aktualizovať údaje.
-                </div>
-            </div>
-        </div>
+                <h2>
+                    Aktualizácia údajov školy zapojenej do štrajku
+                </h2>
 
-        <div class="form-group">
-            <div class="col-sm-12">
-                <input type="submit" value="Odoslať" class="btn btn-primary">
+                <form class="form form-horizontal request-update-form">
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <div>
+                                Zadajte emailovú adresu, na ktorú Vám príde email s inštrukciami ako aktualizovať údaje.
+                            </div>
+
+                            <div class="input-group input-group-lg">
+                                <input type="text" name="Email" class="form-control" placeholder="Emailová adresa kontaktnej osoby">
+                                <span class="input-group-btn">
+                                    <input type="submit" class="btn btn-primary" value="Odoslať">
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-12">
+
+                        </div>
+                    </div>
+                </form>
+                <p>
+                    Ak ste Vašu školu ešte nezaregistrovali môžete <a href="$Link(#registracia)" class="update-form">vytvoriť novú registráciu</a>.
+                </p>
             </div>
         </div>
-    </form>
+    </div>
+</div>
+
 <% else %>
+    <% if $IsRestricted %>
+    <div class="update-registration-holder">
+        <div class="container">
+            <div class="row registration">
+                <div class="col-sm-5">
+                    <h2>
+                        Aktualizácia údajov školy zapojenej do štrajku
+                    </h2>
+
+                    <p>Odoslaním elektronického prihlasovacieho formulára súhlasím so spracovaním osobných údajov, v zmysle ustanovenia § 11 zákona č. 122/2013 Z.z. o ochrane osobných údajov. Tento súhlas platí výlučne pre interné potreby Iniciatívy slovenských učiteľov v rozsahu osobných údajov:  meno a e-mailová adresa, najmä na zasielanie ďalších oznámení a informácií o štrajku vo forme emailov a newslettera. Iniciatíva slovenských učiteľov nebude tieto údaje nikde zverejňovať, ani ich posielať tretím stranám. Tento súhlas možno písomne odvolať mailom na <a href="mailto:strajk@isu.sk">strajk@isu.sk</a></p>
+                </div>
+                <div class="col-sm-7">
+    <% end_if %>
+
     <% if $IncludeFormTag %>
     <form $AttributesHTML>
         <% end_if %>
@@ -181,6 +216,14 @@
         <% if $IncludeFormTag %>
     </form>
     <% end_if %>
+
+    <% if $IsRestricted %>
+        </div>
+        </div>
+        </div>
+    </div>
+    <% end_if %>
+
 <% end_if %>
 
 <script type="text/javascript">
