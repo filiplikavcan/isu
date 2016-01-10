@@ -68,6 +68,12 @@ class AjaxController extends Controller
 
         if ($response['code'] == 'success')
         {
+            (new IsuEmail())->sendEmail(
+                array($email),
+                'www.isu.sk: Zasielanie noviniek',
+                $this->renderWith(array('IsuNewsletterSignin'), array('Email' => $email))
+            );
+
             Session::set('FlashMessage',
                 $this->renderWith(array('FlashMessageNewsletterRegistration'), array('Email' => $email))
             );
