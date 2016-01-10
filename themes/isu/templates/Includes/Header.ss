@@ -12,9 +12,9 @@
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li><a href="/#registracia">Registrácia školy</a></li>
-                <li><a href="/#dokumenty">Manuály a tlačové správy</a></li>
-                <li><a href="/#regiony">Regionálne iniciatívy</a></li>
+                <li><a href="/home#registracia">Registrácia školy</a></li>
+                <li><a href="/home#dokumenty">Manuály a tlačové správy</a></li>
+                <li><a href="/home#regiony">Regionálne iniciatívy</a></li>
             </ul>
         </div>
     </div>

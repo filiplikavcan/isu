@@ -2,7 +2,7 @@
     <% loop $Articles %>
     <li>
         <a href="$Link" class="icon-$IconName">
-            $Title
+            $MenuTitle
             <span><% if $FileSize %>$FileSize<% end_if %></span>
         </a>
     </li>
