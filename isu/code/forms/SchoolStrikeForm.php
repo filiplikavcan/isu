@@ -97,4 +97,14 @@ class SchoolStrikeForm extends Form
     {
         return $this->is_restricted;
     }
+
+    public function CitiesCacheKey()
+    {
+        return implode('-',
+            array(
+                City::get()->count(),
+                City::get()->sort('LastEdited DESC')->first()->LastEdited
+            )
+        );
+    }
 }

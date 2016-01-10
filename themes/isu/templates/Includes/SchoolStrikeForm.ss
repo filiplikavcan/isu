@@ -37,13 +37,15 @@
                 </div>
             </div>
         <% else %>
-            <div class="form-group choose-city">
-                <label class="col-sm-4 control-label">Vyberte obec:</label>
-                <div class="col-sm-8">
-                    $Fields.fieldByName(City)
-                    <div><a href="" class="toggle" data-toggle="choose_city">Kliknite ak Vaša obec nie je v zozname</a></div>
+            <% cached $CitiesCacheKey %>
+                <div class="form-group choose-city">
+                    <label class="col-sm-4 control-label">Vyberte obec:</label>
+                    <div class="col-sm-8">
+                        $Fields.fieldByName(City)
+                        <div><a href="" class="toggle" data-toggle="choose_city">Kliknite ak Vaša obec nie je v zozname</a></div>
+                    </div>
                 </div>
-            </div>
+            <% end_cached %>
 
             <div class="form-group add-city">
                 <label class="col-sm-4 control-label">Názov obce:</label>
