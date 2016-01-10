@@ -69,7 +69,11 @@
                         <li>
                             <a href="$Link" class="icon-$IconName">
                                 $MenuTitle
-                                <span><% if $FileSize %>$FileSize<% end_if %></span>
+                                <span>
+                                    <% if $PublishDate %>
+                                        $PublishDate.format('j. n. Y')
+                                    <% end_if %>
+                                    <% if $FileSize %><% if $PublishDate %> | <% end_if %>$FileSize<% end_if %></span>
                             </a>
                         </li>
                         <% end_loop %>
