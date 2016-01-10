@@ -17,7 +17,7 @@
                     <h2>Zaregistrujte školu zapojenú do štrajku</h2>
 
                     <p>
-                        Registrácia zapojených škôl slúži výlučne pre potreby Iniciatívy slovenských učiteľov. Ďakujeme, že registrujete štrajkujúce školy, je to dôležité pre efektívny priebeh štrajku. Údaje o kontaktnej osobe nebudú zverejnené.
+                        Registrácia zapojených škôl slúži výlučne pre potreby <a href="/manualy/strajkovy-vybor-isu/">štrajkového výboru Iniciatívy slovenských učiteľov</a>. Ďakujeme, že registrujete štrajkujúce školy, je to dôležité pre efektívny priebeh štrajku. Údaje o kontaktnej osobe nebudú zverejnené.
                     </p>
 
                     <div>
@@ -68,7 +68,7 @@
                         <% loop Children %>
                         <li>
                             <a href="$Link" class="icon-$IconName">
-                                $Title
+                                $MenuTitle
                                 <span><% if $FileSize %>$FileSize<% end_if %></span>
                             </a>
                         </li>
