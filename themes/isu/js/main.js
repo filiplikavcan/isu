@@ -143,6 +143,7 @@ var SchoolStrikeForm = function() {
         UpdateHash: null,
         EmployeesCount: null,
         JoinedEmployeesCount: null,
+        SchoolClosed: 'maybe',
         ContactName: '',
         ContactSurname: '',
         ContactPosition: '',
@@ -184,6 +185,10 @@ var SchoolStrikeForm = function() {
 SchoolStrikeForm.prototype = {
     init: function() {
         var that = this;
+
+        $('.school-strike-form select[name=SchoolClosed]').select2({
+            minimumResultsForSearch: Infinity
+        });
 
         if (this.is_new)
         {

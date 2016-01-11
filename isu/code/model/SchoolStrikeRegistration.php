@@ -12,6 +12,7 @@ class SchoolStrikeRegistration extends DataObject
         'ContactEmail' => 'Varchar',
         'ContactPhone' => 'Varchar',
         'VerificationHash' => 'Varchar',
+        'SchoolClosed' => 'Varchar(10)',
         'UpdateHash' => 'Varchar',
         'Note' => 'Text',
     );
@@ -84,6 +85,7 @@ class SchoolStrikeRegistration extends DataObject
         {
             $action = $registration->isInDB() ? 'Updated' : 'Created';
 
+            $registration->SchoolClosed = $data['SchoolClosed'];
             $registration->EmployeesCount = $data['EmployeesCount'];
             $registration->JoinedEmployeesCount = $data['JoinedEmployeesCount'];
             $registration->ContactName = $data['ContactName'];

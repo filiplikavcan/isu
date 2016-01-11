@@ -30,13 +30,16 @@
         </div>
         <div class="row info-boxes">
             <div class="col-sm-4">
-                <h2 id="regiony">O ISU</h2>
+                <h2>Kontakt</h2>
+                <p>
+                    Email: <a href="mailto:info@isu.sk">info@isu.sk</a><br>
+                    Telefón: 0908 420 468
+                </p>
+
+                <h2 id="regiony" style="margin-top: 40px;">O ISU</h2>
 
                 <p>
                     Iniciatíva slovenských učiteľov je neformálne hnutie, ktoré vzniklo spojením lokálnych učiteľských iniciatív z celého Slovenska.
-                </p>
-                <p>
-                    Kontakt: <a href="mailto:info@isu.sk">info@isu.sk</a>
                 </p>
             </div>
             <div class="col-sm-4">
@@ -75,16 +78,19 @@
 
                 <ul>
                     <li>
-                        spoločnosti <a href="http://www.websupport.sk/" target="_blank">Websupport</a> za hosting
+                        <a href="http://fair-play.sk/" target="_blank">Aliancii Fair-Play</a> za odbornú pomoc a poradenstvo.
                     </li>
                     <li>
-                        spoločnosti <a href="http://www.bratia.sk/" target="_blank">bratia.sk</a> za web
+                        <a href="http://www.frco.sk/" target="_blank">Andrejovi Borskému</a> za grafický návrh webu.
                     </li>
                     <li>
-                        <a href="http://www.frco.sk/" target="_blank">Andrejovi Borskému</a> za grafický návrh webu
+                        Braňovi Bezručkovi za prípravu printových materiálov.
                     </li>
                     <li>
-                        Braňovi Bezručkovi za prípravu printových materiálov
+                        Spoločnosti <a href="http://www.bratia.sk/" target="_blank">bratia.sk</a> za web.
+                    </li>
+                    <li>
+                        Spoločnosti <a href="http://www.websupport.sk/" target="_blank">Websupport</a> za hosting.
                     </li>
                 </ul>
             </div>
