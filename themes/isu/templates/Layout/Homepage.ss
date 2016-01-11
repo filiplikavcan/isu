@@ -67,13 +67,13 @@
                     <ul class="articles-list">
                         <% loop Children %>
                         <li>
-                            <a href="$Link" class="icon-$IconName">
+                            <a href="$Link">
                                 $MenuTitle
                                 <span>
                                     <% if $PublishDate %>
                                         $PublishDate.format('j. n. Y')
                                     <% end_if %>
-                                    <% if $FileSize %><% if $PublishDate %> | <% end_if %>$FileSize<% end_if %></span>
+                                </span>
                             </a>
                         </li>
                         <% end_loop %>
