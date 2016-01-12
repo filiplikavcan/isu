@@ -65,8 +65,20 @@
         </div>
         </div>
     <% else %>
-        $Form
-        $Layout
+        <% if $Form %>
+            <div style="margin-top: 100px;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            $Layout
+                            $Form
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <% else %>
+            $Layout
+        <% end_if %>
     <% end_if %>
 
     <% include Footer %>
