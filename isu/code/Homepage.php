@@ -2,9 +2,22 @@
 
 class Homepage extends Page
 {
-    private static $db = array();
+    private static $db = array(
+        'FeaturedButtonTitle' => 'Varchar(1000)'
+    );
 
-    private static $has_one = array();
+    private static $has_one = array(
+        'FeaturedPage' => 'Page'
+    );
+
+    public function getCMSFields() {
+        $fields = parent::getCMSFields();
+
+        $fields->addFieldToTab('Root.Main', new TreeDropdownField('FeaturedPageID', 'Featured Page', 'Page'), 'Content');
+        $fields->addFieldToTab('Root.Main', new TextField('FeaturedButtonTitle', 'Featured Button Title'), 'Content');
+
+        return $fields;
+    }
 }
 
 class Homepage_Controller extends Page_Controller

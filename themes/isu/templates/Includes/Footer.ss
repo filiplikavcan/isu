@@ -1,3 +1,26 @@
+<div class="media-holder" style="margin-top: 40px; padding-top: 75px; padding-bottom: 75px; background-color: #efefef;">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <span class="anchor" id="media"></span>
+                <h2 style="padding: 0 0 20px 0; margin: 0;">V médiách</h2>
+
+                <ul style="margin-bottom: 45px;">
+                    <% loop $MediaLinks %>
+                    <li style="padding-bottom: 5px;">
+                        <a href="$Link" target="_blank">$Title</a> <small>$Medium</small>
+                    </li>
+                    <% end_loop %>
+                </ul>
+            </div>
+
+            <div class="col-sm-6">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/LF1M-qdb6RE?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="footer">
     <div class="container">
         <div class="row">
@@ -36,14 +59,15 @@
                     Telefón: 0908 420 468
                 </p>
 
-                <h2 id="regiony" style="margin-top: 40px;">O ISU</h2>
+                <h2 style="margin-top: 40px;">O ISU</h2>
 
                 <p>
                     Iniciatíva slovenských učiteľov je neformálne hnutie, ktoré vzniklo spojením lokálnych učiteľských iniciatív z celého Slovenska.
                 </p>
             </div>
             <div class="col-sm-4">
-                <h2 id="regiony">Regionálne iniciatívy</h2>
+                <span class="anchor" id="regiony"></span>
+                <h2>Regionálne iniciatívy</h2>
                 <ul>
                     <li>
                         <a href="http://ibu7.webnode.sk/" target="_blank">IBU - Iniciatíva bratislavských učiteľov</a>

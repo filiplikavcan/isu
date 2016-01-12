@@ -30,7 +30,7 @@
                     </div>
                 </form>
                 <p>
-                    Ak ste Vašu školu ešte nezaregistrovali môžete <a href="$Link(#registracia)" class="update-form">vytvoriť novú registráciu</a>.
+                    Ak ste Vašu školu ešte nezaregistrovali môžete <a href="/#registracia" class="update-form">vytvoriť novú registráciu</a>.
                 </p>
             </div>
         </div>
@@ -43,11 +43,9 @@
         <div class="container">
             <div class="row registration">
                 <div class="col-sm-5">
-                    <h2>
+                    <h2 style="margin-top: 0;">
                         Aktualizácia údajov školy zapojenej do štrajku
                     </h2>
-
-                    <p>Odoslaním elektronického prihlasovacieho formulára súhlasím so spracovaním osobných údajov, v zmysle ustanovenia § 11 zákona č. 122/2013 Z.z. o ochrane osobných údajov. Tento súhlas platí výlučne pre interné potreby Iniciatívy slovenských učiteľov v rozsahu osobných údajov:  meno a e-mailová adresa, najmä na zasielanie ďalších oznámení a informácií o štrajku vo forme emailov a newslettera. Iniciatíva slovenských učiteľov nebude tieto údaje nikde zverejňovať, ani ich posielať tretím stranám. Tento súhlas možno písomne odvolať mailom na <a href="mailto:strajk@isu.sk">strajk@isu.sk</a></p>
                 </div>
                 <div class="col-sm-7">
     <% end_if %>
@@ -219,6 +217,9 @@
                 </div>
             </div>
             <% end_if %>
+
+            <p><small>Odoslaním elektronického prihlasovacieho formulára súhlasím so spracovaním osobných údajov, v zmysle ustanovenia § 11 zákona č. 122/2013 Z.z. o ochrane osobných údajov. Tento súhlas platí výlučne pre interné potreby Iniciatívy slovenských učiteľov v rozsahu osobných údajov:  meno a e-mailová adresa, najmä na zasielanie ďalších oznámení a informácií o štrajku vo forme emailov a newslettera. Iniciatíva slovenských učiteľov nebude tieto údaje nikde zverejňovať, ani ich posielať tretím stranám. Tento súhlas možno písomne odvolať mailom na <a href="mailto:strajk@isu.sk">strajk@isu.sk</a></small></p>
+
         </div>
         <% if $IncludeFormTag %>
     </form>

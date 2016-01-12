@@ -14,6 +14,7 @@
             <ul class="nav navbar-nav">
                 <li><a href="/home#registracia">Registrácia školy</a></li>
                 <li><a href="/home#dokumenty">Manuály a tlačové správy</a></li>
+                <li><a href="#media">V médiách</a></li>
                 <li><a href="/home#regiony">Regionálne iniciatívy</a></li>
             </ul>
         </div>

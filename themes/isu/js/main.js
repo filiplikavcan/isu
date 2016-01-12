@@ -21,6 +21,46 @@ App.prototype = {
         form.init();
     },
 
+    initVideos: function()
+    {
+        // Find all YouTube videos
+        var $allVideos = $("iframe[src^='https://www.youtube.com']");
+
+        // Figure out and save aspect ratio for each video
+        $allVideos.each(function ()
+        {
+            $(this)
+                .data('aspectRatio', this.height / this.width)
+                // and remove the hard coded width/height
+                .removeAttr('height')
+                .removeAttr('width');
+
+            var newWidth = $(this).closest('div').width();
+
+            var $el = $(this);
+
+            $el
+                .width(newWidth)
+                .height(newWidth * $el.data('aspectRatio'));
+        });
+
+        $(window).resize(function(){
+            // Resize all videos according to their own aspect ratio
+            $allVideos.each(function ()
+            {
+
+                var newWidth = $(this).closest('div').width();
+
+                var $el = $(this);
+
+                $el
+                    .width(newWidth)
+                    .height(newWidth * $el.data('aspectRatio'));
+
+            });
+        });
+    },
+
     initNewsletterForm: function()
     {
         var form = $('.newsletter-form');
@@ -77,6 +117,7 @@ var APP = {
 };
 
 APP.init('NewsletterForm');
+APP.init('Videos');
 
 //// calculate zoom based on the width of map div
 //function calculate_zoom() {

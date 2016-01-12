@@ -40,6 +40,31 @@ class Page_Controller extends ContentController
         return ArticleCategoryPage::get();
     }
 
+    public function getMediaLinks()
+    {
+        return MediaLink::get();
+    }
+
+    public function getFeaturedButtonTitle()
+    {
+        return Homepage::get()->first()->FeaturedButtonTitle;
+    }
+
+    public function getFeaturedPage()
+    {
+        $homepage = Homepage::get()->first();
+        $featured_page = $homepage->FeaturedPage();
+
+        if ($featured_page instanceof Page)
+        {
+            return $featured_page;
+        }
+        else
+        {
+            return null;
+        }
+    }
+
     public function IsFlashError()
     {
         return Session::get('FlashError');

@@ -24,6 +24,12 @@
                         <a href="/#registracia" class="btn btn-register">Zaregistrovať školu</a>
                     </div>
 
+                    <% if $FeaturedPage %>
+                        <div>
+                            <a href="$FeaturedPage.Link" class="btn btn-register" style="text-transform: none; margin-top: -10px; font-weight: 400">$FeaturedButtonTitle</a>
+                        </div>
+                    <% end_if %>
+
                     <p style="text-align: center;">
                         Ak ste už Vašu školu zaregistrovali, môžete<br> <a href="$Link('edit')" class="update-form">aktualizovať údaje</a>.
                     </p>
@@ -32,55 +38,56 @@
         </div>
     </div>
 
-    <span class="anchor" id="registracia"></span>
+    <span class="anchor" id="dokumenty"></span>
+    <div class="documents">
+        <div class="document-category-holder odd">
+            <div class="container">
+                <div class="row">
+                    <% loop $ArticleCategories %>
+                    <div class="col-sm-4 document-category">
+                        <h2>$Title</h2>
+                        <div class="description">
+                            $Content
+                        </div>
+
+                        <ul class="articles-list">
+                            <% loop Children %>
+                            <li>
+                                <a href="$Link">
+                                    $MenuTitle
+                                        <span>
+                                            <% if $PublishDate %>
+                                                $PublishDate.format('j. n. Y')
+                                            <% end_if %>
+                                        </span>
+                                </a>
+                            </li>
+                            <% end_loop %>
+                        </ul>
+                    </div>
+
+                    <% if MultipleOf(3) %>
+                    <span class="clearfix visible-md-block visible-lg-block visible-sm-block"></span>
+                    <% end_if %>
+                    <% end_loop %>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="container">
         <div class="row registration">
-            <div class="col-sm-5">
+            <div class="col-sm-7">
+                <span class="anchor" id="registracia"></span>
                 <h2>
                     Registrácia školy zapojenej do štrajku
                 </h2>
 
-                <p>Odoslaním elektronického prihlasovacieho formulára súhlasím so spracovaním osobných údajov, v zmysle ustanovenia § 11 zákona č. 122/2013 Z.z. o ochrane osobných údajov. Tento súhlas platí výlučne pre interné potreby Iniciatívy slovenských učiteľov v rozsahu osobných údajov:  meno a e-mailová adresa, najmä na zasielanie ďalších oznámení a informácií o štrajku vo forme emailov a newslettera. Iniciatíva slovenských učiteľov nebude tieto údaje nikde zverejňovať, ani ich posielať tretím stranám. Tento súhlas možno písomne odvolať mailom na <a href="mailto:strajk@isu.sk">strajk@isu.sk</a></p>
-            </div>
-
-            <div class="col-sm-7">
                 $SchoolStrikeCreateRegistrationForm
+             </div>
+
+            <div class="col-sm-5">
             </div>
         </div>
     </div>
 <% end_if %>
-
-<span class="anchor" id="dokumenty"></span>
-<div class="documents">
-    <% loop $ArticleCategories %>
-    <div class="document-category-holder <% if $Odd %>odd<% else %>even<% end_if %>">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-5">
-                    <% if $Image %><img src="$Image.Link"><% end_if %>
-                    <h2>$Title</h2>
-                    <div class="description">
-                        $Content
-                    </div>
-                </div>
-                <div class="col-sm-7">
-                    <ul class="articles-list">
-                        <% loop Children %>
-                        <li>
-                            <a href="$Link">
-                                $MenuTitle
-                                <span>
-                                    <% if $PublishDate %>
-                                        $PublishDate.format('j. n. Y')
-                                    <% end_if %>
-                                </span>
-                            </a>
-                        </li>
-                        <% end_loop %>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <% end_loop %>
-</div>
