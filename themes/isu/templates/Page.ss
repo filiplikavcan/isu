@@ -8,7 +8,7 @@
 
     <meta property="og:url" content="http://isu.sk/"/>
     <meta property="og:title" content="Iniciatíva slovenských učiteľov"/>
-    <meta property="og:image" content="http://isu.sk/themes/isu/image/isu-fb.png"/>
+    <meta property="og:image" content="http://isu.sk/themes/isu/images/isu-fb.png"/>
     <meta property="og:description" content="Iniciatíva slovenských učiteľov je neformálne hnutie, ktoré vzniklo spojením lokálnych učiteľských iniciatív z celého Slovenska."/>
     <meta property="og:type" content="website"/>
 
