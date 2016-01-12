@@ -2,8 +2,16 @@
 <html lang="$ContentLocale">
 <head>
     <% base_tag %>
-    <title><% if $MetaTitle %>$MetaTitle<% else %>$Title<% end_if %> &raquo; $SiteConfig.Title</title>
     <meta charset="utf-8">
+
+    <title><% if $MetaTitle %>$MetaTitle<% else %>$Title<% end_if %> &raquo; $SiteConfig.Title</title>
+
+    <meta property="og:url" content="http://isu.sk/"/>
+    <meta property="og:title" content="Iniciatíva slovenských učiteľov"/>
+    <meta property="og:image" content="http://isu.sk/themes/isu/image/isu-fb.png"/>
+    <meta property="og:description" content="Iniciatíva slovenských učiteľov je neformálne hnutie, ktoré vzniklo spojením lokálnych učiteľských iniciatív z celého Slovenska."/>
+    <meta property="og:type" content="website"/>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     $MetaTags(false)
@@ -23,6 +31,16 @@
         ga('send', 'pageview');
 
     </script>
+
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/sk_SK/sdk.js#xfbml=1&version=v2.5";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
     <% include Header %>
     <% if IsFlashMessage || IsFlashError %>
         <div class="flash-message-holder">
