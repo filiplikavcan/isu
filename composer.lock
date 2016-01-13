@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b20f698d1219f09c3593abff067cc77d",
-    "content-hash": "b9a0298dc878b05541121754c7978eae",
+    "hash": "c0ace354a7e1b799d5315ab92813c00d",
+    "content-hash": "ff3b8bab2ee472519fa2b77b3684c323",
     "packages": [
         {
             "name": "axllent/silverstripe-less",
@@ -146,6 +146,41 @@
             "time": "2015-10-29 23:28:48"
         },
         {
+            "name": "firebrandhq/silverstripe-excel-export",
+            "version": "0.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/firebrandhq/excel-export.git",
+                "reference": "97147f262a2d14b42fd41fb4e0b039a184287680"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/firebrandhq/excel-export/zipball/97147f262a2d14b42fd41fb4e0b039a184287680",
+                "reference": "97147f262a2d14b42fd41fb4e0b039a184287680",
+                "shasum": ""
+            },
+            "require": {
+                "phpoffice/phpexcel": ">=1.8",
+                "silverstripe/cms": ">=3.1"
+            },
+            "suggest": {
+                "silverstripe/restfulserver": "If you install the restfull server, you'll be able to dynamically generate SpreadSheet on the fly."
+            },
+            "type": "silverstripe-module",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Firebrand",
+                    "email": "hello@firebrand.nz"
+                }
+            ],
+            "description": "Silverstripe module offering DataFormatters to export DataObjects in Excel format.",
+            "time": "2015-09-21 11:02:21"
+        },
+        {
             "name": "mailin-api/mailin-api-php",
             "version": "v1.0.1",
             "source": {
@@ -247,6 +282,63 @@
             ],
             "description": "PHPMailer is a full-featured email creation and transfer class for PHP",
             "time": "2015-11-01 10:15:28"
+        },
+        {
+            "name": "phpoffice/phpexcel",
+            "version": "1.8.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PHPOffice/PHPExcel.git",
+                "reference": "372c7cbb695a6f6f1e62649381aeaa37e7e70b32"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PHPOffice/PHPExcel/zipball/372c7cbb695a6f6f1e62649381aeaa37e7e70b32",
+                "reference": "372c7cbb695a6f6f1e62649381aeaa37e7e70b32",
+                "shasum": ""
+            },
+            "require": {
+                "ext-xml": "*",
+                "ext-xmlwriter": "*",
+                "php": ">=5.2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "PHPExcel": "Classes/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL"
+            ],
+            "authors": [
+                {
+                    "name": "Maarten Balliauw",
+                    "homepage": "http://blog.maartenballiauw.be"
+                },
+                {
+                    "name": "Mark Baker"
+                },
+                {
+                    "name": "Franck Lefevre",
+                    "homepage": "http://blog.rootslabs.net"
+                },
+                {
+                    "name": "Erik Tilt"
+                }
+            ],
+            "description": "PHPExcel - OpenXML - Read, Create and Write Spreadsheet documents in PHP - Spreadsheet engine",
+            "homepage": "http://phpexcel.codeplex.com",
+            "keywords": [
+                "OpenXML",
+                "excel",
+                "php",
+                "spreadsheet",
+                "xls",
+                "xlsx"
+            ],
+            "time": "2015-05-01 07:00:55"
         },
         {
             "name": "silverstripe-australia/gridfieldextensions",

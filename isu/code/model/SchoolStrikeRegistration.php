@@ -22,10 +22,14 @@ class SchoolStrikeRegistration extends DataObject
     );
 
     private static $summary_fields = array(
-        'Name' => 'Name',
-        'Street' => 'Street',
-        'CityName' => 'City',
+        'SchoolName' => 'Škola',
+        'SchoolStreet' => 'Ulica',
+        'CityName' => 'Obec',
+        'StrikeInfo' => 'Počet zamestnancov/Počet zapojených zamestnancov/Bude škola zavretá?',
     );
+
+    protected static $schools = null;
+    protected static $cities = null;
 
     public function getCMSFields() {
         $fields = parent::getCMSFields();
@@ -35,9 +39,72 @@ class SchoolStrikeRegistration extends DataObject
         return $fields;
     }
 
+    public function canEdit($member = null)
+    {
+        return false;
+    }
+
+    public function canCreate($member = null)
+    {
+        return false;
+    }
+
+    public function getStrikeInfo()
+    {
+        return $this->EmployeesCount . '/' . $this->JoinedEmployeesCount . '/' . $this->SchoolClosed;
+    }
+
+    public function getSchoolName()
+    {
+        self::cacheSchools();
+        return isset(self::$schools[$this->SchoolID]) ? self::$schools[$this->SchoolID]->Name : '';
+    }
+
+    public function getSchoolNameFromDb()
+    {
+        self::cacheSchools();
+        return isset(self::$schools[$this->SchoolID]) ? self::$schools[$this->SchoolID]->Street : '';
+    }
+
     protected function getCityName()
     {
-        return $this->City()->Name;
+        self::cacheSchools();
+        self::cacheCities();
+
+        if (isset(self::$schools[$this->SchoolID]) && isset(self::$cities[self::$schools[$this->SchoolID]->CityID]))
+        {
+            return self::$cities[self::$schools[$this->SchoolID]->CityID]->Name;
+        }
+        else
+        {
+            return '';
+        }
+    }
+
+    protected static function cacheSchools()
+    {
+        if (is_null(self::$schools))
+        {
+            self::$schools = array();
+
+            foreach (School::get() as $school)
+            {
+                self::$schools[$school->ID] = $school;
+            }
+        }
+    }
+
+    protected static function cacheCities()
+    {
+        if (is_null(self::$cities))
+        {
+            self::$cities = array();
+
+            foreach (City::get() as $city)
+            {
+                self::$cities[$city->ID] = $city;
+            }
+        }
     }
 
     public static function requestUpdate($email)
