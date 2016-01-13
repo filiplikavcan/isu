@@ -150,7 +150,7 @@ fieldset {
 }
 
 .fb-button {
-  display: none;
+    display: none;
 
   @media (min-width: @grid-float-breakpoint) {
     display: block;
@@ -556,5 +556,40 @@ fieldset {
         color: rgba(0, 0, 0, 0.6);
       }
     }
+  }
+}
+
+.counter {
+  position: absolute;
+  width: 130px;
+  height: 130px;
+  background-color: #e82d2f;
+  background-color: white;
+  border: 5px solid rgba(128, 128, 128, 0.1);
+  border-radius: 50%;
+  box-shadow: 2px 2px 2px 2px rgba(128, 128, 128, 0.15);
+  z-index: 10;
+
+  font-size: 13px;
+  text-align: center;
+  padding-top: 22px;
+
+  right: 0;
+  top: -50px;
+
+  color: gray;
+
+  line-height: 14px;
+
+  .people-count {
+    color: #e82d2f;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 36px;
+  }
+
+  span {
+    color: #636363;
+    font-weight: 700;
   }
 }

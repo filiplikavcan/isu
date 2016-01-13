@@ -70,6 +70,16 @@ class Page_Controller extends ContentController
         }
     }
 
+    public function getStrikeCounter()
+    {
+        $counts = DB::query('SELECT SUM(JoinedEmployeesCount) AS PeopleCount, COUNT(*) AS SchoolsCount FROM SchoolStrikeRegistration')->record();
+
+        return new ArrayData(array(
+            'PeopleCount' => $counts['PeopleCount'],
+            'SchoolsCount' => $counts['SchoolsCount'],
+        ));
+    }
+
     public function IsFlashError()
     {
         return Session::get('FlashError');
