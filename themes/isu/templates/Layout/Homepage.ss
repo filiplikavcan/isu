@@ -14,6 +14,11 @@
                     </div>
                 </div>
                 <div class="col-sm-6">
+                    <h2>Prídeme na vašu školu</h2>
+                    <p>
+                        Ak by niektorá škola, učiteľský zbor, rodičia potrebovali viac informácii, prípadne diskusné fórum, vieme sa operatívne dohodnúť a prísť. <a href="/kontakty">Kontaktujte nás</a>.
+                    </p>
+
                     <h2>Zaregistrujte sa do štrajku</h2>
 
                     <p>
