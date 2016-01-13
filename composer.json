@@ -9,7 +9,8 @@
 		"silverstripe/siteconfig": "3.2.1",
 		"axllent/silverstripe-less": "dev-master",
 		"phpmailer/phpmailer": "~5.2",
-		"mailin-api/mailin-api-php": "^1.0"
+		"mailin-api/mailin-api-php": "^1.0",
+		"silverstripe-australia/gridfieldextensions": "dev-master"
 	},
 	"require-dev": {
 		"phpunit/PHPUnit": "~3.7"

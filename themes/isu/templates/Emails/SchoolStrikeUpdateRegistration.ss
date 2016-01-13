@@ -1,6 +1,6 @@
 $EmailSalutation("Dobrý deň"),<br>
 <br>
-údaje o škole "$Registration.School.Name" boli úspešne aktualizované.<br><br>
+údaje v registrácii školy alebo jednotlivcov zo školy "$Registration.School.Name" boli úspešne aktualizované.<br><br>
 
 Ďakujeme za Váš záujem.<br><br>
 S pozdravom,<br><br>

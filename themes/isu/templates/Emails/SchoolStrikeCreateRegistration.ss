@@ -1,6 +1,6 @@
 $EmailSalutation("Dobrý deň"),<br>
 <br>
-pre potvrdenie registrácie školy "$Registration.School.Name" do štrajku je potrebné kliknúť na nasledovný odkaz:<br><br>
+pre potvrdenie registrácie školy alebo jednotlivcov zo školy "$Registration.School.Name" je potrebné kliknúť na nasledovný odkaz:<br><br>
 
 <a href="$VerificationLink">$VerificationLink</a><br><br>
 Ďakujeme za Váš záujem.<br><br>

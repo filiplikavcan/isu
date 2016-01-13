@@ -8,7 +8,7 @@
                 <ul style="margin-bottom: 45px;">
                     <% loop $MediaLinks %>
                     <li style="padding-bottom: 5px;">
-                        <a href="$Link" target="_blank">$Title</a> <small>$Medium</small>
+                        <span>$Date.format('j. n. Y')<% if $Date && $Medium %>, <% end_if %>$Medium:</span> <a href="$Link" target="_blank">$Title</a>
                     </li>
                     <% end_loop %>
                 </ul>
@@ -69,30 +69,11 @@
                 <span class="anchor" id="regiony"></span>
                 <h2>Regionálne iniciatívy</h2>
                 <ul>
+                    <% loop $Regions %>
                     <li>
-                        <a href="http://ibu7.webnode.sk/" target="_blank">IBU - Iniciatíva bratislavských učiteľov</a>
+                        <a href="$Link" target="_blank">$Title</a>
                     </li>
-                    <li>
-                        <a href="http://izu4.webnode.sk/" target="_blank">IZU - Iniciatíva žilinských učiteľov</a>
-                    </li>
-                    <li>
-                        <a href="http://www.velkaprestavka.sk/" target="_blank">Veľká prestávka - iniciatíva považskobystrických učiteľov</a>
-                    </li>
-                    <li>
-                        <a href="http://ibbu1.webnode.sk/" target="_blank">IBBU - Iniciatíva banskobystrických učiteľov</a>
-                    </li>
-                    <li>
-                        <a href="http://itu3.webnode.sk/" target="_blank">ITU - Iniciatíva trnavských učiteľov</a>
-                    </li>
-                    <li>
-                        <a href="https://www.facebook.com/groups/975617185831007/" target="_blank">ILU - Iniciatíva levických učiteľov</a>
-                    </li>
-                    <li>
-                        <a href="https://www.facebook.com/Iniciat%C3%ADva-nitrianskych-u%C4%8Dite%C4%BEov-1655038091427960/" target="_blank">INRU - Iniciatíva nitrianskych učiteľov</a>
-                    </li>
-                    <li>
-                        <a href="https://www.facebook.com/groups/1681140675501152/" target="_blank">ITNU - Iniciatíva trenčianskych učiteľov</a>
-                    </li>
+                    <% end_loop %>
                 </ul>
             </div>
             <div class="col-sm-4">

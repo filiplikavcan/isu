@@ -17,12 +17,12 @@ class FaqPage extends Page
             new GridFieldPaginator(50),
             new GridFieldEditButton(),
             new GridFieldDeleteAction(),
-            new GridFieldDetailForm()//,
-           // new GridFieldOrderableRows()
+            new GridFieldDetailForm(),
+            new GridFieldOrderableRows()
         );
 
-        $gridField = new GridField("MediaSlots", "Media", $this->Questions(), $gridFieldConfig);
-        $fields->addFieldToTab("Root.Media", $gridField);
+        $gridField = new GridField("Questions", "Otázky", $this->Questions(), $gridFieldConfig);
+        $fields->addFieldToTab("Root.Otázky", $gridField);
 
         return $fields;
     }

@@ -50,6 +50,11 @@ class Page_Controller extends ContentController
         return Homepage::get()->first()->FeaturedButtonTitle;
     }
 
+    public function getRegions()
+    {
+        return Region::get();
+    }
+
     public function getFeaturedPage()
     {
         $homepage = Homepage::get()->first();

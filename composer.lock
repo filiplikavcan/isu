@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f783a9ac32a71858a8a46ebcc3b8c69f",
-    "content-hash": "630bf4527c21f347bdbf7219c9c87cdc",
+    "hash": "b20f698d1219f09c3593abff067cc77d",
+    "content-hash": "b9a0298dc878b05541121754c7978eae",
     "packages": [
         {
             "name": "axllent/silverstripe-less",
@@ -247,6 +247,59 @@
             ],
             "description": "PHPMailer is a full-featured email creation and transfer class for PHP",
             "time": "2015-11-01 10:15:28"
+        },
+        {
+            "name": "silverstripe-australia/gridfieldextensions",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/silverstripe-australia/silverstripe-gridfieldextensions.git",
+                "reference": "450d6a3b2b6ccc8a7aa50c3239e2696d707d222f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/silverstripe-australia/silverstripe-gridfieldextensions/zipball/450d6a3b2b6ccc8a7aa50c3239e2696d707d222f",
+                "reference": "450d6a3b2b6ccc8a7aa50c3239e2696d707d222f",
+                "shasum": ""
+            },
+            "require": {
+                "silverstripe/framework": "~3.1"
+            },
+            "replace": {
+                "ajshort/silverstripe-gridfieldextensions": "self.version"
+            },
+            "type": "silverstripe-module",
+            "extra": {
+                "installer-name": "gridfieldextensions",
+                "branch-alias": {
+                    "dev-master": "1.2.x-dev"
+                },
+                "screenshots": [
+                    "docs/en/_images/editable-rows.png",
+                    "docs/en/_images/add-existing-search.png"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Marcus Nyeholt",
+                    "email": "marcus@silverstripe.com.au"
+                },
+                {
+                    "name": "Andrew Short",
+                    "email": "andrewjshort@gmail.com"
+                }
+            ],
+            "description": "A collection of useful grid field components",
+            "homepage": "http://github.com/silverstripe-australia/silverstripe-gridfieldextensions",
+            "keywords": [
+                "gridfield",
+                "silverstripe"
+            ],
+            "time": "2015-12-20 23:39:44"
         },
         {
             "name": "silverstripe/cms",
@@ -849,7 +902,8 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "axllent/silverstripe-less": 20
+        "axllent/silverstripe-less": 20,
+        "silverstripe-australia/gridfieldextensions": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

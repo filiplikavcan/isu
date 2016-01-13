@@ -3,7 +3,12 @@
 class FaqQuestion extends DataObject
 {
     private static $db = array(
-        'Question' => 'Varchar(1000)',
-        'Answer' => 'HTMLText'
+        'Question' => 'Text',
+        'Answer' => 'HTMLText',
+        'Sort' => 'Int'
+    );
+
+    private static $summary_fields = array(
+        'Question' => 'Question'
     );
 }

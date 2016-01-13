@@ -1,6 +1,6 @@
 $EmailSalutation("Dobrý deň"),<br>
 <br>
-na aktualizáciu údajov školy "$Registration.School.Name" je potrebné kliknúť na nasledovný odkaz:<br><br>
+na aktualizáciu údajov školy alebo jednotlivcov zo školy "$Registration.School.Name" je potrebné kliknúť na nasledovný odkaz:<br><br>
 
 <a href="$UpdateLink">$UpdateLink</a><br><br>
 Ďakujeme za Váš záujem.<br><br>

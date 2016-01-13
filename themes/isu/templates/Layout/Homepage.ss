@@ -14,14 +14,15 @@
                     </div>
                 </div>
                 <div class="col-sm-6">
-                    <h2>Zaregistrujte školu zapojenú do štrajku</h2>
+                    <h2>Zaregistrujte sa do štrajku</h2>
 
                     <p>
-                        Registrácia zapojených škôl slúži výlučne pre potreby <a href="/manualy/strajkovy-vybor-isu/">štrajkového výboru Iniciatívy slovenských učiteľov</a>. Ďakujeme, že registrujete štrajkujúce školy, je to dôležité pre efektívny priebeh štrajku. Údaje o kontaktnej osobe nebudú zverejnené.
+                        Registrácia slúži výlučne pre potreby <a href="/manualy/strajkovy-vybor-isu/" style="display: inline;">štrajkového výboru Iniciatívy slovenských učiteľov</a>.
+                        Ďakujeme, že sa registrujete, je to dôležité pre efektívny priebeh štrajku. Údaje o kontaktnej osobe nebudú zverejnené.
                     </p>
 
                     <div>
-                        <a href="/#registracia" class="btn btn-register">Zaregistrovať školu</a>
+                        <a href="/#registracia" class="btn btn-register">Registrujte sa</a>
                     </div>
 
                     <% if $FeaturedPage %>
@@ -31,7 +32,7 @@
                     <% end_if %>
 
                     <p style="text-align: center;">
-                        Ak ste už Vašu školu zaregistrovali, môžete<br> <a href="$Link('edit')" class="update-form">aktualizovať údaje</a>.
+                        Ak ste sa už zaregistrovali, môžete <a href="$Link('edit')" class="update-form">aktualizovať údaje</a>.
                     </p>
                 </div>
             </div>
@@ -80,7 +81,7 @@
             <div class="col-sm-7">
                 <span class="anchor" id="registracia"></span>
                 <h2>
-                    Registrácia školy zapojenej do štrajku
+                    Registrácia do štrajku
                 </h2>
 
                 $SchoolStrikeCreateRegistrationForm

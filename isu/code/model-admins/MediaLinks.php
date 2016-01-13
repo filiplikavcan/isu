@@ -7,7 +7,7 @@ class MediaLinks extends ModelAdmin
 
     private static $url_segment = 'media-links';
 
-    private static $menu_title = 'Media Links';
+    private static $menu_title = 'V médiách';
 
     private static $menu_icon = 'framework/admin/images/menu-icons/16x16/document.png';
 

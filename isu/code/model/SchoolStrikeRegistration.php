@@ -152,7 +152,7 @@ class SchoolStrikeRegistration extends DataObject
     {
         $this->sendEmail(
             array($this->ContactEmail),
-            'www.isu.sk: Registrácia školy do štrajku',
+            'www.isu.sk: Registrácia do štrajku',
             $this->renderWith(array('SchoolStrikeCreateRegistration'), array('Registration' => $this))
         );
     }
@@ -161,7 +161,7 @@ class SchoolStrikeRegistration extends DataObject
     {
         $this->sendEmail(
             array($this->ContactEmail),
-            'www.isu.sk: Aktualizácia údajov školy v štrajku',
+            'www.isu.sk: Aktualizácia údajov registrácie',
             $this->renderWith(array('SchoolStrikeUpdateRegistration'), array('Registration' => $this))
         );
     }
@@ -170,7 +170,7 @@ class SchoolStrikeRegistration extends DataObject
     {
         $this->sendEmail(
             array($this->ContactEmail),
-            'www.isu.sk: Aktualizácia údajov školy',
+            'www.isu.sk: Aktualizácia údajov registrácie',
             $this->renderWith(array('SchoolStrikeUpdateLink'), array('Registration' => $this))
         );
     }

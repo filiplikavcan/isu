@@ -1,15 +1,13 @@
 <?php
-class Schools extends ModelAdmin
+class Regions extends ModelAdmin
 {
     private static $managed_models = array(
-        'School',
-        'SchoolType',
-        'City',
+        'Region',
     );
 
-    private static $url_segment = 'shools';
+    private static $url_segment = 'regions';
 
-    private static $menu_title = 'Školy';
+    private static $menu_title = 'Regióny';
 
     private static $menu_icon = 'framework/admin/images/menu-icons/16x16/document.png';
 

@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-sm-12">
                 <h2>
-                    Aktualizácia údajov školy zapojenej do štrajku
+                    Aktualizácia registrácie do štrajku
                 </h2>
 
                 <form class="form form-horizontal request-update-form">
@@ -30,7 +30,7 @@
                     </div>
                 </form>
                 <p>
-                    Ak ste Vašu školu ešte nezaregistrovali môžete <a href="/#registracia" class="update-form">vytvoriť novú registráciu</a>.
+                    Ak ste sa ešte nezaregistrovali, môžete <a href="/#registracia" class="update-form">vytvoriť novú registráciu</a>.
                 </p>
             </div>
         </div>
@@ -44,7 +44,7 @@
             <div class="row registration">
                 <div class="col-sm-5">
                     <h2 style="margin-top: 0;">
-                        Aktualizácia údajov školy zapojenej do štrajku
+                        Aktualizácia registrácie do štrajku
                     </h2>
                 </div>
                 <div class="col-sm-7">
