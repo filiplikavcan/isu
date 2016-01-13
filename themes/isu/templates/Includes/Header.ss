@@ -5,7 +5,7 @@
         </div>
 
         <ul class="nav navbar-nav navbar-right fb-button">
-            <li style="padding-top: 30px; padding-right: 20px;">
+            <li style="padding-top: 30px; padding-right: 350px;">
                 <div class="fb-like" data-href="https://www.facebook.com/iniciativa.slovenskych.ucitelov" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div>
             </li>
         </ul>

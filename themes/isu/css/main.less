@@ -168,9 +168,12 @@ fieldset {
   margin-bottom: 0;
 
   .navbar-nav > li {
-    &:first-child {
-      > a {
-        padding-left: 0;
+
+    @media (min-width: @grid-float-breakpoint) {
+      &:first-child {
+        a {
+          padding-left: 0;
+        }
       }
     }
 
