@@ -83,7 +83,7 @@
 
     <div class="container">
         <div class="row registration">
-            <div class="col-sm-7">
+            <div class="col-sm-8 col-sm-offset-2">
                 <span class="anchor" id="registracia"></span>
                 <h2>
                     Registrácia do štrajku
