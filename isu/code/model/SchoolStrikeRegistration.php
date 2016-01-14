@@ -167,8 +167,8 @@ class SchoolStrikeRegistration extends DataObject
 
             if ($action == 'Created')
             {
-
                 $registration->sendRegistrationCreateEmail();
+                $registration->sendSlackNotification();
             }
             else
             {
@@ -181,6 +181,48 @@ class SchoolStrikeRegistration extends DataObject
         }
 
         return $registration instanceof SchoolStrikeRegistration;
+    }
+
+    public function sendSlackNotification()
+    {
+        $school = $this->School();
+        $school_closed = array(
+            '' => 'momentálne nevieme',
+            'maybe' => 'momentálne nevieme',
+            'yes' => 'áno',
+            'no' => 'nie',
+        )[$this->SchoolClosed];
+
+        $message = array(
+            '*Jupí. Bola vytvorená nová registrácia!*',
+            '```Škola: ' . $school->Name . ', ' . $this->SchoolStreet . ', ' . $school->City()->Name,
+            'Počet zamestnancov: ' . $this->EmployeesCount,
+            'Počet zapojených zamestnancov: ' . $this->JoinedEmployeesCount,
+            'Bude zatvorená: ' . $school_closed . '```'
+        );
+
+        $content = array(
+            'username' => 'všeweb',
+            'channel' => '#uvodny-web-pre-strajk',
+            'mrkdwn' => true,
+            'icon_emoji' => ':v:',
+            'text' => implode("\n", $message),
+        );
+
+
+        $opts = array(
+            'http'=>array(
+                'method'=>"POST",
+                'content' => 'payload=' . json_encode($content),
+                'timeout' => 3,
+                'header' => "Content-type: application/x-www-form-urlencoded\r\n"
+            )
+        );
+
+        $context = stream_context_create($opts);
+
+        $fp = fopen('https://hooks.slack.com/services/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', 'r', false, $context);
+        fclose($fp);
     }
 
     protected static function findOrCreateSchool($data)
