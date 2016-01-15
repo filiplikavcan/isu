@@ -6,7 +6,7 @@
                 <h2 style="padding: 0 0 20px 0; margin: 0;">V médiách</h2>
 
                 <ul style="margin-bottom: 45px;">
-                    <% loop $MediaLinks %>
+                    <% loop $MediaLinks.Sort(Sort) %>
                     <li style="padding-bottom: 5px;">
                         <span>$Date.format('j. n. Y')<% if $Date && $Medium %>, <% end_if %>$Medium:</span> <a href="$Link" target="_blank">$Title</a>
                     </li>

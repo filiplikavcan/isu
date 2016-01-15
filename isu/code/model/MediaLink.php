@@ -6,7 +6,8 @@ class MediaLink extends DataObject
         'Link' => 'Varchar(1000)',
         'Title' => 'Varchar(1000)',
         'Medium' => 'Varchar(1000)',
-        'Date' => 'Date'
+        'Date' => 'Date',
+        'Sort' => 'Int',
     );
 
     public function getCMSFields() {
