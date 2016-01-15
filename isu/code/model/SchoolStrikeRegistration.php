@@ -59,7 +59,16 @@ class SchoolStrikeRegistration extends DataObject
     public function getRegionName()
     {
         self::cacheSchools();
-        return isset(self::$schools[$this->SchoolID]) ? City::$regions[self::$schools[$this->SchoolID]->Region] : '';
+        self::cacheCities();
+
+        if (isset(self::$schools[$this->SchoolID]) && isset(self::$cities[self::$schools[$this->SchoolID]->CityID]))
+        {
+            return City::$regions[self::$cities[self::$schools[$this->SchoolID]->CityID]->Region];
+        }
+        else
+        {
+            return '';
+        }
     }
 
     public function getSchoolNameFromDb()
