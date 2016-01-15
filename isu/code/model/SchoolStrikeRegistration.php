@@ -22,6 +22,7 @@ class SchoolStrikeRegistration extends DataObject
     );
 
     private static $summary_fields = array(
+        'ID' => 'ID',
         'SchoolName' => 'Škola',
         'SchoolStreet' => 'Ulica',
         'CityName' => 'Obec',
@@ -39,11 +40,6 @@ class SchoolStrikeRegistration extends DataObject
         return $fields;
     }
 
-    public function canEdit($member = null)
-    {
-        return false;
-    }
-
     public function canCreate($member = null)
     {
         return false;
@@ -58,6 +54,12 @@ class SchoolStrikeRegistration extends DataObject
     {
         self::cacheSchools();
         return isset(self::$schools[$this->SchoolID]) ? self::$schools[$this->SchoolID]->Name : '';
+    }
+
+    public function getRegionName()
+    {
+        self::cacheSchools();
+        return isset(self::$schools[$this->SchoolID]) ? City::$regions[self::$schools[$this->SchoolID]->Region] : '';
     }
 
     public function getSchoolNameFromDb()
@@ -203,7 +205,7 @@ class SchoolStrikeRegistration extends DataObject
 
         $content = array(
             'username' => 'všeweb',
-            'channel' => '#uvodny-web-pre-strajk',
+            'channel' => '#registracie',
             'mrkdwn' => true,
             'icon_emoji' => ':v:',
             'text' => implode("\n", $message),

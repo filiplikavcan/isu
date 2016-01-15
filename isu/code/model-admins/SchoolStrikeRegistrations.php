@@ -24,6 +24,7 @@ class SchoolStrikeRegistrations extends ModelAdmin
             'SchoolStreet',
             'SchoolNameFromDb',
             'CityName',
+            'RegionName',
             'EmployeesCount',
             'JoinedEmployeesCount',
             'ContactName',
