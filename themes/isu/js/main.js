@@ -105,6 +105,23 @@ App.prototype = {
                     });
                 }
             });
+    },
+
+    initStrikeMap: function()
+    {
+        console.log('asdasd');
+        //var myLatLng = {lat: -25.363, lng: 131.044};
+        //
+        //var map = new google.maps.Map(document.getElementById('strike-map'), {
+        //    zoom: 4,
+        //    center: myLatLng
+        //});
+        //
+        //var marker = new google.maps.Marker({
+        //    position: myLatLng,
+        //    map: map,
+        //    title: 'Hello World!'
+        //});
     }
 };
 
@@ -140,9 +157,9 @@ APP.init('Videos');
 //
 //var map;
 //
-//$(document).ready(function(){
-//    APP = new App(APP.inits);
-//
+$(document).ready(function(){
+    APP = new App(APP.inits);
+
 //    // leaflet map
 //    resize_map();
 //    map = L.map('map', {
@@ -184,7 +201,7 @@ APP.init('Videos');
 //    });
 //
 //    var heat = L.heatLayer(heat_points, {minOpacity: 0.3, radius: 10, blur: 10, gradient: {0.2: 'blue', 0.41: 'lime', 0.5: 'red'}}).addTo(map);
-//});
+});
 
 var SchoolStrikeForm = function() {
     this.form_holder = $('.school-strike-form');
