@@ -139,10 +139,10 @@ APP.init('Videos');
 //});
 //
 //var map;
-
-$(document).ready(function(){
-    APP = new App(APP.inits);
-
+//
+//$(document).ready(function(){
+//    APP = new App(APP.inits);
+//
 //    // leaflet map
 //    resize_map();
 //    map = L.map('map', {
@@ -166,7 +166,25 @@ $(document).ready(function(){
 //            return feature.properties && feature.properties.style;
 //        },
 //    }).addTo(map);
-});
+//
+//    var heat_points = [];
+//
+//    towns.forEach( function addToMap(town) {
+//        heat_points.push([
+//            town.lat,
+//            town.lng,
+//            0.5
+//        ]);
+//        var circle = L.circle([town.lat, town.lng], 2000, {
+//            color: 'transparent',
+//            fillColor: '#d96459',
+//            fillOpacity: 0.4
+//        }).addTo(map);
+//        circle.bindPopup(town.name + ': ' + town.value, { autoPan: false });
+//    });
+//
+//    var heat = L.heatLayer(heat_points, {minOpacity: 0.3, radius: 10, blur: 10, gradient: {0.2: 'blue', 0.41: 'lime', 0.5: 'red'}}).addTo(map);
+//});
 
 var SchoolStrikeForm = function() {
     this.form_holder = $('.school-strike-form');
@@ -518,19 +536,19 @@ SchoolStrikeForm.prototype = {
                 text: option.text()
             })
         });
-    }//,
+    },
 
-    //geocodeCity: function(city, callback)
-    //{
-    //    var geocoder = new google.maps.Geocoder();
-    //    geocoder.geocode({'address': city + ', slovensko'}, function(results, status) {
-    //        if (status == google.maps.GeocoderStatus.OK) {
-    //            callback(results[0].geometry.location.lat(), results[0].geometry.location.lng());
-    //        }
-    //        else
-    //        {
-    //            callback(null, null);
-    //        }
-    //    });
-    //}
+    geocodeAddress: function(street, city, callback)
+    {
+        var geocoder = new google.maps.Geocoder();
+        geocoder.geocode({'address': street + ', ' + city + ', slovensko'}, function(results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                callback(results[0].geometry.location.lat(), results[0].geometry.location.lng());
+            }
+            else
+            {
+                callback(null, null);
+            }
+        });
+    }
 };
