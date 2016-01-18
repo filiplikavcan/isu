@@ -492,12 +492,19 @@ SchoolStrikeForm.prototype = {
                         city = that.data.CityRaw;
                     }
 
-                    that.geocodeAddress(that.data.SchoolStreet, city, function(lat, lng) {
-                        that.data.Lat = lat;
-                        that.data.Lng = lng;
+                    if (that.is_new)
+                    {
+                        that.geocodeAddress(that.data.SchoolStreet, city, function(lat, lng) {
+                            that.data.Lat = lat;
+                            that.data.Lng = lng;
 
+                            that.submitData();
+                        });
+                    }
+                    else
+                    {
                         that.submitData();
-                    });
+                    }
                 }
                 else
                 {

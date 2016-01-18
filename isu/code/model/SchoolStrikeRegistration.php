@@ -155,6 +155,8 @@ class SchoolStrikeRegistration extends DataObject
             $registration = new self;
             $registration->SchoolID = self::findOrCreateSchool($data)->ID;
             $registration->SchoolStreet = $data['SchoolStreet'];
+            $registration->Lat = $data['Lat'];
+            $registration->Lng = $data['Lng'];
         }
         else
         {
@@ -173,8 +175,6 @@ class SchoolStrikeRegistration extends DataObject
             $registration->ContactPosition = $data['ContactPosition'];
             $registration->ContactEmail = $data['ContactEmail'];
             $registration->ContactPhone = $data['ContactPhone'];
-            $registration->Lat = $data['Lat'];
-            $registration->Lng = $data['Lng'];
             $registration->Note = $data['Note'];
             $registration->UpdateHash = null;
 
