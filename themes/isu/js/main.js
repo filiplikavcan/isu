@@ -109,19 +109,50 @@ App.prototype = {
 
     initStrikeMap: function()
     {
-        console.log('asdasd');
-        //var myLatLng = {lat: -25.363, lng: 131.044};
-        //
-        //var map = new google.maps.Map(document.getElementById('strike-map'), {
-        //    zoom: 4,
-        //    center: myLatLng
-        //});
-        //
-        //var marker = new google.maps.Marker({
-        //    position: myLatLng,
-        //    map: map,
-        //    title: 'Hello World!'
-        //});
+        var myLatLng = {lat: -25.363, lng: 131.044};
+
+        var map = new google.maps.Map(document.getElementById('strike-map'), {
+            zoom: 4,
+            scrollwheel: false,
+            center: myLatLng
+        });
+
+        var bounds = new google.maps.LatLngBounds();
+
+        var active_infowindow = null;
+
+        $.each(SCHOOL_MARKERS, function(i, school_marker) {
+
+            if (school_marker.lat && school_marker.lng)
+            {
+                var marker = new google.maps.Marker({
+                    position: {
+                        lat: parseFloat(school_marker.lat),
+                        lng: parseFloat(school_marker.lng)
+                    },
+                    map: map,
+                    title: school_marker.name
+                });
+
+                var infowindow = new google.maps.InfoWindow({
+                    content: '<strong>' + school_marker.name + '</strong><br>' + school_marker.address
+                });
+
+                marker.addListener('click', function() {
+                    if (active_infowindow)
+                    {
+                        active_infowindow.close();
+                    }
+
+                    infowindow.open(map, marker);
+                    active_infowindow = infowindow;
+                });
+
+                bounds.extend(marker.getPosition());
+            }
+        });
+
+        map.fitBounds(bounds);
     }
 };
 
@@ -447,26 +478,26 @@ SchoolStrikeForm.prototype = {
                 {
                     that.setFormAsSubmitting(that.form_holder);
 
-                    //that.data.CityLat = null;
-                    //that.data.CityLng = null;
-                    //
-                    //var city;
-                    //
-                    //if (that.choose_city)
-                    //{
-                    //    city = that.form_holder.find('[name=City] option[value=' + that.data.City + ']').text();
-                    //}
-                    //else
-                    //{
-                    //    city = that.data.CityRaw;
-                    //}
+                    that.data.CityLat = null;
+                    that.data.CityLng = null;
 
-                      that.submitData();
+                    var city;
 
-                    //that.geocodeCity(city, function(lat, lng) {
-                    //    that.data.CityLat = lat;
-                    //    that.data.CityLng = lng;
-                    //});
+                    if (that.choose_city)
+                    {
+                        city = that.form_holder.find('[name=City] option[value=' + that.data.City + ']').text();
+                    }
+                    else
+                    {
+                        city = that.data.CityRaw;
+                    }
+
+                    that.geocodeAddress(that.data.SchoolStreet, city, function(lat, lng) {
+                        that.data.Lat = lat;
+                        that.data.Lng = lng;
+
+                        that.submitData();
+                    });
                 }
                 else
                 {
@@ -558,7 +589,7 @@ SchoolStrikeForm.prototype = {
     geocodeAddress: function(street, city, callback)
     {
         var geocoder = new google.maps.Geocoder();
-        geocoder.geocode({'address': street + ', ' + city + ', slovensko'}, function(results, status) {
+        geocoder.geocode({'address': (street + ', ' + city + ', slovensko')}, function(results, status) {
             if (status == google.maps.GeocoderStatus.OK) {
                 callback(results[0].geometry.location.lat(), results[0].geometry.location.lng());
             }

@@ -18,7 +18,7 @@ class Page_Controller extends ContentController
         Requirements::javascript("//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js");
         Requirements::javascript("//cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/js/select2.min.js");
         Requirements::javascript("//cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js");
-//        Requirements::javascript("//maps.google.com/maps/api/js?v=3.2&sensor=false&language=sk&region=sk");
+        Requirements::javascript("https://maps.googleapis.com/maps/api/js?key=AIzaSyBGXPpTwHUFT1gbrHi7ppVqSjQHSXFMrOQ");
 //        Requirements::javascript($this->ThemeDir() . "/js/leaflet-heat.js");
 //        Requirements::javascript($this->ThemeDir() . "/js/map-slovakia.js");
         Requirements::javascript($this->ThemeDir() . "/js/main.js");
@@ -54,6 +54,11 @@ class Page_Controller extends ContentController
     public function getRegions()
     {
         return Region::get();
+    }
+
+    public function getStrikeMapPage()
+    {
+        return StrikeMapPage::get()->first();
     }
 
     public function getFeaturedPage()

@@ -15,6 +15,8 @@ class SchoolStrikeRegistration extends DataObject
         'SchoolClosed' => 'Varchar(10)',
         'UpdateHash' => 'Varchar',
         'Note' => 'Text',
+        'Lat' => 'Varchar',
+        'Lng' => 'Varchar',
     );
 
     private static $has_one = array(
@@ -77,7 +79,7 @@ class SchoolStrikeRegistration extends DataObject
         return isset(self::$schools[$this->SchoolID]) ? self::$schools[$this->SchoolID]->Street : '';
     }
 
-    protected function getCityName()
+    public function getCityName()
     {
         self::cacheSchools();
         self::cacheCities();
@@ -171,6 +173,8 @@ class SchoolStrikeRegistration extends DataObject
             $registration->ContactPosition = $data['ContactPosition'];
             $registration->ContactEmail = $data['ContactEmail'];
             $registration->ContactPhone = $data['ContactPhone'];
+            $registration->Lat = $data['Lat'];
+            $registration->Lng = $data['Lng'];
             $registration->Note = $data['Note'];
             $registration->UpdateHash = null;
 

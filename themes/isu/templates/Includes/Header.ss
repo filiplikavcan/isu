@@ -27,6 +27,9 @@
             <div class="counter">
                 <div class="people-count">$PeopleCount</div>
                 <div class="school-stats">registrovaných učiteľov<br>z&nbsp;<span>$SchoolsCount</span> škôl</div>
+                <% if $Top.StrikeMapPage %>
+                    <a href="$Top.StrikeMapPage.Link">viac info</a>
+                <% end_if %>
             </div>
         <% end_with %>
     </div>

@@ -51,7 +51,7 @@
     <% end_if %>
 
     <% if $IncludeFormTag %>
-    <form $AttributesHTML>
+    <form class="form form-horizontal school-strike-form">
         <% end_if %>
 
         <div class="alert alert-danger form-error-message">
