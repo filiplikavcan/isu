@@ -19,9 +19,9 @@ class SupportUsForm extends Form
         $this->is_restricted = $is_restricted;
 
         $fields = array(
-            (new TextField('SupporterSurname'))->addExtraClass('form-control'),
-            (new TextField('SupporterLastname'))->addExtraClass('form-control'),
-            (new TextField('SupporterLink'))->addExtraClass('form-control'),
+            (new TextField('Surname'))->addExtraClass('form-control'),
+            (new TextField('LastName'))->addExtraClass('form-control'),
+            (new TextField('Link'))->addExtraClass('form-control'),
         );
  
 
