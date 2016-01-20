@@ -14,32 +14,26 @@
                     </div>
                 </div>
                 <div class="col-sm-6">
-                    <% if $InfotextTitle %>
-                        <h2>$InfotextTitle</h2>
-                    <% end_if %>
 
-                    $Content
+                    <h2 style="text-transform: none; font-size: 56px; line-height: 56px;">Pridajte sa,<br>spolu to dokážeme!</h2>
 
-                    <h2>Registrácia pokračuje!<br>PRIDAJTE SA,<br>SPOLU TO DOKÁŽEME!</h2>
-
-                    <p>
-                        Registrácia slúži výlučne pre potreby <a href="/manualy/strajkovy-vybor-isu/" style="display: inline;">štrajkového výboru Iniciatívy slovenských učiteľov</a>.
-                        Ďakujeme, že sa registrujete, je to dôležité pre efektívny priebeh štrajku. Údaje o kontaktnej osobe nebudú zverejnené.
-                    </p>
+                    <h2 style="margin-top: 0; text-transform: none; font-size: 30px; line-height: 32px;">Registrácia pokračuje aj po&nbsp;20.&nbsp;januári&nbsp;2016<br></h2>
 
                     <div>
                         <a href="/#registracia" class="btn btn-register">Registrujte sa</a>
                     </div>
 
-                    <% if $FeaturedPage %>
-                        <div>
-                            <a href="$FeaturedPage.Link" class="btn btn-register" style="text-transform: none; margin-top: -10px; font-weight: 400">$FeaturedButtonTitle</a>
-                        </div>
-                    <% end_if %>
-
                     <p style="text-align: center;">
                         Ak ste sa už zaregistrovali, môžete <a href="$Link('edit')" class="update-form">aktualizovať údaje</a>.
                     </p>
+
+                    <% if $InfotextTitle %>
+                    <h2 style="font-size: 24px;">$InfotextTitle</h2>
+                    <% end_if %>
+
+                    <div>
+                        $Content
+                    </div>
                 </div>
             </div>
         </div>
@@ -89,6 +83,11 @@
                 <h2>
                     Registrácia do štrajku
                 </h2>
+
+                <p>
+                    Registrácia slúži výlučne pre potreby <a href="/manualy/strajkovy-vybor-isu/" style="display: inline;">štrajkového výboru Iniciatívy slovenských učiteľov</a>.
+                    Ďakujeme, že sa registrujete, je to dôležité pre efektívny priebeh štrajku. Údaje o kontaktnej osobe nebudú zverejnené.
+                </p>
 
                 $SchoolStrikeCreateRegistrationForm
              </div>
