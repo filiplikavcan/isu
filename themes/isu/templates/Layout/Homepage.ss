@@ -20,7 +20,7 @@
 
                     $Content
 
-                    <h2>Zaregistrujte sa do štrajku</h2>
+                    <h2>Registrácia pokračuje!<br>PRIDAJTE SA,<br>SPOLU TO DOKÁŽEME!</h2>
 
                     <p>
                         Registrácia slúži výlučne pre potreby <a href="/manualy/strajkovy-vybor-isu/" style="display: inline;">štrajkového výboru Iniciatívy slovenských učiteľov</a>.
