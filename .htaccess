@@ -61,6 +61,13 @@ ErrorDocument 500 /assets/error-500.html
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^/?$ /cache/index.html [L]
 
+    RewriteCond %{REQUEST_METHOD} ^GET|HEAD$
+    RewriteCond %{QUERY_STRING} ^$
+    RewriteCond %{REQUEST_URI} ^/?$
+    RewriteCond %{DOCUMENT_ROOT}/cache/index.stale.html -f
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^/?$ /cache/index.stale.html [L]
+
 	RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule ^home/?$ / [R=301,L]
