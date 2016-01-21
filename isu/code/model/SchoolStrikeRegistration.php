@@ -201,12 +201,14 @@ class SchoolStrikeRegistration extends DataObject
     public function sendSlackNotification()
     {
         $school = $this->School();
-        $school_closed = array(
+        $school_closed_options = array(
             '' => 'momentálne nevieme',
             'maybe' => 'momentálne nevieme',
             'yes' => 'áno',
             'no' => 'nie',
-        )[$this->SchoolClosed];
+        );
+
+        $school_closed = $school_closed_options[$this->SchoolClosed];
 
         $message = array(
             '*Jupí. Bola vytvorená nová registrácia!*',
