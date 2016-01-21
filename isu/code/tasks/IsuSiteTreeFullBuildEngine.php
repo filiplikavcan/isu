@@ -7,7 +7,8 @@ class IsuSiteTreeFullBuildEngine extends SiteTreeFullBuildEngine {
 	private static $quiet = false;
 
 	public function run($request) {
-		parent::run($request);
+		increase_time_limit_to();
+		$this->runFrom(0);
 
 		$this->getUrlArrayObject()->addUrls(array('/'));
 
