@@ -26,7 +26,7 @@ class Page_Controller extends ContentController
         Requirements::css("//cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/css/select2.min.css");
 //        Requirements::css("//cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css");
 
-        if (Director::isDev())
+        if (false && Director::isDev())
         {
             Requirements::css($this->ThemeDir() . "/css/main.less");
         }
@@ -34,6 +34,16 @@ class Page_Controller extends ContentController
         {
             Requirements::css($this->ThemeDir() . '/css/main.css');
         }
+    }
+
+    public function objectsToUpdate($context)
+    {
+        return Page::get();
+    }
+
+    public function objectsToDelete($context)
+    {
+        return Page::get();
     }
 
     public function getArticleCategories()

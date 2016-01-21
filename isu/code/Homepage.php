@@ -28,7 +28,8 @@ class Homepage_Controller extends Page_Controller
     private static $allowed_actions = array(
         'SchoolStrikeForm',
         'SendSchoolStrikeForm',
-        'edit'
+        'edit',
+        'back'
     );
 
     /**
@@ -58,6 +59,11 @@ class Homepage_Controller extends Page_Controller
                 }
             }
         }
+    }
+
+    public function back()
+    {
+        $this->redirect(BASE_URL);
     }
 
     public function SchoolStrikeCreateRegistrationForm()

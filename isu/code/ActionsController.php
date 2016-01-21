@@ -29,6 +29,6 @@ class ActionsController extends ContentController
             );
         }
 
-        $this->redirect(BASE_URL);
+        $this->redirect(BASE_URL . '/home/message');
     }
 }

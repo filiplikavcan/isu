@@ -40,23 +40,48 @@ ErrorDocument 500 /assets/error-500.html
 	SetEnv HTTP_MOD_REWRITE On
 	RewriteEngine On
 
+    RewriteCond %{REQUEST_METHOD} ^GET|HEAD$
+    RewriteCond %{QUERY_STRING} ^$
+    RewriteCond %{REQUEST_URI} /(.*[^/])/?$
+    RewriteCond %{DOCUMENT_ROOT}/cache/%1.html -f
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule .* /cache/%1.html [L]
+
+    RewriteCond %{REQUEST_METHOD} ^GET|HEAD$
+    RewriteCond %{QUERY_STRING} ^$
+    RewriteCond %{REQUEST_URI} /(.*[^/])/?$
+    RewriteCond %{DOCUMENT_ROOT}/cache/%1.stale.html -f
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule .* /cache/%1.stale.html [L]
+
+    RewriteCond %{REQUEST_METHOD} ^GET|HEAD$
+    RewriteCond %{QUERY_STRING} ^$
+    RewriteCond %{REQUEST_URI} ^/?$
+    RewriteCond %{DOCUMENT_ROOT}/cache/index.html -f
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^/?$ /cache/index.html [L]
+
+	RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^home/?$ / [R=301,L]
+
     RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
     RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
 
 	# Enable HTTP Basic authentication workaround for PHP running in CGI mode
 	RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
-	
+
 	# Deny access to potentially sensitive files and folders
 	RewriteRule ^vendor(/|$) - [F,L,NC]
 	RewriteRule silverstripe-cache(/|$) - [F,L,NC]
 	RewriteRule composer\.(json|lock) - [F,L,NC]
-	
+
 	# Process through SilverStripe if no file with the requested name exists.
 	# Pass through the original path as a query parameter, and retain the existing parameters.
 	RewriteCond %{REQUEST_URI} ^(.*)$
 	RewriteCond %{REQUEST_FILENAME} !-f
 	RewriteRule .* framework/main.php?url=%1 [QSA]
-	
+
 	# If framework isn't in a subdirectory, rewrite to installer
 	RewriteCond %{REQUEST_URI} ^(.*)/framework/main.php$
 	RewriteCond %{REQUEST_FILENAME} !-f

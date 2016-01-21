@@ -92,7 +92,7 @@ App.prototype = {
                     $.getJSON('/data/addToNewsletter', { email: email.val() }, function(response) {
                         if (response.code == 'success')
                         {
-                            window.location = '/';
+                            window.location = '/home/message';
                         }
                         else
                         {
@@ -525,7 +525,7 @@ SchoolStrikeForm.prototype = {
     submitData: function()
     {
         $.post('/data/submit', { data: this.data }, function(response) {
-            window.location = '/';
+            window.location = '/home/message';
         });
     },
 
@@ -545,7 +545,7 @@ SchoolStrikeForm.prototype = {
         this.setFormAsSubmitting(form);
 
         $.post('/data/requestUpdate', { email: form.find('[name=Email]').val() }, function() {
-            window.location = '/';
+            window.location = '/home/message';
         });
     },
 

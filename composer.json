@@ -11,6 +11,7 @@
 		"phpmailer/phpmailer": "~5.2",
 		"mailin-api/mailin-api-php": "^1.0",
 		"silverstripe-australia/gridfieldextensions": "dev-master",
+		"silverstripe/staticpublishqueue": "dev-master",
 		"firebrandhq/silverstripe-excel-export": "^0.0.1"
 	},
 	"require-dev": {

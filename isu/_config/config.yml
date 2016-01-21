@@ -1,9 +1,30 @@
 ---
+Name: isuconfig_redirector
+After: 'staticpublishqueue/*'
+---
+RedirectorPage:
+  extensions:
+    - PublishableRedirectorPage
+---
+Name: isuconfig_staticpublishqueue
+After: 'staticpublishqueue/*','#isuconfig_redirector'
+---
+SiteTree:
+  extensions:
+    - PublishableSiteTree
+    - SiteTreePublishingEngine
+    - FilesystemPublisher('cache', 'html')
+---
+
+FilesystemPublisher:
+    static_base_url: http://isu.sk
+
+---
 Name: isu
 After:
   - 'framework/*'
   - 'cms/*'
----
+
 # YAML configuration for SilverStripe
 # See http://doc.silverstripe.org/framework/en/topics/configuration
 # Caution: Indentation through two spaces, not tabs
