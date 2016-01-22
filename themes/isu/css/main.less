@@ -224,6 +224,7 @@ fieldset {
 }
 
 .faq-holder,
+.article-category-holder,
 .contacts-holder,
 .article-holder {
   border-top: 15px solid #e82d2f;
@@ -608,4 +609,51 @@ fieldset {
   background-color: black;
   padding-top: 30px;
   padding-bottom: 30px;
+}
+
+.article-category-holder {
+  margin-bottom: -40px;
+  padding-bottom: 120px;
+
+  h2 {
+    font-size: 42px;
+    font-weight: 700;
+  }
+
+  .content {
+    font-size: 16px;
+  }
+
+  .main-image {
+    text-align: center;
+    padding-bottom: 40px;
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+  ul {
+    list-style: none;
+    margin: 30px 0 30px 0;
+    padding: 0;
+    font-size: 16px;
+
+    li {
+      margin-bottom: 10px;
+    }
+  }
+
+  &.black {
+    background-color: black;
+    color: white;
+
+    .content {
+      color: white;
+    }
+
+    a {
+      color: lighten(#0078ff, 20%);
+    }
+  }
 }

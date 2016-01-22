@@ -16,8 +16,8 @@
     <div class="container" style="position: relative;">
         <ul class="nav navbar-nav">
             <li><a href="/home#registracia">Registrácia</a></li>
-            <li><a href="/home#dokumenty">Aktuality, manuály, vyhlásenia</a></li>
-            <li><a href="#media">V médiách</a></li>
+            <li><a href="/home#dokumenty">Akcie a dokumenty</a></li>
+            <li><a href="/zastrasovanie">Zastrašovanie</a></li>
             <li><a href="/najcastejsie-otazky">Najčastejšie otázky</a></li>
             <li><a href="/podporuju-nas">Podporujú nás</a></li>
             <li><a href="/kontakty">Kontakty</a></li>
