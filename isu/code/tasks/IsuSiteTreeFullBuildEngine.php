@@ -7,6 +7,8 @@ class IsuSiteTreeFullBuildEngine extends SiteTreeFullBuildEngine {
 	private static $quiet = false;
 
 	public function run($request) {
+		$this->deduplicateQueue();
+
 		increase_time_limit_to();
 		$this->runFrom(0);
 

@@ -95,6 +95,9 @@
                         Spoločnosti <a href="http://www.bratia.sk/" target="_blank">bratia.sk</a> za web.
                     </li>
                     <li>
+                        <a href="http://www.viaiuris.sk/index.html" target="_blank">Via Iuris</a> za právne poradenstvo.
+                    </li>
+                    <li>
                         Spoločnosti <a href="http://www.websupport.sk/" target="_blank">Websupport</a> za hosting.
                     </li>
                 </ul>
