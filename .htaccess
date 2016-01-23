@@ -40,35 +40,36 @@ ErrorDocument 500 /assets/error-500.html
 	SetEnv HTTP_MOD_REWRITE On
 	RewriteEngine On
 
-	RewriteRule cache/index\.html / [R=301,L]
+    RewriteCond %{REQUEST_URI} cache/.*
+    RewriteRule cache/(.*)\.html / [R=301,END]
 
     RewriteCond %{REQUEST_METHOD} ^GET|HEAD$
     RewriteCond %{QUERY_STRING} ^$
     RewriteCond %{REQUEST_URI} /(.*[^/])/?$
     RewriteCond %{DOCUMENT_ROOT}/cache/%1.html -f
     RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteRule .* /cache/%1.html [L]
+    RewriteRule .* /cache/%1.html [END]
 
     RewriteCond %{REQUEST_METHOD} ^GET|HEAD$
     RewriteCond %{QUERY_STRING} ^$
     RewriteCond %{REQUEST_URI} /(.*[^/])/?$
     RewriteCond %{DOCUMENT_ROOT}/cache/%1.stale.html -f
     RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteRule .* /cache/%1.stale.html [L]
+    RewriteRule .* /cache/%1.stale.html [END]
 
     RewriteCond %{REQUEST_METHOD} ^GET|HEAD$
     RewriteCond %{QUERY_STRING} ^$
     RewriteCond %{REQUEST_URI} ^/?$
     RewriteCond %{DOCUMENT_ROOT}/cache/index.html -f
     RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteRule ^/?$ /cache/index.html [L]
+    RewriteRule ^/?$ /cache/index.html [END]
 
     RewriteCond %{REQUEST_METHOD} ^GET|HEAD$
     RewriteCond %{QUERY_STRING} ^$
     RewriteCond %{REQUEST_URI} ^/?$
     RewriteCond %{DOCUMENT_ROOT}/cache/index.stale.html -f
     RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteRule ^/?$ /cache/index.stale.html [L]
+    RewriteRule ^/?$ /cache/index.stale.html [END]
 
 	RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
