@@ -40,6 +40,8 @@ ErrorDocument 500 /assets/error-500.html
 	SetEnv HTTP_MOD_REWRITE On
 	RewriteEngine On
 
+	RewriteRule cache/index\.html / [R=301,L]
+
     RewriteCond %{REQUEST_METHOD} ^GET|HEAD$
     RewriteCond %{QUERY_STRING} ^$
     RewriteCond %{REQUEST_URI} /(.*[^/])/?$
