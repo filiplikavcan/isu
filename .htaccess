@@ -44,7 +44,7 @@ ErrorDocument 500 /assets/error-500.html
     RewriteRule cache/(.*)\.html / [R=301,END]
 
     RewriteCond %{QUERY_STRING} clickTAG=
-    RewriteRule (.*) /$1/? [R=301,END]
+    RewriteRule (.*) /$1? [R=301,END]
 
     RewriteCond %{REQUEST_METHOD} ^GET|HEAD$
     RewriteCond %{QUERY_STRING} ^$
