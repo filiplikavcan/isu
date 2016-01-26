@@ -15,9 +15,17 @@
                 </div>
                 <div class="col-sm-6">
 
+                    <% if $InfotextTitle %>
+                    <h2 style="font-size: 24px;">$InfotextTitle</h2>
+                    <% end_if %>
+
+                    <div>
+                        $Content
+                    </div>
+
                     <h2 style="text-transform: none; font-size: 56px; line-height: 56px;">Pridajte sa,<br>spolu to dokážeme!</h2>
 
-                    <h2 style="margin-top: 0; text-transform: none; font-size: 30px; line-height: 32px;">Registrácia pokračuje aj po&nbsp;20.&nbsp;januári&nbsp;2016<br></h2>
+                    <h2 style="margin-top: 0; text-transform: none; font-size: 30px; line-height: 32px;">Registrácia pokračuje aj po&nbsp;25.&nbsp;januári&nbsp;2016<br></h2>
 
                     <div>
                         <a href="/#registracia" class="btn btn-register">Registrujte sa</a>
@@ -26,14 +34,6 @@
                     <p style="text-align: center;">
                         Ak ste sa už zaregistrovali, môžete <a href="$Link('edit')" class="update-form">aktualizovať údaje</a>.
                     </p>
-
-                    <% if $InfotextTitle %>
-                    <h2 style="font-size: 24px;">$InfotextTitle</h2>
-                    <% end_if %>
-
-                    <div>
-                        $Content
-                    </div>
                 </div>
             </div>
         </div>
@@ -43,6 +43,25 @@
     <div class="documents">
         <div class="document-category-holder odd">
             <div class="container">
+                <!--<div class="row">-->
+                    <!--<div class="col-sm-4 col-sm-push-4">-->
+                        <!--<h2>Akcie</h2>-->
+                    <!--</div>-->
+
+                    <!--<div class="col-sm-4 col-sm-push-4">-->
+                        <!--<h2>Novinky</h2>-->
+                    <!--</div>-->
+                    <!--<div class="col-sm-4 col-sm-pull-8">-->
+                        <!--<h2>Dokumenty</h2>-->
+                        <!--<ul>-->
+                        <!--<% loop $ArticleCategories %>-->
+                            <!--<li>-->
+                                <!--<a href="$Link">$Title</a>-->
+                            <!--</li>-->
+                        <!--<% end_loop %>-->
+                        <!--</ul>-->
+                    <!--</div>-->
+                <!--</div>-->
                 <div class="row">
                     <% loop $ArticleCategories %>
                     <div class="col-sm-4 document-category">
