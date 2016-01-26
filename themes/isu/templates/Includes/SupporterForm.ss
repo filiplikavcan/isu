@@ -1,6 +1,6 @@
 <div class="sidebar-holder">
     <h2>
-        Podporte štraj učiteľov osobne
+        Podporte štrajk učiteľov osobne
     </h2>
     <form $FormAttributes>
         <label for="{$FormName}_Name">Meno a priezvisko</label>
