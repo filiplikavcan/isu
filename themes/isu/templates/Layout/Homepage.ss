@@ -25,7 +25,7 @@
 
                     <h2 style="text-transform: none; font-size: 56px; line-height: 56px;">Pridajte sa,<br>spolu to dokážeme!</h2>
 
-                    <h2 style="margin-top: 0; text-transform: none; font-size: 30px; line-height: 32px;">Registrácia pokračuje aj po&nbsp;25.&nbsp;januári&nbsp;2016<br></h2>
+                    <h2 style="margin-top: 0; text-transform: none; font-size: 30px; line-height: 32px;">Registrácia stále pokračuje. Nezabudnite priebežne aktualizovať údaje.<br></h2>
 
                     <div>
                         <a href="/#registracia" class="btn btn-register">Registrujte sa</a>
