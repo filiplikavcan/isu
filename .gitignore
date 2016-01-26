@@ -22,3 +22,6 @@ _ss_environment.php
 
 /gridfieldextensions
 /silverstripe-excel-export
+/gridfieldmultiselect
+/gridfieldajaxrefresh
+/staticpublishqueue

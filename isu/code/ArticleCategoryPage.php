@@ -3,7 +3,7 @@
 class ArticleCategoryPage extends Page
 {
     private static $db = array(
-        'IsBlack' => 'Boolean'
+        'IsBlack' => 'Boolean',
     );
 
     private static $has_one = array(

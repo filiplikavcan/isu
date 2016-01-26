@@ -29,7 +29,7 @@ body {
 
 .container {
   width: 100%;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -49,7 +49,7 @@ h2, h3 {
 .anchor {
   display: block;
   position: relative;
-  top: -120px;
+  top: -20px;
   visibility: hidden;
 }
 
@@ -225,6 +225,7 @@ fieldset {
 
 .faq-holder,
 .article-category-holder,
+.support-holder,
 .contacts-holder,
 .article-holder {
   border-top: 15px solid #e82d2f;
@@ -233,8 +234,9 @@ fieldset {
 
   h2 {
     text-transform: none;
-    font-size: 30px;
-    line-height: 34px;
+    font-size: 42px;
+    line-height: 50px;
+    font-weight: 700;
     padding: 0;
     margin: 0;
   }
@@ -654,6 +656,171 @@ fieldset {
 
     a {
       color: lighten(#0078ff, 20%);
+    }
+  }
+}
+
+.video {
+  .video-image {
+    padding-top: 56.25%;
+    background-size: cover;
+    margin-bottom: 10px;
+
+    &.hide-image {
+      padding-top: 0;
+      background-image: none !important;
+    }
+  }
+
+  .video-holder {
+    display: none;
+  }
+
+  margin-bottom: 20px;
+}
+
+.support-holder {
+  h2 {
+    margin-bottom: 30px;
+  }
+
+  ol,
+  ul {
+    margin: 0 0 0 15px;
+    padding: 0;
+
+    li {
+      margin: 0;
+      padding: 0 0 5px 0;
+    }
+  }
+
+  ol,
+  ul {
+    margin: 0 0 0 15px;
+    padding: 0;
+
+    li {
+      margin: 0;
+      padding: 0 0 2px 0;
+    }
+  }
+
+  h3 {
+    font-weight: 700;
+  }
+}
+
+.sidebar-holder {
+  background-color: #fff2c5;
+  padding: 30px;
+  margin-bottom: 30px;
+
+  border: 1px solid #e1e1df;
+  border-radius: 2px;
+
+  color: #0d0e0e;
+  font-size: 15px;
+  line-height: 24px;
+
+  h2 {
+    font-size: 24px;
+    line-height: 28px;
+    text-transform: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  form {
+    padding: 0;
+    margin: 0;
+
+    label {
+      color: #404040;
+      font-size: 13px;
+      display: block;
+      margin: 10px 0 2px 0;
+      font-weight: 500;
+    }
+
+    input.text {
+      width: 100%;
+      border: 1px solid #d6d5d1;
+      padding: 5px 10px;
+      border-radius: 2px;
+    }
+
+    input.action {
+      background-color: #ec3233;
+      border: 1px solid #ec3233;
+      text-transform: uppercase;
+      width: 180px;
+      color: white;
+      font-weight: 700;
+      padding: 5px 0;
+      font-size: 18px;
+      margin-top: 30px;
+      border-radius: 2px;
+    }
+
+    small {
+      color: #4f4f4f;
+      display: block;
+      line-height: 14px;
+      margin-top: 15px;
+    }
+  }
+}
+
+.support-organizations-holder {
+  background-color: #efefef;
+  padding: 75px 0;
+  margin: 40px 0 75px 0;
+
+  h2 {
+    margin-bottom: 20px;
+  }
+
+  h3 {
+    padding: 20px 0;
+    margin: 0;
+  }
+}
+
+.support-people-holder {
+
+  font-size: 15px;
+  line-height: 24px;
+  color: #0d0e0e;
+
+  h2 {
+    margin-bottom: 20px;
+  }
+
+  ol,
+  ul {
+    list-style-position:inside;
+    margin: 0;
+    padding: 0;
+
+    li {
+      margin: 0;
+      padding: 0 0 2px 0;
+    }
+  }
+
+  .supporters-paginator {
+    margin-top: 30px;
+
+    a {
+      display: inline-block;
+      border: 1px solid #b2b2b2;
+      padding: 1px 10px;
+      color: black;
+
+      &.active {
+        background-color: #efefef;
+      }
     }
   }
 }

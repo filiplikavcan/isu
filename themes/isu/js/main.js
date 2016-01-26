@@ -21,6 +21,38 @@ App.prototype = {
         form.init();
     },
 
+    initSupportVideos: function()
+    {
+        var that = this;
+
+        $('.support-holder').on('click', '.video-image', function(){
+
+            $('.support-holder .main-video .video-image').html('').removeClass('hide-image');
+
+            var main_video = $('.support-holder .main-video .video');
+            var main_video_html = main_video.html();
+            var this_video = $(this).closest('.video');
+
+            main_video.html(this_video.html());
+            this_video.html(main_video_html);
+
+            $('.support-holder .main-video .video-image').html($(this).data('embed-code')).addClass('hide-image');
+
+            that.initVideos();
+            that.smoothScroll($('#video'));
+        });
+    },
+
+    smoothScroll: function(target)
+    {
+        if (target.length) {
+            $('html,body').animate({
+                scrollTop: target.offset().top
+            }, 250);
+            return false;
+        }
+    },
+
     initVideos: function()
     {
         // Find all YouTube videos
@@ -48,7 +80,6 @@ App.prototype = {
             // Resize all videos according to their own aspect ratio
             $allVideos.each(function ()
             {
-
                 var newWidth = $(this).closest('div').width();
 
                 var $el = $(this);
@@ -120,6 +151,11 @@ App.prototype = {
         var bounds = new google.maps.LatLngBounds();
 
         var active_infowindow = null;
+
+        var school_markers_count = SCHOOL_MARKERS.length;
+        var duration = 5000;
+
+        var batch_size = Math.round(school_markers_count / duration);
 
         $.each(SCHOOL_MARKERS, function(i, school_marker) {
 

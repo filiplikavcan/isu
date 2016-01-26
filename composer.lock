@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a5b4b06e7c8054c8a5a5ffe27d60e1bf",
-    "content-hash": "32b3fd8b89388cd60b275d28781fff15",
+    "hash": "c5799c344bcae2de78f97e5db5f0fb22",
+    "content-hash": "7ce9d35125a5131a105e89d89af948a7",
     "packages": [
         {
             "name": "axllent/silverstripe-less",
@@ -221,6 +221,48 @@
             "description": "Official SendinBlue provided API V2 wrapper",
             "homepage": "https://github.com/mailin-api/mailin-api-php",
             "time": "2015-09-08 11:49:00"
+        },
+        {
+            "name": "markguinn/silverstripe-gridfieldmultiselect",
+            "version": "0.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/markguinn/silverstripe-gridfieldmultiselect.git",
+                "reference": "2919e7acdf70fcb09b9b188e581281f0a9a6aac2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/markguinn/silverstripe-gridfieldmultiselect/zipball/2919e7acdf70fcb09b9b188e581281f0a9a6aac2",
+                "reference": "2919e7acdf70fcb09b9b188e581281f0a9a6aac2",
+                "shasum": ""
+            },
+            "require": {
+                "silverstripe/framework": ">=3.1"
+            },
+            "type": "silverstripe-module",
+            "extra": {
+                "installer-name": "gridfieldmultiselect"
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mark Guinn",
+                    "email": "mark@adaircreative.com",
+                    "homepage": "http://github.com/markguinn"
+                }
+            ],
+            "description": "Gridfield extensions to add checkboxes for each row to easily delete or perform actions on multiple rows.",
+            "keywords": [
+                "checkboxes",
+                "gridfield",
+                "modeladmin",
+                "multiselect",
+                "silverstripe"
+            ],
+            "time": "2014-12-23 17:57:09"
         },
         {
             "name": "phpmailer/phpmailer",

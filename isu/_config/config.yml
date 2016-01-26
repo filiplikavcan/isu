@@ -30,3 +30,7 @@ After:
 # Caution: Indentation through two spaces, not tabs
 SSViewer:
   theme: 'isu'
+
+LeftAndMain:
+  extra_requirements_css:
+    - 'themes/isu/css/cms.css'

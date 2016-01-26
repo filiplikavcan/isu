@@ -23,8 +23,11 @@ class SchoolStrikeRegistration extends DataObject
         'School' => 'School',
     );
 
+    private static $default_sort = 'LastEdited DESC';
+
     private static $summary_fields = array(
         'ID' => 'ID',
+        'LastEdited' => 'Čas aktualizácie',
         'SchoolName' => 'Škola',
         'SchoolStreet' => 'Ulica',
         'CityName' => 'Obec',

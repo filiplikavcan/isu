@@ -12,7 +12,8 @@
 		"mailin-api/mailin-api-php": "^1.0",
 		"silverstripe-australia/gridfieldextensions": "dev-master",
 		"silverstripe/staticpublishqueue": "dev-master",
-		"firebrandhq/silverstripe-excel-export": "^0.0.1"
+		"firebrandhq/silverstripe-excel-export": "^0.0.1",
+		"markguinn/silverstripe-gridfieldmultiselect": "^0.0.2"
 	},
 	"require-dev": {
 		"phpunit/PHPUnit": "~3.7"
