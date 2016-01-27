@@ -9,6 +9,11 @@ class AjaxController extends Controller
         'addToNewsletter',
     );
 
+    public function renderSupporterForm()
+    {
+
+    }
+
     public function schoolsByCity(SS_HTTPRequest $request)
     {
         $result = array(

@@ -137,29 +137,9 @@ class SupportPage_Controller extends ArticlePage_Controller
         return $result[1];
     }
 
-    public function SupporterForm() {
-        $fields = new FieldList(
-            TextField::create('Name', 'Meno a priezvisko'),
-            TextField::create('City', 'Obec/Mesto')
-        );
-
-        $actions = new FieldList(
-            FormAction::create("doSubmit")->setTitle("Odoslať")
-        );
-
-        $form = new Form($this, 'SupporterForm', $fields, $actions);
-        $form->setAttribute('novalidate', true);
-        $form->setTemplate(array('SupporterForm'));
-
-        $data = Session::get("FormInfo.Form_SupporterForm.data");
-
-        if (is_array($data))
-        {
-            $form->loadDataFrom($data);
-            Session::clear("FormInfo.Form_SupporterForm.data");
-        }
-
-        return $form;
+    public function SupporterForm()
+    {
+        return new SupporterForm($this);
     }
 
     public function doSubmit($data, Form $form) {
