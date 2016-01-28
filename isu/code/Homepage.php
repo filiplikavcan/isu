@@ -23,18 +23,6 @@ class Homepage extends Page
 
         return $fields;
     }
-
-    public function getHeadlineContentTemp()
-    {
-        if (isset($_GET['preview']))
-        {
-            return $this->HeadlineContent;
-        }
-        else
-        {
-            return null;
-        }
-    }
 }
 
 class Homepage_Controller extends Page_Controller

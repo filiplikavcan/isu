@@ -39,7 +39,7 @@
         </div>
     </div>
 
-    <% if $HeadlineContentTemp %>
+    <% if $HeadlineContent %>
         <div class="headline-holder">
             <div class="container">
                 <div class="col-xs-12 col-sm-10 col-sm-offset-1">
