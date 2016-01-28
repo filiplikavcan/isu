@@ -301,7 +301,8 @@ var SchoolStrikeForm = function() {
         ['ContactName'],
         ['ContactSurname'],
         ['ContactPosition'],
-        ['ContactEmail']
+        ['ContactEmail'],
+        ['ContactPhone']
     ];
 
     if (this.is_new)

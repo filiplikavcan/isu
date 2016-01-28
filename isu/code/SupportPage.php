@@ -152,10 +152,15 @@ class SupportPage_Controller extends ArticlePage_Controller
         {
             Session::set('SupporterFormFlash', array('message', 'Váš podpis bol uložený a po kontrole bude zverejnený v zozname podporovateľov.'));
 
-            $supporter = new Supporter;
-            $supporter->Name = $data['Name'];
-            $supporter->City = $data['City'];
-            $supporter->write();
+            $supporter_exits = Supporter::get()->filter(array('Name' => $data['Name'], 'City' => $data['City']))->count() > 0;
+
+            if (!$supporter_exits)
+            {
+                $supporter = new Supporter;
+                $supporter->Name = $data['Name'];
+                $supporter->City = $data['City'];
+                $supporter->write();
+            }
         }
 
         return $this->redirect($this->Link('flash'));

@@ -31,7 +31,7 @@
                     <h2>$Title</h2>
 
                     <div class="row">
-                    <% loop SupportVideos %>
+                    <% loop SupportVideos.Sort(Sort) %>
                             <% if First %>
                                 <span class="anchor" id="video"></span>
                                 <div class="col-xs-12 main-video">

@@ -186,12 +186,6 @@
                         </div>
                     </div>
                 </div>
-            </fieldset>
-
-            <fieldset>
-                <h3>
-                    4. Doplňujúce údaje <span>(nepovinné)</span>
-                </h3>
 
                 <div class="form-group">
                     <label class="col-sm-4 control-label">Telefón:</label>
@@ -199,6 +193,12 @@
                         $Fields.fieldByName(ContactPhone)
                     </div>
                 </div>
+            </fieldset>
+
+            <fieldset>
+                <h3>
+                    4. Doplňujúce údaje <span>(nepovinné)</span>
+                </h3>
 
                 <div class="form-group">
                     <label class="col-sm-4 control-label">Poznámka:</label>
