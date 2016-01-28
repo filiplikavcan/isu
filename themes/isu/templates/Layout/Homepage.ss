@@ -39,29 +39,20 @@
         </div>
     </div>
 
+    <% if $HeadlineContentTemp %>
+        <div class="headline-holder">
+            <div class="container">
+                <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+                    $HeadlineContent.RAW
+                </div>
+            </div>
+        </div>
+    <% end_if %>
+
     <span class="anchor" id="dokumenty"></span>
     <div class="documents">
         <div class="document-category-holder odd">
             <div class="container">
-                <!--<div class="row">-->
-                    <!--<div class="col-sm-4 col-sm-push-4">-->
-                        <!--<h2>Akcie</h2>-->
-                    <!--</div>-->
-
-                    <!--<div class="col-sm-4 col-sm-push-4">-->
-                        <!--<h2>Novinky</h2>-->
-                    <!--</div>-->
-                    <!--<div class="col-sm-4 col-sm-pull-8">-->
-                        <!--<h2>Dokumenty</h2>-->
-                        <!--<ul>-->
-                        <!--<% loop $ArticleCategories %>-->
-                            <!--<li>-->
-                                <!--<a href="$Link">$Title</a>-->
-                            <!--</li>-->
-                        <!--<% end_loop %>-->
-                        <!--</ul>-->
-                    <!--</div>-->
-                <!--</div>-->
                 <div class="row">
                     <% loop $ArticleCategories %>
                     <div class="col-sm-4 document-category">

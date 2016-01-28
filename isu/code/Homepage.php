@@ -5,6 +5,7 @@ class Homepage extends Page
     private static $db = array(
         'FeaturedButtonTitle' => 'Varchar(1000)',
         'InfotextTitle' => 'Varchar(1000)',
+        'HeadlineContent' => 'Text',
     );
 
     private static $has_one = array(
@@ -17,9 +18,22 @@ class Homepage extends Page
         $fields->addFieldToTab('Root.Main', new TreeDropdownField('FeaturedPageID', 'Featured Page', 'Page'), 'Content');
         $fields->addFieldToTab('Root.Main', new TextField('FeaturedButtonTitle', 'Featured Button Title'), 'Content');
         $fields->addFieldToTab('Root.Main', new TextField('InfotextTitle', 'Infotext Title'), 'Content');
+        $fields->addFieldToTab('Root.Main', new TextareaField('HeadlineContent', 'HeadlineContent'));
         $fields->renameField('Content', 'Infotext Content');
 
         return $fields;
+    }
+
+    public function getHeadlineContentTemp()
+    {
+        if (isset($_GET['preview']))
+        {
+            return $this->HeadlineContent;
+        }
+        else
+        {
+            return null;
+        }
     }
 }
 
