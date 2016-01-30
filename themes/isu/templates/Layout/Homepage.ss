@@ -78,7 +78,7 @@
                                                             </div>
                                                         <% end_if %>
                                                         <div class="col-xs-9">
-                                                            <% if $Up.Up.Up.Up.Custom %>
+                                                            <% if $Up.Up.Up.Up.Up.Custom %>
                                                                 <div>
                                                                     <strong>$City</strong>,
                                                                     $Place<% if $Link %>&nbsp;<a href="$Link" target="_blank"><i class="fa fa-external-link"></i></a><% end_if %>
