@@ -65,30 +65,34 @@
                                     <% loop $Dates %>
                                         <h4>$Date</h4>
 
-                                        <% loop $Actions %>
+                                        <% loop $Actions.GroupedBy('TimeFrom') %>
                                             <div class="day-row">
                                                 <div class="row">
                                                     <div class="col-xs-3">
-                                                    <% if IsTimeChange %>
                                                         <strong>$TimeFrom</strong>
-                                                    <% end_if %>
                                                     </div>
-                                                    <div class="col-xs-9">
-                                                        <% if $Up.Up.Up.Custom %>
-                                                            <div>
-                                                                <strong>$City</strong>,
-                                                                $Place<% if $Link %>&nbsp;<a href="$Link" target="_blank"><i class="fa fa-external-link"></i></a><% end_if %>
-                                                                <% if $TimeTo %><em><br> koniec o $TimeTo</em><% end_if %>
-                                                            </div>
-                                                        <% else %>
-                                                            <div>
-                                                                <strong>$City </strong>&ndash; $Title<% if $Link %>&nbsp;<a href="$Link" target="_blank"><i class="fa fa-external-link"></i></a><% end_if %><br>
-                                                                $Place <% if $Description %><br>$Description<% end_if %>
-                                                                <% if $TimeTo %><em><br> koniec o $TimeTo</em><% end_if %>
+                                                    <% loop Children %>
+                                                        <% if not First %>
+                                                            <div class="col-xs-3">
+
                                                             </div>
                                                         <% end_if %>
-
-                                                    </div>
+                                                        <div class="col-xs-9">
+                                                            <% if $Up.Up.Up.Up.Custom %>
+                                                                <div>
+                                                                    <strong>$City</strong>,
+                                                                    $Place<% if $Link %>&nbsp;<a href="$Link" target="_blank"><i class="fa fa-external-link"></i></a><% end_if %>
+                                                                    <% if $TimeTo %><em><br> koniec o $TimeTo</em><% end_if %>
+                                                                </div>
+                                                            <% else %>
+                                                                <div>
+                                                                    <strong>$City </strong>&ndash; $Title<% if $Link %>&nbsp;<a href="$Link" target="_blank"><i class="fa fa-external-link"></i></a><% end_if %><br>
+                                                                    $Place <% if $Description %><br>$Description<% end_if %>
+                                                                    <% if $TimeTo %><em><br> koniec o $TimeTo</em><% end_if %>
+                                                                </div>
+                                                            <% end_if %>
+                                                        </div>
+                                                    <% end_loop %>
                                                 </div>
                                             </div>
                                         <% end_loop %>

@@ -42,17 +42,24 @@ class ActionGroup extends DataObject
             ->filter(array('Published' => true))
             ->Sort('Date, TimeFrom, Sort');
 
+        //
+
         foreach ($actions as $action)
         {
             if (empty($result[$action->Date]))
             {
                 $result[$action->Date] = new ArrayData(array(
                     'Date' => $this->translateDate($action->obj('Date')->format('l j. F Y')),
-                    'Actions' => new ArrayList()
+                    'Actions' => new ArrayList(),
                 ));
             }
 
             $result[$action->Date]->getField('Actions')->add($action);
+        }
+
+        foreach ($result as $date => $date_data)
+        {
+            $result[$date]->setField('Actions', GroupedList::create($date_data->getField('Actions')));
         }
 
         return new ArrayList($result);
