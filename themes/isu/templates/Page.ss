@@ -16,6 +16,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     $MetaTags(false)
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->

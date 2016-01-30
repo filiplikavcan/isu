@@ -54,6 +54,49 @@
         <div class="document-category-holder odd">
             <div class="container">
                 <div class="row">
+                    <div class="col-sm-6 col-md-4 document-category">
+                        <h2>Akcie</h2>
+                        <% loop $ActionGroups %>
+                            <% with $Group %>
+                                <div class="action-group<% if $Up.Custom %> custom-action-group<% end_if %>">
+                                    <h3>$Title</h3>
+                                    $Description
+
+                                    <% loop $Dates %>
+                                        <h4>$Date</h4>
+
+                                        <% loop $Actions %>
+                                            <div class="day-row">
+                                                <div class="row">
+                                                    <div class="col-xs-3">
+                                                    <% if IsTimeChange %>
+                                                        <strong>$TimeFrom</strong>
+                                                    <% end_if %>
+                                                    </div>
+                                                    <div class="col-xs-9">
+                                                        <% if $Up.Up.Up.Custom %>
+                                                            <div>
+                                                                <strong>$City</strong>,
+                                                                $Place<% if $Link %>&nbsp;<a href="$Link" target="_blank"><i class="fa fa-external-link"></i></a><% end_if %>
+                                                                <% if $TimeTo %><em><br> koniec o $TimeTo</em><% end_if %>
+                                                            </div>
+                                                        <% else %>
+                                                            <div>
+                                                                <strong>$City </strong>&ndash; $Title<% if $Link %>&nbsp;<a href="$Link" target="_blank"><i class="fa fa-external-link"></i></a><% end_if %><br>
+                                                                $Place <% if $Description %><br>$Description<% end_if %>
+                                                                <% if $TimeTo %><em><br> koniec o $TimeTo</em><% end_if %>
+                                                            </div>
+                                                        <% end_if %>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <% end_loop %>
+                                    <% end_loop %>
+                                </div>
+                            <% end_with %>
+                        <% end_loop %>
+                    </div>
                     <% loop $ArticleCategories %>
                     <div class="col-sm-4 document-category">
                         <h2>$Title</h2>
@@ -86,6 +129,7 @@
         </div>
     </div>
 
+    <div style="background-color: #efefef;">
     <div class="container">
         <div class="row registration">
             <div class="col-sm-8 col-sm-offset-2">
@@ -112,5 +156,6 @@
                 <!--</div>-->
             <!--</div>-->
         </div>
+    </div>
     </div>
 <% end_if %>

@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c5799c344bcae2de78f97e5db5f0fb22",
-    "content-hash": "7ce9d35125a5131a105e89d89af948a7",
+    "hash": "1591b0969bf855495fbaacd42dc0f01d",
+    "content-hash": "225217aea2448e449d7bf773a77b8575",
     "packages": [
         {
             "name": "axllent/silverstripe-less",
@@ -695,6 +695,42 @@
                 "static-publishing"
             ],
             "time": "2016-01-18 12:52:02"
+        },
+        {
+            "name": "unisolutions/silverstripe-copybutton",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/unisolutions/silverstripe-copybutton.git",
+                "reference": "c7851daad4eebdcadfe21907347678da36b8f5e8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/unisolutions/silverstripe-copybutton/zipball/c7851daad4eebdcadfe21907347678da36b8f5e8",
+                "reference": "c7851daad4eebdcadfe21907347678da36b8f5e8",
+                "shasum": ""
+            },
+            "require": {
+                "silverstripe/framework": "3.*"
+            },
+            "type": "silverstripe-module",
+            "extra": {
+                "installer-name": "copybutton"
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Elvinas Liutkevičius",
+                    "email": "elvinas@unisolutions.eu"
+                }
+            ],
+            "description": "Adds copy button to the GridField.",
+            "keywords": [
+                "button",
+                "copy",
+                "silverstripe"
+            ],
+            "time": "2015-01-14 09:47:55"
         }
     ],
     "packages-dev": [

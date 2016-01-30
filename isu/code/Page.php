@@ -48,7 +48,7 @@ class Page_Controller extends ContentController
 
     public function getArticleCategories()
     {
-        return ArticleCategoryPage::get();
+        return ArticleCategoryPage::get()->filter(array('ShowInMenus' => true));
     }
 
     public function getMediaLinks()
