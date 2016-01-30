@@ -47,7 +47,7 @@ class Action extends DataObject
 
     public function IsTimeChange()
     {
-        $key = (empty($this->GroupID) ? '-' : $this->GroupID) . $this->Date;
+        $key = (empty($this->GroupID) ? '-' : $this->GroupID) . '-' . $this->Date;
 
         $result = empty(self::$last_time[$key]) || self::$last_time[$key] != $this->TimeFrom;
         self::$last_time[$key] = $this->TimeFrom;
