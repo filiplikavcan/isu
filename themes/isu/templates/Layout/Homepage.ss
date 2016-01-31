@@ -2,10 +2,27 @@
     $SchoolStrikeUpdateRegistrationForm
 <% else %>
 
+<div class="red-alert-holder">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-md-5">
+                <h1 class="ziva-retaz-title">
+                    Živá reťaz
+                </h1>
+            </div>
+            <div class="col-sm-6">
+                <div class="btn-action">
+                    Podrobnosti o Živej reťazi nájdete <a href="/#dokumenty">v zozname akcií</a>.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
     <div class="main-banner">
         <div class="container">
             <div class="row">
-                <div class="col-sm-6">
+                <div class="col-sm-6 col-md-5">
                     <div class="main-info">
                         <div>
                             <h2>Iniciatíva slovnských učiteľov vyhlasuje štrajk od 25.1.2016</h2>
@@ -13,22 +30,24 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-6">
+                <div class="col-sm-6 col-md-5">
 
                     <% if $InfotextTitle %>
-                    <h2 style="font-size: 24px;">$InfotextTitle</h2>
+                    <h2>$InfotextTitle</h2>
                     <% end_if %>
 
                     <div>
                         $Content
                     </div>
 
-                    <h2 style="text-transform: none; font-size: 56px; line-height: 56px;">Pridajte sa,<br>spolu to dokážeme!</h2>
-
-                    <h2 style="margin-top: 0; text-transform: none; font-size: 30px; line-height: 32px;">Registrácia stále pokračuje. Nezabudnite priebežne aktualizovať údaje.<br></h2>
+                    <h2>Pridajte sa, spolu to dokážeme!</h2>
 
                     <div>
-                        <a href="/#registracia" class="btn btn-register">Registrujte sa</a>
+                        Registrácia stále pokračuje. Nezabudnite priebežne aktualizovať údaje.<br>
+                    </div>
+
+                    <div>
+                        <a href="/#registracia" class="btn btn-register">Registrácia</a>
                     </div>
 
                     <p style="text-align: center;">
