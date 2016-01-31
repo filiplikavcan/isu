@@ -66,17 +66,14 @@
                                         <h4>$Date</h4>
 
                                         <% loop $Actions.GroupedBy('TimeFrom') %>
-                                            <div class="day-row">
-                                                <div class="row">
-                                                    <div class="col-xs-3">
-                                                        <strong>$TimeFrom</strong>
-                                                    </div>
-                                                    <% loop Children %>
-                                                        <% if not First %>
-                                                            <div class="col-xs-3">
-
-                                                            </div>
-                                                        <% end_if %>
+                                            <% loop Children %>
+                                                <div class="day-row">
+                                                    <div class="row">
+                                                        <div class="col-xs-3">
+                                                            <% if First %>
+                                                            <strong>$TimeFrom</strong>
+                                                            <% end_if %>
+                                                        </div>
                                                         <div class="col-xs-9">
                                                             <% if $Up.Up.Up.Up.Up.Custom %>
                                                                 <div>
@@ -92,9 +89,9 @@
                                                                 </div>
                                                             <% end_if %>
                                                         </div>
-                                                    <% end_loop %>
+                                                    </div>
                                                 </div>
-                                            </div>
+                                            <% end_loop %>
                                         <% end_loop %>
                                     <% end_loop %>
                                 </div>
