@@ -2,22 +2,22 @@
     $SchoolStrikeUpdateRegistrationForm
 <% else %>
 
-<!--<div class="red-alert-holder">-->
-    <!--<div class="container">-->
-        <!--<div class="row">-->
-            <!--<div class="col-sm-6 col-md-5">-->
-                <!--<h1 class="ziva-retaz-title">-->
-                    <!--Živá reťaz-->
-                <!--</h1>-->
-            <!--</div>-->
-            <!--<div class="col-sm-6">-->
-                <!--<div class="btn-action">-->
-                    <!--Podrobnosti o Živej reťazi nájdete <a href="/#dokumenty">v zozname akcií</a>.-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</div>-->
-<!--</div>-->
+<div class="red-alert-holder">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-md-5">
+                <h1 class="ziva-retaz-title">
+                    Živá reťaz
+                </h1>
+            </div>
+            <div class="col-sm-6">
+                <div class="btn-action">
+                    Podrobnosti o "Ďakujeme, že vieme" nájdete <a href="/#dokumenty">v zozname akcií</a>.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
     <div class="main-banner">
         <div class="container">

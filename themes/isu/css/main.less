@@ -910,46 +910,55 @@ fieldset {
 .red-alert-holder {
   background-color: #ffd527;
 
-  background-image: url(/themes/isu/images/human-chain.png);
+  background-image: url(/themes/isu/images/kolieska.png);
   background-repeat: repeat-x;
   background-position: center center;
 
-  position: relative;
+  height: 105px;
 
-  padding: 10px 0;
+  position: relative;
 
   .ziva-retaz-title {
     position: absolute;
-    width: 310px;
-    height: 148px;
+    width: 439px;
+    height: 154px;
 
-    background-image: url(/themes/isu/images/ziva-retaz.png);
+    background-image: url(/themes/isu/images/dakujeme-ze-vieme.png);
 
     text-indent: 150%;
     white-space: nowrap;
     overflow: hidden;
 
-    top: -20px;
+    top: -40px;
+  }
+
+  @media (max-width: @screen-xs-max) {
+   // background-image: none;
+   // background-color: #0f74f0;
+    background-image: url(/themes/isu/images/kolieska-full.png);
+    background-repeat: repeat;
+    height: auto;
   }
 
   .btn-action {
 
     display: block;
-    margin-top: 115px;
-    margin-bottom: 10px;
 
     font-size: 18px;
     line-height: 20px;
     font-weight: 700;
-    color: black;
+    color: white;
     width: 100%;
 
+    margin-top: 60px;
+
     @media (max-width: @screen-xs-max) {
-      margin-top: 160px;
+      margin-top: 150px;
+      margin-bottom: 20px;
     }
 
     a {
-      color: black;
+      color: white;
       text-decoration: underline;
 
       &:active,
