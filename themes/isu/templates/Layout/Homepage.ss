@@ -40,8 +40,8 @@
                         $Content
                     </div>
 
-                    <h2>
-                        Do štrajku sa už spolu zapojilo vyše&nbsp;14500&nbsp;učiteľov z&nbsp;viac ako 950&nbsp;škôl.</small>
+                    <h2 style="line-height: 34px;">
+                        Do štrajku sa už zapojilo<br> vyše&nbsp;<span style="background-color: black; color: white; display: inline-block; padding: 0 6px; margin-bottom: 2px;">14500</span> učiteľov<br>z&nbsp;viac ako <span style="background-color: black; color: white; display: inline-block; padding: 1px 6px;">950</span> škôl.</small>
                     </h2>
 
                     <div>
