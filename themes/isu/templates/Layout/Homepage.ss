@@ -40,7 +40,9 @@
                         $Content
                     </div>
 
-                    <h2>Pridajte sa, spolu to dokážeme!</h2>
+                    <h2>
+                        Do štrajku sa už spolu zapojilo vyše&nbsp;14500&nbsp;učiteľov z&nbsp;viac ako 950&nbsp;škôl.</small>
+                    </h2>
 
                     <div>
                         Registrácia stále pokračuje. Nezabudnite priebežne aktualizovať údaje.<br>
