@@ -12,7 +12,7 @@
             </div>
             <div class="col-sm-6">
                 <div class="btn-action">
-                    Podrobnosti o "Ďakujeme, že vieme" nájdete <a href="/#dokumenty">v zozname akcií</a>.
+                    Podrobnosti o demonštráciách nájdete <a href="/#dokumenty">v zozname akcií</a>.
                 </div>
             </div>
         </div>

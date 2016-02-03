@@ -20,6 +20,7 @@
             <li><a href="/zastrasovanie">Zastrašovanie</a></li>
             <li><a href="/najcastejsie-otazky">Najčastejšie otázky</a></li>
             <li><a href="/podporuju-nas">Podporujú nás</a></li>
+            <li><a href="#media">Média</a></li>
             <li><a href="/kontakty">Kontakty</a></li>
             <li><a href="/foreign-media" style="color: gray;">Foreign media</a></li>
         </ul>
