@@ -91,9 +91,7 @@
                                                 <div class="day-row">
                                                     <div class="row">
                                                         <div class="col-xs-3">
-                                                            <% if First %>
                                                             <strong>$TimeFrom</strong>
-                                                            <% end_if %>
                                                         </div>
                                                         <div class="col-xs-9">
                                                             <% if $Up.Up.Up.Up.Up.Custom %>
