@@ -5,6 +5,8 @@ class Supporter extends DataObject
     private static $db = array(
         'Name' => 'Varchar(1000)',
         'City' => 'Varchar(1000)',
+        'Email' => 'Varchar(1000)',
+        'Type' => 'Varchar(10)',
         'Verified' => 'Boolean',
     );
 

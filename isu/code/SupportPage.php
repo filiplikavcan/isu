@@ -143,24 +143,30 @@ class SupportPage_Controller extends ArticlePage_Controller
     }
 
     public function doSubmit($data, Form $form) {
-        if (empty($data['Name']) || empty($data['City']))
+
+        if (empty($data['Name']) || empty($data['City']) || empty($data['Email']) || empty($data['PersonType']))
         {
-            Session::set('SupporterFormFlash', array('error', 'Zadajte, prosím, meno, priezvisko a mesto/obec.'));
+            Session::set('SupporterFormFlash', array('error', 'Zadajte, prosím, meno, priezvisko, mesto/obec, email a kto ste.'));
             Session::set("FormInfo.Form_SupporterForm.data", $data);
         }
         else
         {
             Session::set('SupporterFormFlash', array('message', 'Váš podpis bol uložený a po kontrole bude zverejnený v zozname podporovateľov.'));
 
-            $supporter_exits = Supporter::get()->filter(array('Name' => $data['Name'], 'City' => $data['City']))->count() > 0;
+            $supporter = Supporter::get()->filter(array('Email' => $data['Email']))->first();
 
-            if (!$supporter_exits)
+            if (!($supporter instanceof Supporter))
             {
                 $supporter = new Supporter;
+
                 $supporter->Name = $data['Name'];
                 $supporter->City = $data['City'];
-                $supporter->write();
+                $supporter->Email = $data['Email'];
             }
+
+            $supporter->Type = $data['PersonType'];
+
+            $supporter->write();
         }
 
         return $this->redirect($this->Link('flash'));

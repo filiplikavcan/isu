@@ -1,24 +1,6 @@
 <% if $Action == 'edit' %>
     $SchoolStrikeUpdateRegistrationForm
 <% else %>
-
-<div class="red-alert-holder">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-6 col-md-5">
-                <h1 class="ziva-retaz-title">
-                    Živá reťaz
-                </h1>
-            </div>
-            <div class="col-sm-6">
-                <div class="btn-action">
-                    Podrobnosti o demonštráciách nájdete <a href="/#dokumenty">v zozname akcií</a>.
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
     <div class="main-banner">
         <div class="container">
             <div class="row">
@@ -30,7 +12,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-5">
+                <div class="col-sm-6 col-md-6">
 
                     <% if $InfotextTitle %>
                     <h2>$InfotextTitle</h2>
@@ -40,20 +22,20 @@
                         $Content
                     </div>
 
-                    <h2 style="line-height: 34px;">
-                        Do štrajku sa už zapojilo<br> vyše&nbsp;<span style="background-color: black; color: white; display: inline-block; padding: 0 6px; margin-bottom: 2px;">14500</span> učiteľov<br>z&nbsp;viac ako <span style="background-color: black; color: white; display: inline-block; padding: 1px 6px;">950</span> škôl.</small>
+                    <h2 style="font-size: 58px; text-transform: none; line-height: 60px;">
+                        Vysoké školy<br>preberajú štafetu. Spolu to dokážeme!
                     </h2>
 
-                    <div>
-                        Registrácia stále pokračuje. Nezabudnite priebežne aktualizovať údaje.<br>
-                    </div>
+                    <p>
+                        Od 15. februára štrajkujúci učitelia ISU prechádzajú do štrajkovej pohotovosti. Štafetu preberajú vysokoškolskí pedagógovia, ktorí v prípade nesplnenia požiadaviek v pondelok ráno vstupujú do ostrého štrajku. Nekončíme!
+                    </p>
 
                     <div>
-                        <a href="/#registracia" class="btn btn-register">Registrácia</a>
+                        <a href="/#registracia" class="btn btn-register">Registrovať do štrajku</a>
                     </div>
 
                     <p style="text-align: center;">
-                        Ak ste sa už zaregistrovali, môžete <a href="$Link('edit')" class="update-form">aktualizovať údaje</a>.
+                        Ak ste sa už zaregistrovali MŠ, ZŠ alebo SŠ, môžete <a href="$Link('edit')" class="update-form">aktualizovať údaje</a>.
                     </p>
                 </div>
             </div>
@@ -70,7 +52,7 @@
         </div>
     <% end_if %>
 
-    <span class="anchor" id="dokumenty"></span>
+    <span class="anchor" id="akcie"></span>
     <div class="documents">
         <div class="document-category-holder odd">
             <div class="container">
@@ -117,8 +99,25 @@
                             <% end_with %>
                         <% end_loop %>
                     </div>
+
+                    <div class="col-md-7 col-md-offset-1 col-sm-6 document-category">
+                        <span class="anchor" id="registracia"></span>
+                        <h2 style="padding-bottom: 15px;">
+                            Registrácia vysokoškolského učiteľa do&nbsp;štrajku
+                        </h2>
+
+                        <p style="margin-bottom: 15px;">
+                             Ak chcete registrovať materskú, základnú alebo strednú školu <a href="/registracia-ms-zs-a-ss" style="display: inline;">použite registračný formulár pre MŠ, ZŠ a SŠ</a>.
+                        </p>
+
+                        $UniversityStrikeForm
+                    </div>
+                </div>
+                <span class="anchor" id="dokumenty"></span>
+                <div class="row">
+
                     <% loop $ArticleCategories %>
-                    <div class="col-sm-4 document-category">
+                    <div class="col-sm-5 document-category">
                         <h2>$Title</h2>
                         <div class="description">
                             $Content
@@ -126,7 +125,7 @@
 
                         <ul class="articles-list">
                             <% loop Children %>
-                            <li>
+                            <li <% if $Pos > 10 %>class="hidden-link"<% end_if %>>
                                 <a href="$Link">
                                     $MenuTitle
                                         <span>
@@ -138,6 +137,8 @@
                             </li>
                             <% end_loop %>
                         </ul>
+
+                        <a href="#" class="show-more-links">Zobraziť viac</a>
                     </div>
 
                     <% if MultipleOf(3) %>
@@ -147,35 +148,5 @@
                 </div>
             </div>
         </div>
-    </div>
-
-    <div style="background-color: #efefef;">
-    <div class="container">
-        <div class="row registration">
-            <div class="col-sm-8 col-sm-offset-2">
-                <span class="anchor" id="registracia"></span>
-                <h2>
-                    Registrácia do štrajku
-                </h2>
-
-                <p>
-                    Registrácia slúži výlučne pre potreby <a href="/manualy/strajkovy-vybor-isu/" style="display: inline;">štrajkového výboru Iniciatívy slovenských učiteľov</a>.
-                    Ďakujeme, že sa registrujete, je to dôležité pre efektívny priebeh štrajku. Údaje o kontaktnej osobe nebudú zverejnené.
-                </p>
-
-                $SchoolStrikeCreateRegistrationForm
-             </div>
-
-            <!--<div class="col-sm-5">-->
-                <!--<h2>-->
-                    <!--Školy zapojené do štrajku-->
-                <!--</h2>-->
-
-                <!--<div id="map">-->
-
-                <!--</div>-->
-            <!--</div>-->
-        </div>
-    </div>
     </div>
 <% end_if %>

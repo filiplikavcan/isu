@@ -5,8 +5,10 @@ After: 'framework/routes#coreroutes'
 Director:
   rules:
     'data//schoolsByCity': 'AjaxController'
+    'data//universitySubmit': 'AjaxController'
     'data//submit': 'AjaxController'
     'data//requestUpdate': 'AjaxController'
     'data//addToNewsletter': 'AjaxController'
     'v': 'ActionsController'
+    'uv': 'UniversityActionsController'
 ---

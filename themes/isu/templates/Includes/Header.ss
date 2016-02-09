@@ -15,16 +15,17 @@
 <nav class="navbar navbar-default menu">
     <div class="container" style="position: relative;">
         <ul class="nav navbar-nav">
-            <li><a href="/home#registracia">Registrácia</a></li>
-            <li><a href="/home#dokumenty">Akcie a dokumenty</a></li>
+            <li class="highlighted"><a href="/home#registracia">Registrovať do štrajku</a></li>
+            <li class="highlighted"><a href="/podporuju-nas">Podporiť štrajk</a></li>
+            <li><a href="/home#dokumenty">Dokumenty</a></li>
             <li><a href="/zastrasovanie">Zastrašovanie</a></li>
             <li><a href="/najcastejsie-otazky">Najčastejšie otázky</a></li>
-            <li><a href="/podporuju-nas">Podporujú nás</a></li>
             <li><a href="#media">Média</a></li>
             <li><a href="/kontakty">Kontakty</a></li>
             <li><a href="/foreign-media" style="color: gray;">Foreign media</a></li>
         </ul>
 
+        <% if false %>
         <% with $StrikeCounter %>
             <div class="counter">
                 <div class="people-count">$PeopleCount</div>
@@ -34,5 +35,19 @@
                 <% end_if %>
             </div>
         <% end_with %>
+        <% end_if %>
     </div>
 </nav>
+
+<div class="red-alert-holder">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="btn-action">
+                    Podrobnosti o akciách nájdete <a href="/home#akcie">v zozname akcií</a>.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

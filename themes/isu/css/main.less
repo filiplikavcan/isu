@@ -18,6 +18,7 @@ body {
   color: black;
 }
 
+.university-strike-form,
 .school-strike-form {
   .form-error-message,
   .choose-school,
@@ -173,15 +174,6 @@ fieldset {
   .navbar-nav {
     margin-right: 120px;
     > li {
-
-      @media (min-width: @grid-float-breakpoint) {
-        &:first-child {
-          a {
-            padding-left: 0;
-          }
-        }
-      }
-
       & > a {
         color: black;
         font-size: 14px;
@@ -194,6 +186,14 @@ fieldset {
         @media (min-width: 768px) {
           padding-top: 15px;
           padding-bottom: 15px;
+        }
+      }
+
+      &.highlighted {
+        a {
+          background-color: #edc72f;
+          padding: 10px;
+          margin: 5px;
         }
       }
     }
@@ -492,7 +492,7 @@ fieldset {
 .articles-list {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 0 0 20px 0;
 
   li {
     a {
@@ -909,12 +909,14 @@ fieldset {
 
 .red-alert-holder {
   background-color: #f8f8f8;
+  border-bottom: 10px solid black;
 
   background-image: url(/themes/isu/images/crowd.png);
   background-repeat: repeat-x;
   background-position: center bottom;
+  text-align: center;
 
-  height: 105px;
+  height: 107px;
 
   position: relative;
 
@@ -951,8 +953,8 @@ fieldset {
     margin-top: 75px;
 
     @media (max-width: @screen-xs-max) {
-      margin-top: 150px;
-      margin-bottom: 20px;
+      margin-top: 50px;
+      margin-bottom: 5px;
     }
 
     a {
@@ -964,6 +966,28 @@ fieldset {
         outline: none !important;
         border: 1px solid white;
       }
+    }
+  }
+}
+
+.hidden-link {
+  display: none;
+}
+
+.optionset {
+  list-style: none;
+  display: inline;
+
+  li {
+    display: inline;
+
+    input,
+    label {
+      display: inline;
+    }
+
+    label {
+      padding: 0 5px;
     }
   }
 }

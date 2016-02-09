@@ -5,13 +5,15 @@
                 <span class="anchor" id="media"></span>
                 <h2 style="padding: 0 0 20px 0; margin: 0;">V médiách</h2>
 
-                <ul style="margin-bottom: 45px;">
+                <ul style="margin-bottom: 15px; padding-left: 20px;">
                     <% loop $MediaLinks.Sort(Sort) %>
-                    <li style="padding-bottom: 5px;">
-                        <span>$Date.format('j. n. Y')<% if $Date && $Medium %>, <% end_if %>$Medium:</span> <a href="$Link" target="_blank">$Title</a>
+                    <li style="padding-bottom: 5px;" <% if $Pos > 10 %>class="hidden-link"<% end_if %>>
+                    <span>$Date.format('j. n. Y')<% if $Date && $Medium %>, <% end_if %>$Medium:</span> <a href="$Link" target="_blank">$Title</a>
                     </li>
                     <% end_loop %>
                 </ul>
+
+                <a href="#" class="show-more-links">Zobraziť viac</a>
             </div>
 
             <div class="col-sm-6">

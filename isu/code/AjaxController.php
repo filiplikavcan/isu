@@ -4,6 +4,7 @@ class AjaxController extends Controller
 {
     private static $allowed_actions = array (
         'schoolsByCity',
+        'universitySubmit',
         'submit',
         'requestUpdate',
         'addToNewsletter',
@@ -42,6 +43,16 @@ class AjaxController extends Controller
         {
             return json_encode(array(
                 'success' => SchoolStrikeRegistration::store($request->postVar('data')),
+            ));
+        }
+    }
+
+    public function universitySubmit(SS_HTTPRequest $request)
+    {
+        if (Director::is_ajax())
+        {
+            return json_encode(array(
+                'success' => UniversityStrikeRegistration::store($request->postVar('data')),
             ));
         }
     }

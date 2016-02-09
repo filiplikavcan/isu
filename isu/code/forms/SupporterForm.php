@@ -16,7 +16,12 @@ class SupporterForm extends Form
     {
         $fields = new FieldList(
             TextField::create('Name', 'Meno a priezvisko'),
-            TextField::create('City', 'Obec/Mesto')
+            TextField::create('City', 'Obec/Mesto'),
+            TextField::create('Email', 'Email'),
+            OptionsetField::create('PersonType', 'Som', array(
+                'parent' => 'rodič',
+                'other' => 'podporovateľ'
+            ), 'parent')
         );
 
         $actions = new FieldList(

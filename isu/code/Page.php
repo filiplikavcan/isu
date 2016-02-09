@@ -10,9 +10,40 @@ class Page extends SiteTree
 
 class Page_Controller extends ContentController
 {
+    private static $allowed_actions = array(
+        'SchoolStrikeForm',
+        'SendSchoolStrikeForm',
+        'edit',
+        'back'
+    );
+
+    /**
+     * @var SchoolStrikeRegistration
+     */
+    protected $registration;
+
     public function init()
     {
         parent::init();
+
+        if (!empty($this->urlParams['Action']) && $this->urlParams['Action'] == 'edit')
+        {
+            $update_hash = $this->request->getVar('h');
+
+            if (!empty($update_hash))
+            {
+                $this->registration = SchoolStrikeRegistration::get()->filter(array('UpdateHash' => $update_hash))->last();
+
+                if (!$this->registration instanceof SchoolStrikeRegistration)
+                {
+                    Session::set('FlashError',
+                        $this->renderWith(array('FlashErrorRegistrationUpdateHashInvalid'))
+                    );
+
+                    $this->redirect($this->Link('edit'));
+                }
+            }
+        }
 
         Requirements::javascript("//code.jquery.com/jquery-1.11.0.min.js");
         Requirements::javascript("//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js");
@@ -21,6 +52,8 @@ class Page_Controller extends ContentController
         Requirements::javascript("https://maps.googleapis.com/maps/api/js?key=AIzaSyBGXPpTwHUFT1gbrHi7ppVqSjQHSXFMrOQ");
 //        Requirements::javascript($this->ThemeDir() . "/js/leaflet-heat.js");
 //        Requirements::javascript($this->ThemeDir() . "/js/map-slovakia.js");
+        Requirements::javascript($this->ThemeDir() . "/js/school_strike_form.js");
+        Requirements::javascript($this->ThemeDir() . "/js/university_strike_form.js");
         Requirements::javascript($this->ThemeDir() . "/js/main.js");
 
         Requirements::css("//cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/css/select2.min.css");
@@ -34,6 +67,31 @@ class Page_Controller extends ContentController
         {
             Requirements::css($this->ThemeDir() . '/css/main.css');
         }
+    }
+
+    public function back()
+    {
+        $this->redirect(BASE_URL);
+    }
+
+    public function UniversityStrikeForm()
+    {
+        return new UniversityStrikeForm($this);
+    }
+
+    public function SchoolStrikeCreateRegistrationForm()
+    {
+        return new SchoolStrikeForm($this);
+    }
+
+    public function SchoolStrikeUpdateRegistrationForm()
+    {
+        return new SchoolStrikeForm($this, true, $this->registration);
+    }
+
+    public function getUpdateHash()
+    {
+        return $this->request->getVar('hash');
     }
 
     public function objectsToUpdate($context)
