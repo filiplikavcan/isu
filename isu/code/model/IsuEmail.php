@@ -2,7 +2,7 @@
 
 class IsuEmail extends DataObject
 {
-    public function sendEmail($recipients, $subject, $body)
+    public function sendEmail($recipients, $subject, $body, $from = null)
     {
         $mail = new PHPMailer;
 
@@ -19,7 +19,7 @@ class IsuEmail extends DataObject
 
         $config = SiteConfig::current_site_config();
 
-        $mail->From = 'info@isu.sk';
+        $mail->From = empty($from) ? 'info@isu.sk' : $from;
         $mail->FromName = 'ISU';
         $mail->CharSet = 'UTF-8';
 

@@ -105,7 +105,8 @@ class UniversityStrikeRegistration extends DataObject
         $this->sendEmail(
             array($this->ContactEmail),
             'www.isu.sk: Registrácia do štrajku',
-            $this->renderWith(array('SchoolStrikeCreateUniversityRegistration'), array('Registration' => $this))
+            $this->renderWith(array('SchoolStrikeCreateUniversityRegistration'), array('Registration' => $this)),
+            'ivu@isu.sk'
         );
     }
 
@@ -149,9 +150,9 @@ class UniversityStrikeRegistration extends DataObject
         return sha1($random_string);
     }
 
-    protected function sendEmail($recipients, $subject, $body)
+    protected function sendEmail($recipients, $subject, $body, $from = null)
     {
         $email = new IsuEmail();
-        $email->sendEmail($recipients, $subject, $body);
+        $email->sendEmail($recipients, $subject, $body, $from);
     }
 }
