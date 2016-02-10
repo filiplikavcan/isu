@@ -7,4 +7,4 @@ pre potvrdenie Vašej registrácie je potrebné kliknúť na nasledovný odkaz:<
 S pozdravom,<br><br>
 Iniciatíva slovenských učiteľov<br>
 web: <a href="http://www.isu.sk/">www.isu.sk</a><br>
-email: <a href="mailto:info@isu.sk">info@isu.sk</a>
+email: <a href="mailto:ivu@isu.sk">ivu@isu.sk</a>
