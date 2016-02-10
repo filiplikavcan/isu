@@ -34,9 +34,9 @@
                         <a href="/#registracia" class="btn btn-register">Registrovať do štrajku VŠ</a>
                     </div>
 
-                    <p style="text-align: center;">
-                        Ak ste sa už zaregistrovali MŠ, ZŠ alebo SŠ, môžete <a href="$Link('edit')" class="update-form">aktualizovať údaje</a>.
-                    </p>
+                    <div>
+                        <a href="/podporuju-nas" class="btn btn-register" style="margin-top: 0;">Podporiť štrajk</a>
+                    </div>
                 </div>
             </div>
         </div>
