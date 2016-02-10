@@ -129,6 +129,11 @@ class Page_Controller extends ContentController
         return StrikeMapPage::get()->first();
     }
 
+    public function getUniversityListPage()
+    {
+        return UniversityListPage::get()->first();
+    }
+
     public function getFeaturedPage()
     {
         $homepage = Homepage::get()->first();
@@ -146,11 +151,14 @@ class Page_Controller extends ContentController
 
     public function getStrikeCounter()
     {
-        $counts = DB::query('SELECT SUM(JoinedEmployeesCount) AS PeopleCount, COUNT(*) AS SchoolsCount FROM SchoolStrikeRegistration')->record();
+        $counts = DB::query("
+            SELECT
+                COUNT(DISTINCT UniversityID) AS UniversitiesCount
+            FROM
+                UniversityStrikeRegistration")->record();
 
         return new ArrayData(array(
-            'PeopleCount' => $counts['PeopleCount'],
-            'SchoolsCount' => $counts['SchoolsCount'],
+            'UniversitiesCount' => $counts['UniversitiesCount'],
         ));
     }
 

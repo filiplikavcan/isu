@@ -17,6 +17,7 @@
         <ul class="nav navbar-nav">
             <li class="highlighted"><a href="/home#registracia">Registrovať do štrajku</a></li>
             <li class="highlighted"><a href="/podporuju-nas">Podporiť štrajk</a></li>
+            <li><a href="/vysoke-skoly">Vysoké školy</a></li>
             <li><a href="/home#dokumenty">Dokumenty</a></li>
             <li><a href="/zastrasovanie">Zastrašovanie</a></li>
             <li><a href="/najcastejsie-otazky">Najčastejšie otázky</a></li>
@@ -25,17 +26,15 @@
             <li><a href="/foreign-media" style="color: gray;">Foreign media</a></li>
         </ul>
 
-        <% if false %>
         <% with $StrikeCounter %>
             <div class="counter">
-                <div class="people-count">$PeopleCount</div>
-                <div class="school-stats">registrovaných učiteľov<br>z&nbsp;<span>$SchoolsCount</span> škôl</div>
+                <div class="universities-count">$UniversitiesCount</div>
+                <div class="school-stats">zapojených vysokých škôl</div>
                 <% if $Top.StrikeMapPage %>
-                    <a href="$Top.StrikeMapPage.Link">viac info</a>
+                    <a href="$Top.UniversityListPage.Link">viac info</a>
                 <% end_if %>
             </div>
         <% end_with %>
-        <% end_if %>
     </div>
 </nav>
 
