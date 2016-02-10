@@ -27,11 +27,11 @@
                     </h2>
 
                     <p>
-                        Od 15. februára štrajkujúci učitelia ISU prechádzajú do štrajkovej pohotovosti. Štafetu preberajú vysokoškolskí pedagógovia, ktorí v prípade nesplnenia požiadaviek v pondelok ráno vstupujú do ostrého štrajku. Nekončíme!
+                        Od 15. februára štrajkujúci učitelia ISU prechádzajú do štrajkovej pohotovosti. Štafetu preberajú vysokoškolskí zamestnanci, ktorí v prípade nesplnenia požiadaviek v pondelok ráno vstupujú do ostrého štrajku. Nekončíme!
                     </p>
 
                     <div>
-                        <a href="/#registracia" class="btn btn-register">Registrovať do štrajku</a>
+                        <a href="/#registracia" class="btn btn-register">Registrovať do štrajku VŠ</a>
                     </div>
 
                     <p style="text-align: center;">
@@ -103,7 +103,7 @@
                     <div class="col-md-7 col-md-offset-1 col-sm-6 document-category">
                         <span class="anchor" id="registracia"></span>
                         <h2 style="padding-bottom: 15px;">
-                            Registrácia vysokoškolského učiteľa do&nbsp;štrajku
+                            Registrácia zamestnanca VŠ do&nbsp;štrajku
                         </h2>
 
                         <p style="margin-bottom: 15px;">

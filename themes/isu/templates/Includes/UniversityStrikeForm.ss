@@ -11,7 +11,7 @@
     <div class="other-fields">
         <fieldset>
                 <h3>
-                    Vysokoškolský učiteľ
+                    Zamestnanec VŠ
                 </h3>
             <div class="form-group">
                 <label class="col-sm-4 control-label">Meno:</label>

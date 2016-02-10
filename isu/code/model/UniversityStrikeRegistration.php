@@ -64,10 +64,17 @@ class UniversityStrikeRegistration extends DataObject
 
     public function sendSlackNotification()
     {
+        $university = $this->University();
+
         $message = array(
             '*Gaudeamus Igitur. Bol zaregistrovaný nový VŠ učiteľ!*',
             $this->ContactName . ', ' . $this->ContactSurname . ', ' . $this->ContactEmail . ', ' . $this->ContactPhone,
         );
+
+        if ($university instanceof University)
+        {
+            $message[] = $university->Name;
+        }
 
         $content = array(
             'username' => 'všeweb',
