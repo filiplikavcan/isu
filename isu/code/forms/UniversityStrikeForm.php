@@ -11,6 +11,7 @@ class UniversityStrikeForm extends Form
             (new TextField('ContactSurname'))->addExtraClass('form-control'),
             (new TextField('ContactPosition'))->addExtraClass('form-control'),
             (new DropdownField('University', 'Vysoká škola', University::get()->map()))->addExtraClass('form-control'),
+            (new TextField('FacultyName'))->addExtraClass('form-control'),
             (new TextField('ContactEmail'))->addExtraClass('form-control'),
             (new TextField('ContactPhone'))->addExtraClass('form-control')
         );

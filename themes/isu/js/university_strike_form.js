@@ -6,6 +6,7 @@ var UniversityStrikeForm = function() {
         ContactSurname: '',
         ContactEmail: '',
         ContactPhone: '',
+        FacultyName: '',
         University: ''
     };
 
@@ -14,6 +15,7 @@ var UniversityStrikeForm = function() {
         ['ContactSurname'],
         ['ContactEmail'],
         ['ContactPhone'],
+        ['FacultyName'],
         ['University']
     ];
 };

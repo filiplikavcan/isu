@@ -35,6 +35,13 @@
             </div>
 
             <div class="form-group">
+                <label class="col-sm-4 control-label">Fakulta/Pracovisko:</label>
+                <div class="col-sm-8">
+                    $Fields.fieldByName(FacultyName)
+                </div>
+            </div>
+
+            <div class="form-group">
                 <label class="col-sm-4 control-label">Emailová adresa:</label>
                 <div class="col-sm-8">
                     $Fields.fieldByName(ContactEmail)

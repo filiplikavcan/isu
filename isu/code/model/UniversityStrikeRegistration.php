@@ -7,6 +7,7 @@ class UniversityStrikeRegistration extends DataObject
         'ContactSurname' => 'Varchar',
         'ContactEmail' => 'Varchar',
         'ContactPhone' => 'Varchar',
+        'FacultyName' => 'Varchar(1000)',
         'VerificationHash' => 'Varchar',
     );
 
@@ -17,9 +18,23 @@ class UniversityStrikeRegistration extends DataObject
     private static $default_sort = 'LastEdited DESC';
 
     private static $summary_fields = array(
-        'ID' => 'ID',
+        'LastEdited' => 'Čas aktualizácie',
         'ContactName' => 'Meno',
         'ContactSurname' => 'Priezvisko',
+        'ContactEmail' => 'Email',
+        'ContactPhone' => 'Telefón',
+        'FacultyName' => 'Fakulta/Pracovisko',
+        'UniversityName' => 'VŠ',
+    );
+
+    static $searchable_fields = array (
+
+        'ContactName' => array('title' => 'Meno'),
+        'ContactSurname' => array('title' => 'Priezvisko'),
+        'ContactEmail' => array('title' => 'Email'),
+        'ContactPhone' => array('title' => 'Telefón'),
+        'FacultyName' => array('title' => 'Fakulta/Pracovisko'),
+        'UniversityID' => array('title'=>'VŠ')
     );
 
     public function getCMSFields() {
@@ -36,6 +51,20 @@ class UniversityStrikeRegistration extends DataObject
         $this->write();
     }
 
+    public function getUniversityName()
+    {
+        $university = $this->University();
+
+        if ($university instanceof University)
+        {
+            return $university->Name;
+        }
+        else
+        {
+            return '';
+        }
+    }
+
     public static function store($data)
     {
         $registration = new self;
@@ -48,6 +77,7 @@ class UniversityStrikeRegistration extends DataObject
             $registration->ContactEmail = $data['ContactEmail'];
             $registration->ContactPhone = $data['ContactPhone'];
             $registration->UniversityID = $data['University'];
+            $registration->FacultyName = $data['FacultyName'];
 
             $registration->write();
 
@@ -73,7 +103,7 @@ class UniversityStrikeRegistration extends DataObject
 
         if ($university instanceof University)
         {
-            $message[] = $university->Name;
+            $message[] = $university->Name . ', ' . $this->FacultyName;
         }
 
         $content = array(
