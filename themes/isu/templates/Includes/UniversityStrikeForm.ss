@@ -35,9 +35,12 @@
             </div>
 
             <div class="form-group">
-                <label class="col-sm-4 control-label">Fakulta/Pracovisko:</label>
+                <label class="col-sm-4 control-label">Fakulta:</label>
                 <div class="col-sm-8">
                     $Fields.fieldByName(FacultyName)
+                    <div class="description">
+                        Zadajte len presný oficiálny názov fakulty. Ak vaša škola nemá fakulty, zadajte len názov katedry/ústavu.
+                    </div>
                 </div>
             </div>
 
@@ -46,10 +49,8 @@
                 <div class="col-sm-8">
                     $Fields.fieldByName(ContactEmail)
                     <div class="description">
-                        <% if not $IsRestricted %>
-                            Po odoslaní formulára Vám na túto emailovú adresu príde email s linkou, na ktorú musíte kliknúť,
-                            aby ste potvrdili registráciu.
-                        <% end_if %>
+                        Po odoslaní formulára Vám na túto emailovú adresu príde email s linkou, na ktorú musíte kliknúť,
+                        aby ste potvrdili registráciu.
                     </div>
                 </div>
             </div>
