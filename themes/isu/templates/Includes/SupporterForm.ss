@@ -22,6 +22,6 @@
             <% loop $Actions %>$Field<% end_loop %>
         </div>
 
-        <small>Váš podpis sa po overení zobrazí v&nbsp;dolnej časti tejto stránky. Odoslaním formulára súhlasíte so zasielaním noviniek o štrajku.</small>
+        <small>Váš podpis sa po overení zobrazí v&nbsp;dolnej časti tejto stránky. Odoslaním formulára súhlasíte so zasielaním noviniek od zástupcov Iniciatívy rodičov.</small>
     </form>
 </div>
