@@ -19,6 +19,14 @@ class Supporters extends ModelAdmin
 
         $grid_field = $form->Fields()->fieldByName($this->sanitiseClassName($this->modelClass));
 
+        $export_button = new IsuGridFieldExcelExportButton('toolbar-header-right');
+        $export_button->setCustomFields(array(
+            'Name',
+            'City',
+            'Email',
+            'Type',
+        ));
+
         $gridFieldConfig = GridFieldConfig::create()->addComponents(
             new GridFieldToolbarHeader(),
             (new GridFieldAddNewButton('toolbar-header-left'))->setButtonName('Pridať podporovateľa'),
@@ -35,9 +43,10 @@ class Supporters extends ModelAdmin
                 array($this, 'verifySupporter'),
                 'toolbar-header-right',
                 array(
-                    'confirm' => 'Ľubo, naozaj chceš schváliť týchto podporovateľov (sorry, ak nie si Ľubo :-)?'
+                    'confirm' => 'Naozaj chceš schváliť týchto podporovateľov?'
                 )
-            )
+            ),
+            $export_button
         );
 
         $gridFieldConfig->getComponentByType('GridFieldPaginator')->setItemsPerPage(100);
