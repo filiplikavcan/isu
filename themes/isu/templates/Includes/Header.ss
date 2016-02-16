@@ -9,6 +9,30 @@
                 <div class="fb-like" data-href="https://www.facebook.com/iniciativa.slovenskych.ucitelov" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div>
             </li>
         </ul>
+
+        <% with $StrikeCounter %>
+        <div class="counter">
+            <div class="box">
+                <div class="universities-count">$UniversitiesCount</div>
+                <div class="school-stats">
+                    zapojených VŠ
+                    <% if $Top.StrikeMapPage %>
+                        <br><a href="$Top.UniversityListPage.Link">zoznam VŠ</a>
+                    <% end_if %>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="universities-count">
+                    $Top.PeopleCount
+                </div>
+                <div class="school-stats">
+                    ľudí podporuje štrajk
+                    <br><a href="/podporuju-nas#podporovatelia">zoznam ľudí</a>
+                </div>
+            </div>
+        </div>
+        <% end_with %>
     </div>
 </nav>
 
@@ -25,16 +49,6 @@
             <li><a href="/kontakty">Kontakty</a></li>
             <li><a href="/foreign-media" style="color: gray;">Foreign media</a></li>
         </ul>
-
-        <% with $StrikeCounter %>
-            <div class="counter">
-                <div class="universities-count">$UniversitiesCount</div>
-                <div class="school-stats">zapojených vysokých škôl</div>
-                <% if $Top.StrikeMapPage %>
-                    <a href="$Top.UniversityListPage.Link">viac info</a>
-                <% end_if %>
-            </div>
-        <% end_with %>
     </div>
 </nav>
 

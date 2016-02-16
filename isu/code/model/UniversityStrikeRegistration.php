@@ -9,6 +9,7 @@ class UniversityStrikeRegistration extends DataObject
         'ContactPhone' => 'Varchar',
         'FacultyName' => 'Varchar(1000)',
         'VerificationHash' => 'Varchar',
+        'Verified' => 'Boolean',
     );
 
     private static $has_one = array(
@@ -25,6 +26,7 @@ class UniversityStrikeRegistration extends DataObject
         'ContactPhone' => 'Telefón',
         'FacultyName' => 'Fakulta/Pracovisko',
         'UniversityName' => 'VŠ',
+        'Verified' => 'Overené',
     );
 
     static $searchable_fields = array (
@@ -36,6 +38,11 @@ class UniversityStrikeRegistration extends DataObject
         'FacultyName' => array('title' => 'Fakulta/Pracovisko'),
         'UniversityID' => array('title'=>'VŠ')
     );
+
+    public function VerifiedHumanized()
+    {
+        return $this->Verified ? 'Áno' : 'Nie';
+    }
 
     public function getCMSFields() {
         $fields = parent::getCMSFields();

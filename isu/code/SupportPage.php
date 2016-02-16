@@ -80,11 +80,6 @@ class SupportPage_Controller extends ArticlePage_Controller
         return $this->getColumnStart(2) + 1;
     }
 
-    public function getPeopleCount()
-    {
-        return Supporter::get()->filter(array('Verified' => true))->count();
-    }
-
     public function getPages()
     {
         $page = isset($this->requestParams['p']) ? $this->requestParams['p'] : 1;

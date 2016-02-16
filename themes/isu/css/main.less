@@ -571,38 +571,54 @@ fieldset {
 
 .counter {
   position: absolute;
-  width: 130px;
-  height: 130px;
-  background-color: #e82d2f;
-  background-color: white;
-  border: 5px solid rgba(128, 128, 128, 0.1);
-  border-radius: 50%;
-  box-shadow: 2px 2px 2px 2px rgba(128, 128, 128, 0.15);
   z-index: 10;
+
+  padding: 5px 0 0 0;
 
   font-size: 13px;
   text-align: center;
-  padding-top: 15px;
 
   right: 0;
-  top: -50px;
+  top: 0;
 
   color: gray;
 
   line-height: 14px;
 
+  .box {
+    display: inline-block;
+    vertical-align: middle;
+    width: 150px;
+    padding: 5px;
+
+    &:not(:first-child)
+    {
+      border-left: 1px solid #dedede;
+    }
+
+    @media (max-width: @grid-float-breakpoint-max) {
+      display: block;
+      background-color: white;
+
+      &:not(:first-child)
+      {
+        border-left: none;
+      }
+    }
+  }
+
   .people-count {
     color: #e82d2f;
     font-size: 26px;
     font-weight: 700;
-    line-height: 36px;
+    line-height: 32px;
   }
 
   .universities-count {
     color: #e82d2f;
-    font-size: 42px;
+    font-size: 36px;
     font-weight: 700;
-    line-height: 42px;
+    line-height: 32px;
   }
 
   span {
@@ -1013,5 +1029,9 @@ fieldset {
         font-size: 16px;
       }
     }
+  }
+
+  .faculties {
+    margin: 0;
   }
 }

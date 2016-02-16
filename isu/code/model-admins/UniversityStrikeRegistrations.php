@@ -37,11 +37,26 @@ class UniversityStrikeRegistrations extends ModelAdmin
             new GridFieldEditButton(),
             new GridFieldDeleteAction(),
             new GridFieldDetailForm(),
+            new GridFieldApplyToMultipleRows(
+                'verifyuniregistrations',
+                'Schváliť zvolené registrácie',
+                array($this, 'verifyRegistration'),
+                'toolbar-header-right',
+                array(
+                    'confirm' => 'Naozaj chceš schváliť tieto registrácie?'
+                )
+            ),
             $export_button
         );
 
         $grid_field->setConfig($gridFieldConfig);
 
         return $form;
+    }
+
+    public function verifyRegistration($record, $index)
+    {
+        $record->Verified = true;
+        $record->write();
     }
 }

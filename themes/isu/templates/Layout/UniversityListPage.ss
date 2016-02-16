@@ -12,7 +12,18 @@
                     <% loop $Universities %>
                         <tr <% if $Joined %>class="joined"<% end_if %>>
                             <td>
-                                $Name
+                                <% if $Joined %>
+                                    <strong>$Name</strong>
+                                    <ul class="faculties">
+                                        <% loop $Faculties %>
+                                            <li>
+                                                $Name
+                                            </li>
+                                        <% end_loop %>
+                                    </ul>
+                                <% else %>
+                                    $Name
+                                <% end_if %>
                             </td>
                             <td>
                                 <% if $Joined %>

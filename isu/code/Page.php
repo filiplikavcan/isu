@@ -69,6 +69,11 @@ class Page_Controller extends ContentController
         }
     }
 
+    public function getPeopleCount()
+    {
+        return Supporter::get()->filter(array('Verified' => true))->count();
+    }
+
     public function back()
     {
         $this->redirect(BASE_URL);
@@ -155,7 +160,9 @@ class Page_Controller extends ContentController
             SELECT
                 COUNT(DISTINCT UniversityID) AS UniversitiesCount
             FROM
-                UniversityStrikeRegistration")->record();
+                UniversityStrikeRegistration
+            WHERE
+                Verified = 1")->record();
 
         return new ArrayData(array(
             'UniversitiesCount' => $counts['UniversitiesCount'],
