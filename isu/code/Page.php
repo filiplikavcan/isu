@@ -158,7 +158,8 @@ class Page_Controller extends ContentController
     {
         $counts = DB::query("
             SELECT
-                COUNT(DISTINCT UniversityID) AS UniversitiesCount
+                COUNT(DISTINCT UniversityID) AS UniversitiesCount,
+                COUNT(*) AS UniversityRegistrationsCount
             FROM
                 UniversityStrikeRegistration
             WHERE
@@ -166,6 +167,7 @@ class Page_Controller extends ContentController
 
         return new ArrayData(array(
             'UniversitiesCount' => $counts['UniversitiesCount'],
+            'UniversityRegistrationsCount' => $counts['UniversityRegistrationsCount'],
         ));
     }
 
