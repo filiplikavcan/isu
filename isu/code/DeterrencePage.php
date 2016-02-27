@@ -2,10 +2,8 @@
 
 class DeterrencePage extends Page
 {
-
-    //one to one relation - image
-    private static $has_one = array(
-        'Image' => 'Image'
+    private static $db = array(
+        'DeterrenceVideo' => 'Text',
     );
     
     private static $has_many = array(
@@ -15,8 +13,7 @@ class DeterrencePage extends Page
     public function getCMSFields() {
         $fields = parent::getCMSFields();
 
-        //upload image
-        $fields->addFieldToTab('Root.Main', new UploadField('Image', 'Image'));
+        $fields->addFieldToTab('Root.Main', new TextareaField('DeterrenceVideo', 'DeterrenceVideo'));
 
         $gridFieldConfig = GridFieldConfig::create()->addComponents(
             new GridFieldToolbarHeader(),
@@ -37,7 +34,7 @@ class DeterrencePage extends Page
             $gridFieldConfig
         );
         $fields->addFieldToTab("Root.Príklady", $gridField);
-
+        
         return $fields;
     }
 
