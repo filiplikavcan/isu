@@ -23,16 +23,16 @@
                     </div>
 
                     <h2 style="font-size: 58px; text-transform: none; line-height: 60px;">
-                        Vysoké školy<br>preberajú štafetu. Spolu to dokážeme!
+                        Štrajk prerušujeme,<br>aby zosilnel!
                     </h2>
 
-                    <p>
+                    <!--p>
                         Od 15. februára štrajkujúci učitelia ISU prechádzajú do štrajkovej pohotovosti. Štafetu preberajú vysokoškolskí zamestnanci, ktorí v prípade nesplnenia požiadaviek v pondelok ráno vstupujú do ostrého štrajku. Nekončíme!
-                    </p>
+                    </p-->
 
-                    <div>
+                    <!--div>
                         <a href="/#registracia" class="btn btn-register">Registrovať do štrajku VŠ</a>
-                    </div>
+                    </div-->
 
                     <div>
                         <a href="/podporuju-nas" class="btn btn-register" style="margin-top: 0;">Podporiť štrajk</a>

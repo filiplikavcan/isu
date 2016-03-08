@@ -12,7 +12,7 @@
 
         <% with $StrikeCounter %>
         <div class="counter">
-            <div class="box">
+            <!--div class="box">
                 <div class="universities-count">$UniversityRegistrationsCount</div>
                 <div class="school-stats">
                     zapojených zamestnancov VŠ
@@ -27,7 +27,7 @@
                         <br><a href="$Top.UniversityListPage.Link">zoznam VŠ</a>
                     <% end_if %>
                 </div>
-            </div>
+            </div-->
 
             <div class="box">
                 <div class="universities-count">
