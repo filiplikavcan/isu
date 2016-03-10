@@ -46,7 +46,7 @@
 <nav class="navbar navbar-default menu">
     <div class="container" style="position: relative;">
         <ul class="nav navbar-nav">
-            <li class="highlighted"><a href="/home#registracia">Registrovať do štrajku</a></li>
+            <!--li class="highlighted"><a href="/home#registracia">Registrovať do štrajku</a></li-->
             <li class="highlighted"><a href="/podporuju-nas">Podporiť štrajk</a></li>
             <li><a href="/vysoke-skoly">Vysoké školy</a></li>
             <li><a href="/home#dokumenty">Dokumenty</a></li>

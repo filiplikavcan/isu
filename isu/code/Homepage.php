@@ -37,6 +37,22 @@ class Homepage extends Page
             )));
         }
 
+        /**$other_actions = Action::get()->where('GroupID IS NULL OR GroupID = 0');
+
+        if ($other_actions->count() > 0)
+        {
+            $result->add(new ArrayData(array(
+                'Group' => ActionGroup::getOtherActionsGroup(),
+                'Custom' => false,
+            )));
+        }*/
+
+        return $result;
+    }
+    
+    public function getOtherActionGroups()
+    {
+        $result = new ArrayList();
         $other_actions = Action::get()->where('GroupID IS NULL OR GroupID = 0');
 
         if ($other_actions->count() > 0)
