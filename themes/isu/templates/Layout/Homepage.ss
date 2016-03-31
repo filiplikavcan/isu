@@ -23,8 +23,20 @@
                     </div>
 
                     <h2 style="font-size: 58px; text-transform: none; line-height: 60px;">
-                        Štrajk prerušujeme,<br>aby zosilnel!
+                        Pochod: 
+                        <br>
+                        Štrajk sa neskončil <a href="https://www.facebook.com/events/593743580784713/" target="_blank" style="font-size: 40px;"><i class="fa fa-external-link"></i></a>
                     </h2>
+                    
+                    <p style="font-size: 30px; line-height: 30px;">
+                        Utorok 5. 4.
+                        <br>
+                        16:00 - Námestie slobody (Úrad vlády)
+                    </p>
+
+                    <!--h2 style="font-size: 58px; text-transform: none; line-height: 60px;">
+                        Štrajk prerušujeme,<br>aby zosilnel!
+                    </h2-->
 
                     <!--p>
                         Od 15. februára štrajkujúci učitelia ISU prechádzajú do štrajkovej pohotovosti. Štafetu preberajú vysokoškolskí zamestnanci, ktorí v prípade nesplnenia požiadaviek v pondelok ráno vstupujú do ostrého štrajku. Nekončíme!
