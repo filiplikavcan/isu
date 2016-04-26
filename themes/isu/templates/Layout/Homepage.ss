@@ -135,6 +135,12 @@
                         <% end_loop %>
                     </div>
 
+                    <div class="row">
+                    
+                    <div class="col-sm-12 col-md-12">
+                        <a href="/akcie" title="Zobraziť všetky akcie">Zobraziť viac</a>
+                    </div>
+
                     <!--div class="col-md-7 col-md-offset-1 col-sm-6 document-category">
                         <span class="anchor" id="registracia"></span>
                         <h2 style="padding-bottom: 15px;">
