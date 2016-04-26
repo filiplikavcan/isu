@@ -75,7 +75,7 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="btn-action">
-                    Podrobnosti o akciách nájdete <a href="/home#akcie">v zozname akcií</a>.
+                    Štrajk prerušujeme, aby zosilnel!
                 </div>
             </div>
         </div>
