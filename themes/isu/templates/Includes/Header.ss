@@ -5,9 +5,22 @@
         </div>
 
         <ul class="nav navbar-nav fb-button">
-            <li style="padding-top: 30px; padding-left: 30px;">
-                <div class="fb-like" data-href="https://www.facebook.com/iniciativa.slovenskych.ucitelov" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div>
+
+            <li>
+                <a href="#" target="_blank" title="" class="fb-link">ISU</a>
             </li>
+
+            <li>
+                <a href="#" target="_blank" title="" class="fb-link">IVU</a>
+            </li>
+
+            <li>
+                <a href="#" target="_blank" title="" class="fb-link">ĎŽV</a>
+            </li>
+
+            <!--li style="padding-top: 30px; padding-left: 30px;">
+                <div class="fb-like" data-href="https://www.facebook.com/iniciativa.slovenskych.ucitelov" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div>
+            </li-->
         </ul>
 
         <% with $StrikeCounter %>
@@ -46,15 +59,13 @@
 <nav class="navbar navbar-default menu">
     <div class="container" style="position: relative;">
         <ul class="nav navbar-nav">
-            <!--li class="highlighted"><a href="/home#registracia">Registrovať do štrajku</a></li-->
-            <li class="highlighted"><a href="/podporuju-nas">Podporiť štrajk</a></li>
-            <li><a href="/vysoke-skoly">Vysoké školy</a></li>
-            <li><a href="/home#dokumenty">Dokumenty</a></li>
+            <li><a href="/akcie">Akcie</a></li>
+            <li><a href="/media">Média</a></li>
+            <li><a href="/media">Videá</a></li>
+            <li><a href="/dokumenty">Dokumenty</a></li>
             <li><a href="/zastrasovanie">Zastrašovanie</a></li>
-            <li><a href="/najcastejsie-otazky">Najčastejšie otázky</a></li>
-            <li><a href="#media">Média</a></li>
-            <li><a href="/kontakty">Kontakty</a></li>
-            <li><a href="/foreign-media" style="color: gray;">Foreign media</a></li>
+            <li><a href="/sesttyzdnovy-strajk">Šesťtýždňový štrajk</a></li>
+            <li><a href="#kontakty">Kontakty</a></li>
         </ul>
     </div>
 </nav>
