@@ -196,4 +196,22 @@ class Page_Controller extends ContentController
 
         return $message;
     }
+
+
+    public function getVideo($num = 5) {
+
+        $apiKey = "AIzaSyBKJw43RbCaXEP4B4XRIkmVf3f3EHiK6KI";
+        $channelId = "UCj0iPtfmb9gnDtTTeoaG3_w";
+
+        $link = "https://www.googleapis.com/youtube/v3/search?channelId=".$channelId."&order=date&maxResults=".$num."&key=".$apiKey."&part=snippet,id";
+
+        $video = file_get_contents($link);
+
+        $video = json_decode($video, true);
+
+        //Debug::show(new ArrayList($video["items"]));
+
+        return new ArrayList($video["items"]);
+
+    }
 }

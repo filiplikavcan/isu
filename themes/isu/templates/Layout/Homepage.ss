@@ -141,51 +141,80 @@
                         <a href="/akcie" title="Zobraziť všetky akcie">Zobraziť viac</a>
                     </div>
 
-                    <!--div class="col-md-7 col-md-offset-1 col-sm-6 document-category">
-                        <span class="anchor" id="registracia"></span>
-                        <h2 style="padding-bottom: 15px;">
-                            Registrácia zamestnanca VŠ do&nbsp;štrajku
-                        </h2>
-
-                        <p style="margin-bottom: 15px;">
-                             Ak chcete registrovať materskú, základnú alebo strednú školu <a href="/registracia-ms-zs-a-ss" style="display: inline;">použite registračný formulár pre MŠ, ZŠ a SŠ</a>.
-                        </p>
-
-                        $UniversityStrikeForm
-                    </div-->
                 </div>
                 <span class="anchor" id="dokumenty"></span>
                 <div class="row">
 
-                    <% loop $ArticleCategories %>
-                    <div class="col-sm-5 document-category">
-                        <h2>$Title</h2>
-                        <div class="description">
-                            $Content
-                        </div>
+                    <div class="col-sm-4 document-category">
+                        <h2>Videá</h2>
 
-                        <ul class="articles-list">
-                            <% loop Children %>
-                            <li <% if $Pos > 10 %>class="hidden-link"<% end_if %>>
-                                <a href="$Link">
-                                    $MenuTitle
-                                        <span>
-                                            <% if $PublishDate %>
-                                                $PublishDate.format('j. n. Y')
-                                            <% end_if %>
-                                        </span>
-                                </a>
+                        <ul class="articles-list articles-list--links">
+                            <% loop $Video(3) %>
+                            <li <% if $Pos > 3 %>class="hidden-link"<% end_if %>>
+                                <br>
+                                <strong>$snippet.title</strong>
+                                    <!--span>
+                                        $snippet.publishedAt.format('j. n. Y')
+                                    </span-->
+                                <iframe width="280" height="158" src="https://www.youtube.com/embed/$id.videoId?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+                            </hr>
                             </li>
                             <% end_loop %>
                         </ul>
 
-                        <a href="#" class="show-more-links">Zobraziť viac</a>
+                        <a href="/videa">Zobraziť viac</a>
                     </div>
 
-                    <% if MultipleOf(3) %>
-                    <span class="clearfix visible-md-block visible-lg-block visible-sm-block"></span>
-                    <% end_if %>
-                    <% end_loop %>
+                    <div class="col-sm-4 document-category">
+                        <h2>Médiá</h2>
+
+                        <ul class="articles-list articles-list--links">
+                            <% loop $MediaLinks.Sort(Sort) %>
+                            <li <% if $Pos > 10 %>class="hidden-link"<% end_if %>>
+                                <a href="$Link" class="external-link">
+                                    $Title
+                                    <span>
+                                        $Date.format('j. n. Y')<% if $Date && $Medium %>, <% end_if %>$Medium
+                                    </span>
+                                </a>
+                            </li>
+                            <% end_loop %>
+                        </ul>
+                        
+                        <a href="/media">Zobraziť viac</a>
+                    </div>
+
+                    <div class="col-sm-4 document-category">
+                        <h2>Dokumenty</h2>
+
+                        <% loop $ArticleCategories %>
+
+
+                            <h3>$Title</h3>
+                            <div class="description">
+                                $Content
+                            </div>
+
+                            <ul class="articles-list">
+                                <% loop Children %>
+                                <li <% if $Pos > 5 %>class="hidden-link"<% end_if %>>
+                                    <a href="$Link">
+                                        $MenuTitle
+                                            <span>
+                                                <% if $PublishDate %>
+                                                    $PublishDate.format('j. n. Y')
+                                                <% end_if %>
+                                            </span>
+                                    </a>
+                                </li>
+                                <% end_loop %>
+                            </ul>
+
+                        <% end_loop %>
+
+                        <a href="/dokumenty">Zobraziť viac</a>
+                    </div>
+
                 </div>
             </div>
         </div>

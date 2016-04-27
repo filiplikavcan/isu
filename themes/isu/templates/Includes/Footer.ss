@@ -1,4 +1,4 @@
-<div class="media-holder" style="margin-top: 40px; padding-top: 75px; padding-bottom: 75px; background-color: #efefef;">
+<!--div class="media-holder" style="margin-top: 40px; padding-top: 75px; padding-bottom: 75px; background-color: #efefef;">
     <div class="container">
         <div class="row">
             <div class="col-sm-6">
@@ -21,7 +21,7 @@
             </div>
         </div>
     </div>
-</div>
+</div-->
 
 <div class="footer">
     <div class="container">
