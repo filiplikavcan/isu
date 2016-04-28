@@ -19,17 +19,10 @@
                     <% end_if %>
 
                     <div>
-                        $Content
+                        $MainBannerContent.RAW
                     </div>
 
-                    <h2 style="font-size: 58px; text-transform: none; line-height: 60px;">
-                        <br>
-                        Nemáte sto dní! <a href="http://den100.isu.sk/ " target="_blank" style="font-size: 40px;"><i class="fa fa-external-link"></i></a>
-                    </h2>
                     
-                    <div>
-                        <a href="/podporuju-nas" class="btn btn-register" style="margin-top: 0;">Podporiť štrajk</a>
-                    </div>
                 </div>
             </div>
         </div>
