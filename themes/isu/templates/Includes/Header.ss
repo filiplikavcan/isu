@@ -61,7 +61,7 @@
         <ul class="nav navbar-nav">
             <li><a href="/akcie">Akcie</a></li>
             <li><a href="/media">Média</a></li>
-            <li><a href="/media">Videá</a></li>
+            <li><a href="/video">Videá</a></li>
             <li><a href="/dokumenty">Dokumenty</a></li>
             <li><a href="/zastrasovanie">Zastrašovanie</a></li>
             <li><a href="/sesttyzdnovy-strajk">Šesťtýždňový štrajk</a></li>
