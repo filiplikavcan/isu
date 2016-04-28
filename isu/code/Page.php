@@ -198,20 +198,30 @@ class Page_Controller extends ContentController
     }
 
 
-    public function getVideo($num = 5) {
+    public function getVideo($num = 50) 
+    {
 
         $apiKey = "AIzaSyBKJw43RbCaXEP4B4XRIkmVf3f3EHiK6KI";
         $channelId = "UCj0iPtfmb9gnDtTTeoaG3_w";
 
         $link = "https://www.googleapis.com/youtube/v3/search?channelId=".$channelId."&order=date&maxResults=".$num."&key=".$apiKey."&part=snippet,id";
 
-        //$video = file_get_contents($link);
+        $video = file_get_contents($link);
 
-        //$video = json_decode($video, true);
+        $video = json_decode($video, true);
 
-        //return new ArrayList($video["items"]);
+        if ($video["items"])
+        {
+            return new ArrayList($video["items"]);
+        }
 
         return new ArrayList();
+
+    }
+
+    public function getHomePageVideo() {
+
+        return $this->getVideo(3);
 
     }
 }

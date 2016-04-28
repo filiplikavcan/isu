@@ -145,7 +145,7 @@
                         <h2>Videá</h2>
 
                         <ul class="articles-list articles-list--links">
-                            <% loop $Video(3) %>
+                            <% loop $HomePageVideo %>
                             <li <% if $Pos > 3 %>class="hidden-link"<% end_if %>>
                                 <br>
                                 <strong>$snippet.title</strong>
@@ -158,7 +158,7 @@
                             <% end_loop %>
                         </ul>
 
-                        <a href="/videa">Zobraziť viac</a>
+                        <a href="/video">Zobraziť viac</a>
                     </div>
 
                     <div class="col-sm-4 document-category">
