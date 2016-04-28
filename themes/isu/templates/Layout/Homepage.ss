@@ -43,6 +43,7 @@
         <div class="document-category-holder odd">
             <div class="container">
                 <div class="row">
+                    <% if $ActionGroups %>
                     <div class="col-sm-6 col-md-6 document-category">
                         <h2>Akcie</h2>
                         <% loop $ActionGroups %>
@@ -85,8 +86,9 @@
                             <% end_with %>
                         <% end_loop %>
                     </div>
+                    <% end_if %>
                     
-                    <div class="col-sm-6 col-md-6 document-category">
+                    <div class="<% if $ActionGroups %>col-sm-6 col-md-6<% else %>col-sm-12 col-md-12<% end_if %> document-category">
                         <% loop $OtherActionGroups %>
                             <% with $Group %>
                                 <div class="action-group<% if $Up.Custom %> custom-action-group<% end_if %> other-action-group">
@@ -130,8 +132,9 @@
 
                     <div class="row">
                     
-                    <div class="col-sm-12 col-md-12">
-                        <a href="/akcie" title="Zobraziť všetky akcie">Zobraziť viac</a>
+                        <div class="col-sm-12 col-md-12">
+                            <a href="/akcie" title="Zobraziť všetky akcie">Zobraziť viac</a>
+                        </div>
                     </div>
 
                 </div>
@@ -212,4 +215,17 @@
             </div>
         </div>
     </div>
+
+    <% if $CustomContent %>
+    <div class="custom-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-12">$CustomContent.RAW</div>
+            </div>
+        </div>
+    </div>
+
+
+    <% end_if %>
+    <div>
 <% end_if %>

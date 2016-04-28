@@ -205,13 +205,13 @@ class Page_Controller extends ContentController
 
         $link = "https://www.googleapis.com/youtube/v3/search?channelId=".$channelId."&order=date&maxResults=".$num."&key=".$apiKey."&part=snippet,id";
 
-        $video = file_get_contents($link);
+        //$video = file_get_contents($link);
 
-        $video = json_decode($video, true);
+        //$video = json_decode($video, true);
 
-        //Debug::show(new ArrayList($video["items"]));
+        //return new ArrayList($video["items"]);
 
-        return new ArrayList($video["items"]);
+        return new ArrayList();
 
     }
 }
