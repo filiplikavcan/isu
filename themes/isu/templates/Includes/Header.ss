@@ -7,15 +7,15 @@
         <ul class="nav navbar-nav fb-button">
 
             <li>
-                <a href="#" target="_blank" title="" class="fb-link">ISU</a>
+                <a href="https://www.facebook.com/iniciativa.slovenskych.ucitelov/" target="_blank" title="" class="fb-link">Iniciatíva slovenských učiteľov</a>
             </li>
 
             <li>
-                <a href="#" target="_blank" title="" class="fb-link">IVU</a>
+                <a href="https://www.facebook.com/iniciativa.vs.ucitelov/" target="_blank" title="Iniciatíva vysokoškolských učiteľov" class="fb-link">Iniciatíva vysokoškolských učiteľov</a>
             </li>
 
             <li>
-                <a href="#" target="_blank" title="" class="fb-link">ĎŽV</a>
+                <a href="https://www.facebook.com/dakujemezevieme/" target="_blank" title="Ďakujeme, že vieme" class="fb-link">Ďakujeme, že vieme</a>
             </li>
 
             <!--li style="padding-top: 30px; padding-left: 30px;">
