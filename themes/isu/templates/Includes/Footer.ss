@@ -55,6 +55,59 @@
         </div>
         <div class="row info-boxes">
             <div class="col-sm-4">
+                <h2>Kotakt</h2>
+
+                <h3>ISU</h3>
+                <p>
+                    Email: <a href="mailto:info@isu.sk">info@isu.sk</a><br>
+                    Telefón: 0908 420 468
+                </p>
+
+                <h3>IVU</h3>
+                <p>
+                    Email: <a href="mailto:ivu@isu.sk">ivu@isu.sk</a><br>
+                </p>
+
+                <h3>ĎŽV</h3>
+                <p>
+                    Email: <a href="mailto:dakujemezevieme@gmail.com">dakujemezevieme@gmail.com</a><br>
+                    
+                </p>
+            </div>
+            <div class="col-sm-4">
+                <span class="anchor" id="regiony"></span>
+                <h2>Regionálne iniciatívy</h2>
+                <ul>
+                    <% loop $Regions %>
+                    <% if $Link %>
+                    <li>
+                        <a href="$Link" target="_blank">$Title</a>
+                    </li>
+                    <% end_if %>
+                    <% end_loop %>
+                </ul>
+            </div>
+            <div class="col-sm-4">
+                <h2>
+                    &nbsp;
+                </h2>
+
+                <ul>
+                    <% loop $Regions %>
+                    <% if $Email %>
+                    <li>
+                        $Shortcut: <a href="mailto:info@isu.sk">$Email</a>
+                    </li>
+                    <% end_if %>
+                    <% end_loop %>
+                    <li>
+                        
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--div class="row info-boxes">
+            <div class="col-sm-4">
                 <h2>Kontakt</h2>
                 <p>
                     Email: <a href="mailto:info@isu.sk">info@isu.sk</a><br>
@@ -104,6 +157,6 @@
                     </li>
                 </ul>
             </div>
-        </div>
+        </div-->
     </div>
 </div>
