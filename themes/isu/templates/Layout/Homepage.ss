@@ -14,22 +14,16 @@
                 </div>
                 <div class="col-sm-6 col-md-6">
 
-                    <% if $InfotextTitle %>
-                    <h2>$InfotextTitle</h2>
-                    <% end_if %>
-
-                    <div>
-                        $Content
-                    </div>
-
-                    <h2 style="font-size: 58px; text-transform: none; line-height: 60px;">
+                    <h2 style="font-size: 48px; text-align: center; text-transform: none; line-height: 50px;">
                         <br>
-                        Nemáte sto dní! <a href="http://den100.isu.sk/ " target="_blank" style="font-size: 40px;"><i class="fa fa-external-link"></i></a>
+                        Programové vyhlásenie neplní sľuby! <a href="http://isu.sk/platy " target="_blank" style="font-size: 30px;"><i class="fa fa-external-link"></i></a>
                     </h2>
                     
                     <div>
                         <a href="/podporuju-nas" class="btn btn-register" style="margin-top: 0;">Podporiť štrajk</a>
                     </div>
+
+                    <div style="float: right; font-size: 22px;">Nemáte sto dní! <a href="http://100dni.isu.sk/ " target="_blank" style="font-size: 15px;"><i class="fa fa-external-link"></i></a></div><div style="clear:both;"></div>
                 </div>
             </div>
         </div>
