@@ -165,7 +165,7 @@
                         <h2>Médiá</h2>
 
                         <ul class="articles-list articles-list--links">
-                            <% loop $MediaLinks.Sort(Sort) %>
+                            <% loop $MediaLinks.Sort(Date, Desc) %>
                             <li <% if $Pos > 10 %>class="hidden-link"<% end_if %>>
                                 <a href="$Link" class="external-link">
                                     $Title
