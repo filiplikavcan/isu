@@ -60,7 +60,7 @@
     <div class="container" style="position: relative;">
         <ul class="nav navbar-nav">
             <li><a href="/akcie">Akcie</a></li>
-            <li><a href="/media">Média</a></li>
+            <li><a href="/media">Médiá</a></li>
             <li><a href="/video">Videá</a></li>
             <li><a href="/dokumenty">Dokumenty</a></li>
             <li><a href="/zastrasovanie">Zastrašovanie</a></li>
