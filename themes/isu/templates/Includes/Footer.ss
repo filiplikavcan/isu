@@ -56,7 +56,7 @@
         </div>
         <div class="row info-boxes">
             <div class="col-sm-4">
-                <h2>Kotakt</h2>
+                <h2>Kontakt</h2>
 
                 <h3>ISU</h3>
                 <p>
