@@ -6,6 +6,7 @@ class Homepage extends Page
         'FeaturedButtonTitle' => 'Varchar(1000)',
         'InfotextTitle' => 'Varchar(1000)',
         'MainBannerContent' => 'Text',
+        'MainBannerMedia' => 'Text',
         'HeadlineContent' => 'Text',
         'CustomContent' => 'Text'
     );
@@ -20,6 +21,7 @@ class Homepage extends Page
         $fields->addFieldToTab('Root.Main', new TreeDropdownField('FeaturedPageID', 'Featured Page', 'Page'), 'Content');
         $fields->addFieldToTab('Root.Main', new TextField('FeaturedButtonTitle', 'Featured Button Title'), 'Content');
         $fields->addFieldToTab('Root.Main', new TextField('InfotextTitle', 'Infotext Title'), 'Content');
+        $fields->addFieldToTab('Root.Main', new TextareaField('MainBannerMedia', 'MainBannerMedia'));
         $fields->addFieldToTab('Root.Main', new TextareaField('MainBannerContent', 'MainBannerContent'));
         $fields->addFieldToTab('Root.Main', new TextareaField('HeadlineContent', 'HeadlineContent'));
         $fields->addFieldToTab('Root.Main', new TextareaField('CustomContent', 'CustomContent'));

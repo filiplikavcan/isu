@@ -6,10 +6,11 @@
             <div class="row">
                 <div class="col-sm-6 col-md-5">
                     <div class="main-info">
-                        <div>
+                        $MainBannerMedia.RAW
+                        <!--div> REMOVE FROM CSS
                             <h2>Iniciatíva slovnských učiteľov vyhlasuje štrajk od 25.1.2016</h2>
                             <h3>Nie je nám to FUK!</h3>
-                        </div>
+                        </div-->
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-6">
