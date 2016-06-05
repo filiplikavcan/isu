@@ -13,7 +13,7 @@
 
                     <ul class="articles-list">
                         <% loop Children %>
-                        <li <% if $Pos > 5 %>class="hidden-link"<% end_if %>>
+                        <li>
                             <a href="$Link">
                                 $MenuTitle
                                 <span>
