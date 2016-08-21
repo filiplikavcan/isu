@@ -22,7 +22,7 @@ class SchoolStrikeForm extends Form
             // Pedagogickí a odborní zamestnanci
             (new TextField('EmployeesCount'))->addExtraClass('form-control'),
             (new TextField('JoinedEmployeesCount'))->addExtraClass('form-control'),
-            (new DropdownField('SchoolClosed', 'Bude škola zatvorená?', array('maybe' => 'momentálne nevieme', 'yes' => 'áno', 'no' => 'nie')))->addExtraClass('form-control'),
+            //(new DropdownField('SchoolClosed', 'Bude škola zatvorená?', array('maybe' => 'momentálne nevieme', 'yes' => 'áno', 'no' => 'nie')))->addExtraClass('form-control'),
 
             // Kontaktná osoba
             (new TextField('ContactName'))->addExtraClass('form-control'),

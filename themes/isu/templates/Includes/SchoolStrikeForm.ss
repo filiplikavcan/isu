@@ -138,12 +138,6 @@
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <label class="col-sm-4 control-label">Bude škola zatvorená?:</label>
-                    <div class="col-sm-8">
-                        $Fields.fieldByName(SchoolClosed)
-                    </div>
-                </div>
             </fieldset>
 
             <fieldset>
