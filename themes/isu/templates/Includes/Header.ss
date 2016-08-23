@@ -23,9 +23,11 @@
             </li-->
         </ul>
 
+
+
         <% with $StrikeCounter %>
-        <div class="counter">
-            <!--div class="box">
+        <!--div class="counter">
+            <div class="box">
                 <div class="universities-count">$UniversityRegistrationsCount</div>
                 <div class="school-stats">
                     zapojených zamestnancov VŠ
@@ -40,7 +42,7 @@
                         <br><a href="$Top.UniversityListPage.Link">zoznam VŠ</a>
                     <% end_if %>
                 </div>
-            </div-->
+            </div>
 
             <div class="box">
                 <div class="universities-count">
@@ -51,7 +53,7 @@
                     <br><a href="/podporuju-nas#podporovatelia">zoznam ľudí</a>
                 </div>
             </div>
-        </div>
+        </div-->
         <% end_with %>
     </div>
 </nav>
@@ -67,6 +69,18 @@
             <li><a href="/sesttyzdnovy-strajk">Šesťtýždňový štrajk</a></li>
             <li><a href="#kontakty">Kontakty</a></li>
         </ul>
+
+        <% with $StrikeCounter %>
+            <% if $PeopleCount > 1000 %>
+                <div class="counter">
+                    <div class="people-count">$PeopleCount</div>
+                    <div class="school-stats">registrovaných učiteľov<br>z&nbsp;<span>$SchoolsCount</span> škôl</div>
+                    <% if $Top.StrikeMapPage %>
+                        <a href="$Top.StrikeMapPage.Link">viac info</a>
+                    <% end_if %>
+                </div>
+            <% end_if %>
+        <% end_with %>
     </div>
 </nav>
 

@@ -275,12 +275,13 @@ SchoolStrikeForm.prototype = {
                 {
                     if (that.is_new)
                     {
-                        //window.location = '#registracia';
-                        $(window).scrollTop(0);
+                        window.location = '#registracia';
+                        // $(window).scrollTop(0);
                     }
                     else
                     {
-                        $(window).scrollTop(0);
+                        window.location = '#registracia';
+                        // $(window).scrollTop(0);
                     }
 
                     that.render(invalid_fields);

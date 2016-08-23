@@ -228,7 +228,7 @@
 
 
     <% end_if %>
-    <div>
+    <div id="registracia"></div>
     <div style="background-color: #efefef;">
     <div class="container">
         <div class="row registration">

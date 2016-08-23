@@ -154,20 +154,30 @@ class Page_Controller extends ContentController
         }
     }
 
+    // public function getStrikeCounter()
+    // {
+    //     $counts = DB::query("
+    //         SELECT
+    //             COUNT(DISTINCT UniversityID) AS UniversitiesCount,
+    //             COUNT(*) AS UniversityRegistrationsCount
+    //         FROM
+    //             UniversityStrikeRegistration
+    //         WHERE
+    //             Verified = 1")->record();
+
+    //     return new ArrayData(array(
+    //         'UniversitiesCount' => $counts['UniversitiesCount'],
+    //         'UniversityRegistrationsCount' => $counts['UniversityRegistrationsCount'],
+    //     ));
+    // }
+
     public function getStrikeCounter()
     {
-        $counts = DB::query("
-            SELECT
-                COUNT(DISTINCT UniversityID) AS UniversitiesCount,
-                COUNT(*) AS UniversityRegistrationsCount
-            FROM
-                UniversityStrikeRegistration
-            WHERE
-                Verified = 1")->record();
+        $counts = DB::query('SELECT SUM(JoinedEmployeesCount) AS PeopleCount, COUNT(*) AS SchoolsCount FROM SchoolStrikeRegistration')->record();
 
         return new ArrayData(array(
-            'UniversitiesCount' => $counts['UniversitiesCount'],
-            'UniversityRegistrationsCount' => $counts['UniversityRegistrationsCount'],
+            'PeopleCount' => $counts['PeopleCount'],
+            'SchoolsCount' => $counts['SchoolsCount'],
         ));
     }
 
@@ -200,6 +210,8 @@ class Page_Controller extends ContentController
 
     public function getVideo($num = 50) 
     {
+
+        // return new ArrayList();
 
         $apiKey = "AIzaSyBKJw43RbCaXEP4B4XRIkmVf3f3EHiK6KI";
         $channelId = "UCj0iPtfmb9gnDtTTeoaG3_w";
