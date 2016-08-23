@@ -25,7 +25,9 @@ class StrikeMapPage extends Page
 
     public function getLastRegistrationDate()
     {
-        return SchoolStrikeRegistration::get()->sort('LastEdited')->last()->LastEdited;
+        if (SchoolStrikeRegistration::get()->sort('LastEdited')->last() != null)
+            return SchoolStrikeRegistration::get()->sort('LastEdited')->last()->LastEdited;
+        return '';
     }
 }
 
