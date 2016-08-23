@@ -61,13 +61,12 @@
 <nav class="navbar navbar-default menu">
     <div class="container" style="position: relative;">
         <ul class="nav navbar-nav">
-            <li><a href="#registracia">Registrácia</a></li>
+            <li><a href="/home/#registracia">Registrácia</a></li>
             <li><a href="/akcie">Akcie</a></li>
             <li><a href="/media">Médiá</a></li>
             <li><a href="/video">Videá</a></li>
             <li><a href="/dokumenty">Dokumenty</a></li>
             <li><a href="/zastrasovanie">Zastrašovanie</a></li>
-            <li><a href="/sesttyzdnovy-strajk">Šesťtýždňový štrajk</a></li>
             <li><a href="/sesttyzdnovy-strajk">Šesťtýždňový štrajk</a></li>
             <li><a href="#kontakty">Kontakty</a></li>
             <li><a href="/foreign-media" style="color: gray;">Foreign media</a></li>
