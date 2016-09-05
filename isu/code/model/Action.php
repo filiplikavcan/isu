@@ -9,6 +9,8 @@ class Action extends DataObject
         'City' => 'Varchar',
         'Place' => 'Varchar(1000)',
         'Link' => 'Varchar(1000)',
+        'AttachmentLink' => 'Varchar(1000)',
+        'AttachmentTitle' => 'Varchar(1000)',
         'Date' => 'Date',
         'TimeFrom' => 'Varchar(5)',
         'TimeTo' => 'Varchar(5)',

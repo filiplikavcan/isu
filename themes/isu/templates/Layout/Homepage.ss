@@ -67,12 +67,16 @@
                                                             <% if $Up.Up.Up.Up.Up.Custom %>
                                                                 <div>
                                                                     <strong>$City</strong>,
-                                                                    $Place<% if $Link %>&nbsp;<a href="$Link" target="_blank"><i class="fa fa-external-link"></i></a><% end_if %>
+                                                                    $Place
+                                                                    <% if $AttachmentTitle %>&nbsp;<a href="$AttachmentLink" target="_blank">$AttachmentTitle.RAW</a><% end_if %>
+                                                                    <% if $Link %>&nbsp;<a href="$Link" target="_blank"><i class="fa fa-external-link"></i></a><% end_if %>
                                                                     <% if $TimeTo %><em><br> koniec o $TimeTo</em><% end_if %>
                                                                 </div>
                                                             <% else %>
                                                                 <div>
-                                                                    <strong>$City </strong>&ndash; $Title<% if $Link %>&nbsp;<a href="$Link" target="_blank"><i class="fa fa-external-link"></i></a><% end_if %><br>
+                                                                    <strong>$City </strong>&ndash; $Title
+                                                                    <% if $AttachmentTitle %>&nbsp;<a href="$AttachmentLink" target="_blank">$AttachmentTitle.RAW</a><% end_if %>
+                                                                    <% if $Link %>&nbsp;<a href="$Link" target="_blank"><i class="fa fa-external-link"></i></a><% end_if %><br>
                                                                     $Place <% if $Description %><br>$Description<% end_if %>
                                                                     <% if $TimeTo %><em><br> koniec o $TimeTo</em><% end_if %>
                                                                 </div>
@@ -110,12 +114,16 @@
                                                             <% if $Up.Up.Up.Up.Up.Custom %>
                                                                 <div>
                                                                     <strong>$City</strong>,
-                                                                    $Place<% if $Link %>&nbsp;<a href="$Link" target="_blank"><i class="fa fa-external-link"></i></a><% end_if %>
+                                                                    $Place
+                                                                    <% if $AttachmentTitle %>&nbsp;<a href="$AttachmentLink" target="_blank">$AttachmentTitle.RAW</a><% end_if %>
+                                                                    <% if $Link %>&nbsp;<a href="$Link" target="_blank"><i class="fa fa-external-link"></i></a><% end_if %>
                                                                     <% if $TimeTo %><em><br> koniec o $TimeTo</em><% end_if %>
                                                                 </div>
                                                             <% else %>
                                                                 <div>
-                                                                    <strong>$City </strong>&ndash; $Title<% if $Link %>&nbsp;<a href="$Link" target="_blank"><i class="fa fa-external-link"></i></a><% end_if %><br>
+                                                                    <strong>$City </strong>&ndash; $Title
+                                                                    <% if $AttachmentTitle %>&nbsp;<a href="$AttachmentLink" target="_blank">$AttachmentTitle.RAW</a><% end_if %>
+                                                                    <% if $Link %>&nbsp;<a href="$Link" target="_blank"><i class="fa fa-external-link"></i></a><% end_if %><br>
                                                                     $Place <% if $Description %><br>$Description<% end_if %>
                                                                     <% if $TimeTo %><em><br> koniec o $TimeTo</em><% end_if %>
                                                                 </div>
