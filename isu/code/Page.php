@@ -3,9 +3,23 @@
 class Page extends SiteTree
 {
 
-    private static $db = array();
+    private static $db = array(
+        'FBTitle' => 'Varchar(1000)',
+        'FBImage' => 'Varchar(1000)',
+        'FBDescription' => 'Varchar(1000)'
+    );
 
     private static $has_one = array();
+
+    public function getCMSFields() {
+        $fields = parent::getCMSFields();
+
+        $fields->addFieldToTab('Root.Main', new TextField('FBTitle', 'FB Title'));
+        $fields->addFieldToTab('Root.Main', new TextField('FBImage', 'FB Image'));
+        $fields->addFieldToTab('Root.Main', new TextField('FBDescription', 'FB Description'));
+
+        return $fields;
+    }
 }
 
 class Page_Controller extends ContentController
@@ -211,7 +225,7 @@ class Page_Controller extends ContentController
     public function getVideo($num = 50) 
     {
 
-        // return new ArrayList();
+        //return new ArrayList();
 
         $apiKey = "AIzaSyBKJw43RbCaXEP4B4XRIkmVf3f3EHiK6KI";
         $channelId = "UCj0iPtfmb9gnDtTTeoaG3_w";
