@@ -62,9 +62,9 @@
                 <p>
                     Email: <a href="mailto:info@isu.sk">info@isu.sk</a><br>
                     Telefón: 
-                    <br>0908 420 468
-                    <br>0902 347 413
-                    <br>0905 423 790
+                    <br>0908 420 468 (pre médiá)
+                    <br>0902 347 413 (pre školy)
+                    <br>0905 423 790 (pre školy)
                 </p>
 
                 <h3>IVU</h3>
