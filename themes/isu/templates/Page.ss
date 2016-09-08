@@ -6,7 +6,7 @@
 
     <title><% if $MetaTitle %>$MetaTitle<% else %>$Title<% end_if %> &raquo; $SiteConfig.Title</title>
 
-    <meta property="og:url" content="http://isu.sk/"/>
+    <meta property="og:url" content="$CurrentURL"/>
     <meta property="og:title" content="<% if $FBTitle %>$FBTitle<% else %>Iniciatíva slovenských učiteľov<% end_if %>"/>
     <meta property="og:image" content="<% if $FBImage %>$FBImage<% else %>http://isu.sk/themes/isu/images/isu-fb.png<% end_if %>"/>
     <meta property="og:description" content="<% if $FBDescription %>$FBDescription<% else %>Iniciatíva slovenských učiteľov je neformálne hnutie, ktoré vzniklo spojením lokálnych učiteľských iniciatív z celého Slovenska.<% end_if %>"/>

@@ -250,4 +250,10 @@ class Page_Controller extends ContentController
         return $this->getVideo(3);
 
     }
+
+    public function getCurrentURL() {
+
+        return "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+
+    }
 }
