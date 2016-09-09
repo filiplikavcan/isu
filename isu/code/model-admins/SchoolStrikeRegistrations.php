@@ -32,6 +32,7 @@ class SchoolStrikeRegistrations extends ModelAdmin
             'ContactPosition',
             'ContactEmail',
             'ContactPhone',
+            'Verified',
             'Note',
             'SchoolClosed',
         ));

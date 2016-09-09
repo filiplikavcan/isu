@@ -31,7 +31,8 @@ class SchoolStrikeRegistration extends DataObject
         'SchoolName' => 'Škola',
         'SchoolStreet' => 'Ulica',
         'CityName' => 'Obec',
-        'StrikeInfo' => 'Počet zamestnancov/Počet zapojených zamestnancov/Bude škola zavretá?',
+        'Verified' => 'Verifikovaná',
+        'StrikeInfo' => 'Počet zamestnancov / Počet zapojených / Škola zavretá?',
     );
 
     protected static $schools = null;
@@ -365,4 +366,10 @@ class SchoolStrikeRegistration extends DataObject
         $email = new IsuEmail();
         $email->sendEmail($recipients, $subject, $body);
     }
+
+    public function getVerified()
+    {
+        return $this->VerificationHash == null ? 'Áno' : 'Nie';
+    }
+
 }
