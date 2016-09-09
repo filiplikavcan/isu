@@ -87,6 +87,10 @@
                     <li>
                         <a href="$Link" target="_blank">$Title</a>
                     </li>
+                    <% else  %>
+                    <li>
+                        $Shortcut
+                    </li>
                     <% end_if %>
                     <% end_loop %>
                 </ul>
@@ -100,7 +104,11 @@
                     <% loop $Regions %>
                     <% if $Email %>
                     <li>
-                        $Shortcut: <a href="mailto:info@isu.sk">$Email</a>
+                        <a href="mailto:info@isu.sk">$Email</a>
+                    </li>
+                    <% else  %>
+                    <li>
+                        &nbsp;
                     </li>
                     <% end_if %>
                     <% end_loop %>
