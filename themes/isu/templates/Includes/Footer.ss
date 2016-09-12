@@ -89,7 +89,7 @@
                     </li>
                     <% else  %>
                     <li>
-                        $Shortcut
+                        $Title
                     </li>
                     <% end_if %>
                     <% end_loop %>
@@ -104,9 +104,9 @@
                     <% loop $Regions %>
                     <% if $Email %>
                     <li>
-                        <a href="mailto:info@isu.sk">$Email</a>
+                        <a href="mailto:$Email">$Email</a>
                     </li>
-                    <% else  %>
+                    <% else %>
                     <li>
                         &nbsp;
                     </li>
