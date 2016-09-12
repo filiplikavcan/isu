@@ -187,7 +187,7 @@ class Page_Controller extends ContentController
 
     public function getStrikeCounter()
     {
-        $counts = DB::query('SELECT SUM(JoinedEmployeesCount) AS PeopleCount, COUNT(*) AS SchoolsCount FROM SchoolStrikeRegistration')->record();
+        $counts = DB::query('SELECT SUM(JoinedEmployeesCount) AS PeopleCount, COUNT(*) AS SchoolsCount FROM SchoolStrikeRegistration WHERE VerificationHash IS NULL')->record();
 
         return new ArrayData(array(
             'PeopleCount' => $counts['PeopleCount'],
