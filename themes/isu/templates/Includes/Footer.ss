@@ -77,6 +77,28 @@
                     Email: <a href="mailto:dakujemezevieme@gmail.com">dakujemezevieme@gmail.com</a><br>
 
                 </p>
+
+                <h3>ĎAKUJEME</h3>
+                <ul>
+                    <li>
+                        <a href="http://web.archive.org/web/20160319184106/http://fair-play.sk/" target="_blank">Aliancii Fair-Play</a> za odbornú pomoc a poradenstvo.
+                    </li>
+                    <li>
+                        <a href="http://web.archive.org/web/20160319184106/http://www.frco.sk/" target="_blank">Andrejovi Borskému</a> za grafický návrh webu.
+                    </li>
+                    <li>
+                        Braňovi Bezručkovi za prípravu printových materiálov.
+                    </li>
+                    <li>
+                        Spoločnosti <a href="http://web.archive.org/web/20160319184106/http://www.bratia.sk/" target="_blank">bratia.sk</a> za web.
+                    </li>
+                    <li>
+                        <a href="http://web.archive.org/web/20160319184106/http://www.viaiuris.sk/index.html" target="_blank">Via Iuris</a> za právne poradenstvo.
+                    </li>
+                    <li>
+                        Spoločnosti <a href="http://web.archive.org/web/20160319184106/http://www.websupport.sk/" target="_blank">Websupport</a> za hosting.
+                    </li>
+                </ul>
             </div>
             <div class="col-sm-4">
                 <span class="anchor" id="regiony"></span>
