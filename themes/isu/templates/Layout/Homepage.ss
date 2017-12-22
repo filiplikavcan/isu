@@ -236,24 +236,4 @@
 
 
     <% end_if %>
-    <div id="registracia"></div>
-    <div style="background-color: #efefef;">
-    <div class="container">
-        <div class="row registration">
-            <div class="col-sm-8 col-sm-offset-2">
-                <span class="anchor" id="registracia"></span>
-                <h2>
-                    Registrácia do štrajku
-                </h2>
-
-                <p>
-                    Registrácia slúži výlučne pre potreby <a href="/manualy/strajkovy-vybor-isu/" style="display: inline;">štrajkového výboru Iniciatívy slovenských učiteľov</a>.
-                    Ďakujeme, že sa registrujete, je to dôležité pre efektívny priebeh štrajku. Údaje o kontaktnej osobe nebudú zverejnené.
-                </p>
-
-                $SchoolStrikeCreateRegistrationForm
-             </div>
-        </div>
-    </div>
-    </div>
 <% end_if %>

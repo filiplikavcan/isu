@@ -4,7 +4,7 @@ global $project;
 $project = 'isu';
 
 global $database;
-$database = 'isuweb55_redesign';
+$database = 'isuweb55_04';
 //$database = 'isuweb';
 
 // Set the site locale

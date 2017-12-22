@@ -61,7 +61,7 @@
 <nav class="navbar navbar-default menu">
     <div class="container" style="position: relative;">
         <ul class="nav navbar-nav">
-            <li><a href="/home/#registracia">Registrácia</a></li>
+            <!--li><a href="/home/#registracia">Registrácia</a></li-->
             <li><a href="/akcie">Akcie</a></li>
             <li><a href="/media">Médiá</a></li>
             <li><a href="/video">Videá</a></li>
@@ -71,18 +71,6 @@
             <li><a href="#kontakty">Kontakty</a></li>
             <li><a href="/foreign-media" style="color: gray;">Foreign media</a></li>
         </ul>
-
-        <% with $StrikeCounter %>
-            <% if $PeopleCount > 1000 %>
-                <div class="counter">
-                    <div class="people-count">$PeopleCount</div>
-                    <div class="school-stats">registrovaných učiteľov<br>z&nbsp;<span>$SchoolsCount</span> škôl</div>
-                    <% if $Top.StrikeMapPage %>
-                        <a href="$Top.StrikeMapPage.Link">viac info</a>
-                    <% end_if %>
-                </div>
-            <% end_if %>
-        <% end_with %>
     </div>
 </nav>
 
@@ -91,7 +79,7 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="btn-action">
-                    Pokračujeme v štrajku!
+                    
                 </div>
             </div>
         </div>

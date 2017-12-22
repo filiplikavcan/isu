@@ -10,7 +10,11 @@ class StrikeMapPage extends Page
     {
         $result = array();
 
-        foreach (SchoolStrikeRegistration::get() as $registration)
+        $registredSchools = SchoolStrikeRegistration::get()->where('VerificationHash IS NULL')->filter(array(
+            'JoinedEmployeesCount:GreaterThan' => '0',
+        ));
+
+        foreach ($registredSchools as $registration)
         {
             $result[] = array(
                 'address' => $registration->SchoolStreet . ', ' . $registration->getCityName(),
